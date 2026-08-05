@@ -1,3 +1,6 @@
+import com.android.build.gradle.internal.api.BaseVariantOutputImpl
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -11,7 +14,7 @@ val npmCmd = if (System.getProperty("os.name").startsWith("Windows")) "npm.cmd" 
 
 android {
     namespace = "me.hd.wabtest"
-    compileSdk = 36
+    compileSdk = 37
 
     sourceSets {
         named("main") {
@@ -24,19 +27,20 @@ android {
     defaultConfig {
         applicationId = "me.hd.wabtest"
         minSdk = 27
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 26053001
         versionName = "1.0.10"
         buildConfigField("String", "APP_NAME", "\"WABTest\"")
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     androidResources {
         additionalParameters += listOf("--allow-reserved-package-id", "--package-id", "0x78")
     }
 
-    buildFeatures {
-        buildConfig = true
-    }
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -46,26 +50,20 @@ android {
     }
 
     packaging {
-        resources.excludes.addAll(
-            arrayOf(
-                "kotlin/**",
-                "META-INF/**",
-                "**.bin",
-                "kotlin-tooling-metadata.json",
-            )
-        )
-    }
-    applicationVariants.all {
-        outputs.all {
-            val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
-            output.outputFileName?.let { fileName ->
-                if (fileName.endsWith(".apk")) {
-                    val projectName = rootProject.name
-                    val versionName = defaultConfig.versionName
-                    output.outputFileName = "${projectName}_v${versionName}.apk"
-                }
-            }
+        resources {
+            excludes += "**"
         }
+        dex {
+            useLegacyPackaging = true
+        }
+    }
+
+    applicationVariants.all {
+        outputs.filterIsInstance<BaseVariantOutputImpl>()
+            .forEach { output ->
+                val projectName = rootProject.name
+                output.outputFileName = "${projectName}-v$versionName.apk"
+            }
     }
 
     compileOptions {
@@ -75,7 +73,16 @@ android {
 }
 
 kotlin {
-    jvmToolchain(17)
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+        freeCompilerArgs.addAll(
+            listOf(
+                "-Xno-call-assertions",
+                "-Xno-param-assertions",
+                "-Xno-receiver-assertions"
+            )
+        )
+    }
 }
 
 val npmInstallVueDeps = tasks.register("npmInstallVueDeps") {
@@ -120,6 +127,8 @@ dependencies {
         exclude(group = "com.google.android.material", module = "material")
     }
     ksp(libs.yukihookapi.ksp.xposed)
+    implementation(platform(libs.kavaref.bom))
+    implementation(libs.kavaref.android)
     implementation(libs.kavaref.core)
     implementation(libs.kavaref.extension)
     implementation(libs.kotlinx.serialization.json)
