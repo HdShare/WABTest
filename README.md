@@ -131,3 +131,9 @@ WeChat ABTest
 | 预览图                                                                                                                                                    | 功能     |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
 | <img src="images/clicfg_chatting_voice_input/before/img.png" width="180" /> <img src="images/clicfg_chatting_voice_input/after/img.png" width="180" /> | 快捷语音输入 |
+
+### 8.0.40+
+
+| 预览图                                                                                                                                      | 功能         |
+|------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| <img src="images/clicfg_webview_debug/before/img.png" width="180" /> <img src="images/clicfg_webview_debug/after/img.png" width="180" /> | WebView 调试 |

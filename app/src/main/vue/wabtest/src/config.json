@@ -486,5 +486,15 @@
         "falseVal": "MA=="
       }
     ]
+  },
+  {
+    "8.0.40+": [
+      {
+        "name": "[图]WebView 调试",
+        "key": "clicfg_webview_debug",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      }
+    ]
   }
 ]
