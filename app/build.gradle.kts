@@ -8,6 +8,9 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
+val gitVersionCode: Int by rootProject.extra
+val gitVersionSuffix: String by rootProject.extra
+
 val vueProjectDir = file("src/main/vue/wabtest")
 val vueDistDir = file("$vueProjectDir/dist")
 val npmCmd = if (System.getProperty("os.name").startsWith("Windows")) "npm.cmd" else "npm"
@@ -18,21 +21,21 @@ android {
     namespace = "me.hd.wabtest"
     compileSdk = 37
 
+    defaultConfig {
+        applicationId = "me.hd.wabtest"
+        minSdk = 27
+        targetSdk = 37
+        versionCode = gitVersionCode
+        versionName = "1.1.0$gitVersionSuffix"
+        buildConfigField("String", "APP_NAME", "\"WABTest\"")
+    }
+
     sourceSets {
         named("main") {
             assets {
                 srcDirs(vueDistDir.path)
             }
         }
-    }
-
-    defaultConfig {
-        applicationId = "me.hd.wabtest"
-        minSdk = 27
-        targetSdk = 37
-        versionCode = 26053001
-        versionName = "1.0.10"
-        buildConfigField("String", "APP_NAME", "\"WABTest\"")
     }
 
     buildFeatures {
