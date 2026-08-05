@@ -12,6 +12,8 @@ val vueProjectDir = file("src/main/vue/wabtest")
 val vueDistDir = file("$vueProjectDir/dist")
 val npmCmd = if (System.getProperty("os.name").startsWith("Windows")) "npm.cmd" else "npm"
 
+val ketStorePath: String? = System.getenv("KEY_STORE_PATH")
+
 android {
     namespace = "me.hd.wabtest"
     compileSdk = 37
@@ -41,8 +43,21 @@ android {
         additionalParameters += listOf("--allow-reserved-package-id", "--package-id", "0x78")
     }
 
+    signingConfigs {
+        create("ci") {
+            if (!ketStorePath.isNullOrBlank()) {
+                storeFile = file(ketStorePath)
+                storePassword = System.getenv("KEY_STORE_PASSWORD")
+                keyAlias = System.getenv("KEY_ALIAS")
+                keyPassword = System.getenv("KEY_PASSWORD")
+                enableV2Signing = true
+            }
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig = signingConfigs.findByName("ci")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
