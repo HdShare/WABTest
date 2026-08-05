@@ -19,9 +19,8 @@ concurrency:
 jobs:
   build-ci:
     name: Build CI
-    runs-on: ubuntu-latest
     if: ${{ !startsWith(github.event.head_commit.message, '[skip ci]') && github.ref == 'refs/heads/master' }}
-
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -33,7 +32,6 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          cache: gradle
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
@@ -41,13 +39,15 @@ jobs:
       - name: Build with Gradle
         env:
           KEY_STORE_PATH: '../keystore.jks'
+          KEY_STORE_BASE64: ${{ secrets.SIGN_KEY_STORE_BASE64 }}
           KEY_STORE_PASSWORD: ${{ secrets.SIGN_KEY_STORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.SIGN_KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.SIGN_KEY_PASSWORD }}
         run: |
-          echo ${{ secrets.SIGN_KEY_STORE_BASE64 }} | base64 -d > keystore.jks
+          echo $KEY_STORE_BASE64 | base64 -d > keystore.jks
 
-          ./gradlew build
+          chmod +x gradlew
+          ./gradlew :app:assembleRelease
           echo "APK_FILE_RELEASE=$(find app/build/outputs/apk/release -type f -name '*.apk')" >> $GITHUB_ENV
 
       - name: Upload Artifacts
@@ -55,3 +55,98 @@ jobs:
         with:
           path: ${{ env.APK_FILE_RELEASE }}
           name: WABTest-release-${{ github.event.head_commit.id }}
+
+  tg-bot-api:
+    name: TG Bot API
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Clone Github
+        run: |
+          git clone --recursive https://github.com/tdlib/telegram-bot-api.git
+          git status telegram-bot-api >> tg-bot-api-status
+
+      - name: Cache Binary
+        id: cache-binary
+        uses: actions/cache@v6
+        with:
+          path: tg-bot-api-binary
+          key: tg-bot-api-binary-${{ hashFiles('tg-bot-api-status') }}
+
+      - name: Compile Binary
+        if: steps.cache-binary.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install libssl-dev zlib1g-dev g++ gperf cmake
+          
+          cd telegram-bot-api
+          mkdir build
+          cd build
+          
+          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=.. ..
+          cmake --build . --target install -j$(nproc)
+          
+          cd ../..
+          cp telegram-bot-api/bin/telegram-bot-api tg-bot-api-binary
+
+      - name: Upload Binary
+        uses: actions/upload-artifact@v7
+        with:
+          name: tg-bot-api-binary
+          path: tg-bot-api-binary
+
+  upload-channel:
+    name: Upload Channel
+    if: ${{ success() && github.ref == 'refs/heads/master' }}
+    needs:
+      - build-ci
+      - tg-bot-api
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v8
+        with:
+          path: artifacts
+
+      - name: Download Binary
+        uses: actions/download-artifact@v8
+        with:
+          name: tg-bot-api-binary
+          path: .
+
+      - name: Upload Release
+        env:
+          COMMIT_MESSAGE: |+
+            New push to GitHub\!
+            ```
+            ${{ github.event.head_commit.message }}
+            ```by `${{ github.event.head_commit.author.name }}`
+            See commit detail [here](${{ github.event.head_commit.url }})
+          TG_APP_ID: ${{ secrets.TG_APP_ID }}
+          TG_APP_HASH: ${{ secrets.TG_APP_HASH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHANNEL_ID: ${{ secrets.TG_CHANNEL_ID }}
+        run: |
+          export apk=$(find artifacts -name "*.apk")
+
+          chmod +x tg-bot-api-binary
+          ./tg-bot-api-binary  --api-id="${TG_APP_ID}" --api-hash="${TG_APP_HASH}" --local > /dev/null 2>&1 &
+
+          MEDIA_JSON=$(jq -n \
+           --arg caption "$COMMIT_MESSAGE" \
+           '[{
+              "type":"document",
+              "media":"attach://apk",
+              "parse_mode":"MarkdownV2",
+              "caption": $caption
+           }]'
+          )
+          
+          curl -v "http://127.0.0.1:8081/bot${TG_BOT_TOKEN}/sendMediaGroup" \
+           -F chat_id="$TG_CHANNEL_ID" \
+           -F media="$MEDIA_JSON" \
+           -F apk="@$apk"
+          
+          pkill tg-bot-api
