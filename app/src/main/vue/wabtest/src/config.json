@@ -12,6 +12,60 @@
         "key": "clicfg_chatting_inputbar_voice_input",
         "trueVal": "MQ==",
         "falseVal": "MA=="
+      },
+      {
+        "name": "Media文件预览使用MediaGalleryContainerUI",
+        "key": "clicfg_media_landscape_insets",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      },
+      {
+        "name": "选人页支持按聊天记录搜索",
+        "key": "clicfg_android_select_contact_search_chat_history",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      },
+      {
+        "name": "H5链接卡片域名来源展示及安全打击",
+        "key": "clicfg_url_msg_domain_style_android",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      },
+      {
+        "name": "通讯录头部改版",
+        "key": "clicfg_address_header_redesign",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      },
+      {
+        "name": "新的朋友改版",
+        "key": "clicfg_new_friend_page",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      },
+      {
+        "name": "是否禁用图片意图识别",
+        "key": "clicfg_scan_chatbot_disable_file_intent_android",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      },
+      {
+        "name": "是否禁用实时意图识别",
+        "key": "clicfg_scan_chatbot_disable_video_intent_android",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      },
+      {
+        "name": "是否开启扫一扫问小微",
+        "key": "clicfg_scan_ask_ai_android",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      },
+      {
+        "name": "ClawBot 插件管理与解除连接",
+        "key": "clicfg_clawbot_plugin_unbind_enable_disable_open_switch_and",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
       }
     ]
   },
