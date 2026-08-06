@@ -1,6 +1,22 @@
 ﻿[
   {
-    "8.0.74.3100.0x28004a10+": [
+    "8.0.77.3141.0x28004D10+": [
+      {
+        "name": "[图]输入栏长按语音指令模式",
+        "key": "clicfg_chatting_inputbar_voice_command_mode",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      },
+      {
+        "name": "[图]输入栏长按语音输入",
+        "key": "clicfg_chatting_inputbar_voice_input",
+        "trueVal": "MQ==",
+        "falseVal": "MA=="
+      }
+    ]
+  },
+  {
+    "8.0.74.3100.0x28004A10+": [
       {
         "name": "[图]高清头像高分辨率开关",
         "key": "clicfg_avatar_hd_resolution_upgrade",
@@ -212,7 +228,7 @@
     ]
   },
   {
-    "8.0.69.3040.0x2800455a+": [
+    "8.0.69.3040.0x2800455A+": [
       {
         "name": "聊天语音输入支持指令模式",
         "key": "clicfg_chatting_voice_input_instruction",
