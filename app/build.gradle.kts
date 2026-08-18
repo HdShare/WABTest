@@ -11,10 +11,6 @@ plugins {
 val gitVersionCode: Int by rootProject.extra
 val gitVersionSuffix: String by rootProject.extra
 
-val vueProjectDir = file("src/main/vue/wabtest")
-val vueDistDir = file("$vueProjectDir/dist")
-val npmCmd = if (System.getProperty("os.name").startsWith("Windows")) "npm.cmd" else "npm"
-
 val ketStorePath: String? = System.getenv("KEY_STORE_PATH")
 
 android {
@@ -26,16 +22,8 @@ android {
         minSdk = 27
         targetSdk = 37
         versionCode = gitVersionCode
-        versionName = "1.1.0$gitVersionSuffix"
+        versionName = "1.2.0.$gitVersionSuffix"
         buildConfigField("String", "APP_NAME", "\"WABTest\"")
-    }
-
-    sourceSets {
-        named("main") {
-            assets {
-                srcDirs(vueDistDir.path)
-            }
-        }
     }
 
     buildFeatures {
@@ -103,39 +91,6 @@ kotlin {
     }
 }
 
-val npmInstallVueDeps = tasks.register("npmInstallVueDeps") {
-    group = "wabtest"
-    description = "Install dependencies for Vue settings page"
-    inputs.files(file("$vueProjectDir/package.json"), file("$vueProjectDir/package-lock.json"))
-    outputs.dir(file("$vueProjectDir/node_modules"))
-    doLast {
-        exec {
-            workingDir = vueProjectDir
-            commandLine(npmCmd, "install")
-        }
-    }
-}
-
-val buildVueSettingsPage = tasks.register("buildVueSettingsPage") {
-    group = "wabtest"
-    description = "Build Vue settings page into Android assets"
-    dependsOn(npmInstallVueDeps)
-    inputs.dir(file("$vueProjectDir/src"))
-    inputs.file(file("$vueProjectDir/public/index.html"))
-    inputs.file(file("$vueProjectDir/vue.config.js"))
-    outputs.dir(vueDistDir)
-    doLast {
-        exec {
-            workingDir = vueProjectDir
-            commandLine(npmCmd, "run", "build")
-        }
-    }
-}
-
-tasks.preBuild {
-    dependsOn(buildVueSettingsPage)
-}
-
 dependencies {
     compileOnly(libs.annotation)
     compileOnly(libs.xposed.api)
@@ -150,5 +105,4 @@ dependencies {
     implementation(libs.kavaref.core)
     implementation(libs.kavaref.extension)
     implementation(libs.kotlinx.serialization.json)
-    implementation(libs.kotlinx.serialization.protobuf)
 }

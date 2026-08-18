@@ -1,0 +1,184 @@
+[
+  {
+    "group": "Chatting 会话配置",
+    "configs": [
+      {
+        "key": "clicfg_chatting_inputbar_voice_command_mode",
+        "title": "输入栏长按语音指令模式",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.3141.0x28004D10+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_chatting_inputbar_voice_input",
+        "title": "输入栏长按语音输入",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.3141.0x28004D10+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_chatting_voice_input",
+        "title": "聊天输入栏支持语音输入",
+        "desc": "",
+        "version": {
+          "min": "8.0.62+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_notification_half_screen_chat_enable_new",
+        "title": "微信内消息通知半屏",
+        "desc": "",
+        "version": {
+          "min": "8.0.64+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "MultiTask 星标",
+    "configs": [
+      {
+        "key": "clicfg_multi_floatball_new_style",
+        "title": "浮窗新样式",
+        "desc": "",
+        "version": {
+          "min": "8.0.70+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_webview_new_float_ball",
+        "title": "新版网页浮窗",
+        "desc": "",
+        "version": {
+          "min": "8.0.61+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "启用",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_direct_to_multitask_enable",
+        "title": "星标总开关",
+        "desc": "",
+        "version": {
+          "min": "8.0.54+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "ScreenShot 截图组件",
+    "configs": [
+      {
+        "key": "clicfg_screenshot_share_service",
+        "title": "「截图转发」 - 入口显示",
+        "desc": "",
+        "version": {
+          "min": "8.0.63+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "Other 杂项",
+    "configs": [
+      {
+        "key": "clicfg_webview_debug",
+        "title": "WebView 调试",
+        "desc": "",
+        "version": {
+          "min": "8.0.40+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  }
+]

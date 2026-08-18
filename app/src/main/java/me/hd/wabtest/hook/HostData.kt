@@ -13,5 +13,6 @@ object HostData {
         appClassLoader = baseContext.classLoader
     }
 
-    fun String.toAppClass() = toClass(appClassLoader)
+    fun String.toHostClazz() = toClass(appClassLoader)
+    fun String.toHostClazzOrNull() = runCatching { toHostClazz() }.getOrNull()
 }

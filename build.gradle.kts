@@ -35,9 +35,9 @@ fun getBuildVersionCode(fallback: Int = 1): Int {
     return getGitInfo().first ?: fallback
 }
 
-fun getGitHeadRefsSuffix(fallback: String = ".standalone"): String {
+fun getGitHeadRefsSuffix(fallback: String = "standalone"): String {
     val (count, hash) = getGitInfo()
-    return if (count != null && hash != null) ".r$count.${hash.take(7)}" else fallback
+    return if (count != null && hash != null) "r$count.${hash.take(7)}" else fallback
 }
 
 extra["gitVersionCode"] = getBuildVersionCode()

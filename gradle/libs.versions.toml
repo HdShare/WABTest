@@ -1,6 +1,6 @@
 [versions]
 agp = "8.13.2"
-kotlin = "2.4.10"
+kotlin = "2.4.0"
 devtools-ksp = "2.3.11"
 
 [libraries]
@@ -13,7 +13,6 @@ kavaref-android = { module = "com.highcapable.kavaref:kavaref-android" }
 kavaref-core = { module = "com.highcapable.kavaref:kavaref-core" }
 kavaref-extension = { module = "com.highcapable.kavaref:kavaref-extension" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.11.0" }
-kotlinx-serialization-protobuf = { module = "org.jetbrains.kotlinx:kotlinx-serialization-protobuf", version = "1.11.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
