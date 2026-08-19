@@ -1,6 +1,70 @@
 [
   {
-    "group": "Chatting 会话配置",
+    "group": "ChatBot 配置",
+    "configs": [
+      {
+        "key": "clicfg_enable_optimize_config",
+        "title": "小微负一屏入口",
+        "desc": "",
+        "version": {
+          "min": "8.0.67+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "好友",
+    "configs": [
+      {
+        "key": "clicfg_address_header_redesign",
+        "title": "通讯录头部改版",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_new_friend_page",
+        "title": "新的朋友改版",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "会话配置",
     "configs": [
       {
         "key": "clicfg_chatting_inputbar_voice_command_mode",
@@ -39,11 +103,47 @@
         ]
       },
       {
-        "key": "clicfg_chatting_voice_input",
-        "title": "聊天输入栏支持语音输入",
+        "key": "clicfg_yuanbao_analyze_chat_records_entrance",
+        "title": "多选分析聊天记录总开关",
         "desc": "",
         "version": {
-          "min": "8.0.62+"
+          "min": "8.0.65+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_yuanbao_analyze_private_chat",
+        "title": "多选分析聊天记录支持私聊",
+        "desc": "",
+        "version": {
+          "min": "8.0.65+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_yuanbao_summary_entrance",
+        "title": "聊天长按菜单总结入口",
+        "desc": "",
+        "version": {
+          "min": "8.0.65+"
         },
         "options": [
           {
@@ -73,11 +173,111 @@
             "value": "1"
           }
         ]
+      },
+      {
+        "key": "clicfg_chatting_c2c_live_send_v4",
+        "title": "聊天发送支持实况",
+        "desc": "",
+        "version": {
+          "min": "8.0.63+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_chatting_voice_input",
+        "title": "输入栏快捷语音输入",
+        "desc": "",
+        "version": {
+          "min": "8.0.62+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
       }
     ]
   },
   {
-    "group": "MultiTask 星标",
+    "group": "全局配置",
+    "configs": [
+      {
+        "key": "clicfg_new_setting",
+        "title": "新设置页样式",
+        "desc": "",
+        "version": {
+          "min": "8.0.66+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_setting_search",
+        "title": "新设置页搜索",
+        "desc": "",
+        "version": {
+          "min": "8.0.66+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "消息发送",
+    "configs": [
+      {
+        "key": "clicfg_batch_revoke_msg_enable",
+        "title": "批量撤回菜单",
+        "desc": "",
+        "version": {
+          "min": "8.0.66+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "星标",
     "configs": [
       {
         "key": "clicfg_multi_floatball_new_style",
@@ -136,11 +336,11 @@
     ]
   },
   {
-    "group": "ScreenShot 截图组件",
+    "group": "截图组件",
     "configs": [
       {
         "key": "clicfg_screenshot_share_service",
-        "title": "「截图转发」 - 入口显示",
+        "title": "转发截图入口显示",
         "desc": "",
         "version": {
           "min": "8.0.63+"
@@ -159,11 +359,156 @@
     ]
   },
   {
-    "group": "Other 杂项",
+    "group": "朋友圈",
     "configs": [
       {
+        "key": "clicfg_sns_xiao_wei_white_expt",
+        "title": "朋友圈小微入口总开关",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_sns_xiaowei_post_entry_enabled_network",
+        "title": "朋友圈小微入口状态",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "启用",
+            "value": "1"
+          },
+          {
+            "alias": "隐藏",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_sns_ask_xiaowei_browse_android",
+        "title": "朋友圈浏览页问小微入口",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_sns_ask_xiaowei_post_android",
+        "title": "朋友圈发表页问小微入口",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "WeClaw 配置",
+    "configs": [
+      {
+        "key": "clicfg_clawbot_plugin_unbind_enable_disable_open_switch_and",
+        "title": "ClawBot 插件管理与解除连接",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "元宝",
+    "configs": [
+      {
+        "key": "clicfg_yuanbao_making_avatar_enable",
+        "title": "元宝制作头像",
+        "desc": "",
+        "version": {
+          "min": "8.0.65+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "杂项",
+    "configs": [
+      {
+        "key": "clicfg_sns_use_expandable_video_seek_bar",
+        "title": "朋友圈扩展视频进度条",
+        "desc": "",
+        "version": {
+          "min": "8.0.64+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_webview_debug",
-        "title": "WebView 调试",
+        "title": "WebView 调试菜单",
         "desc": "",
         "version": {
           "min": "8.0.40+"

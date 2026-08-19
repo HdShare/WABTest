@@ -154,9 +154,11 @@ class SettingDialog(ctx: Activity) : AlertDialog.Builder(ctx) {
 
         val listItems = mutableListOf<ListItem>().apply {
             TestManager.getList().forEach { testItem ->
-                add(ListItem(group = testItem.group))
-                testItem.configs.forEach { configItem ->
-                    add(ListItem(config = configItem))
+                if (testItem.configs.isNotEmpty()) {
+                    add(ListItem(group = testItem.group))
+                    testItem.configs.forEach { configItem ->
+                        add(ListItem(config = configItem))
+                    }
                 }
             }
         }
