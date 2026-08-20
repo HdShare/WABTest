@@ -23,11 +23,11 @@
     ]
   },
   {
-    "group": "好友",
+    "group": "会话配置",
     "configs": [
       {
-        "key": "clicfg_address_header_redesign",
-        "title": "通讯录头部改版",
+        "key": "clicfg_android_select_contact_search_chat_history",
+        "title": "选人页支持按聊天记录搜索",
         "desc": "",
         "version": {
           "min": "8.0.77+"
@@ -44,34 +44,11 @@
         ]
       },
       {
-        "key": "clicfg_new_friend_page",
-        "title": "新的朋友改版",
-        "desc": "",
-        "version": {
-          "min": "8.0.77+"
-        },
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "group": "会话配置",
-    "configs": [
-      {
         "key": "clicfg_chatting_inputbar_voice_command_mode",
         "title": "输入栏长按语音指令",
         "desc": "",
         "version": {
-          "min": "8.0.77.3141.0x28004D10+"
+          "min": "8.0.77+"
         },
         "options": [
           {
@@ -89,7 +66,25 @@
         "title": "输入栏长按语音输入",
         "desc": "",
         "version": {
-          "min": "8.0.77.3141.0x28004D10+"
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_mediagroup_new_longclick_menu",
+        "title": "媒体文件折叠合集新长按菜单",
+        "desc": "",
+        "version": {
+          "min": "8.0.76+"
         },
         "options": [
           {
@@ -105,6 +100,42 @@
       {
         "key": "clicfg_chatfooter_longpress_suppress_menu",
         "title": "输入框为空时长按唤起键盘",
+        "desc": "",
+        "version": {
+          "min": "8.0.74+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_file_selector_multi_select_and",
+        "title": "系统文件选择器支持多选",
+        "desc": "",
+        "version": {
+          "min": "8.0.74+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_markdown_preview_enable",
+        "title": "Markdown消息双击预览",
         "desc": "",
         "version": {
           "min": "8.0.74+"
@@ -157,6 +188,42 @@
         ]
       },
       {
+        "key": "clicfg_translation_speech",
+        "title": "启用译文朗读",
+        "desc": "",
+        "version": {
+          "min": "8.0.70+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_chatting_chatfooter_fix_big_font",
+        "title": "聊天输入栏大字体适配",
+        "desc": "",
+        "version": {
+          "min": "8.0.69+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_chatting_voice_input_long_click",
         "title": "快捷语音输入支持长按",
         "desc": "",
@@ -176,7 +243,7 @@
       },
       {
         "key": "clicfg_enable_chat_records_tts_entrance",
-        "title": "聊天记录朗读功能",
+        "title": "聊天记录朗读",
         "desc": "",
         "version": {
           "min": "8.0.69+"
@@ -193,6 +260,46 @@
           {
             "alias": "开启（连续朗读）",
             "value": "2"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_mediagroup_sender_ui_visibility_2",
+        "title": "媒体文件折叠合集",
+        "desc": "",
+        "version": {
+          "min": "8.0.69+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "仅接收",
+            "value": "1"
+          },
+          {
+            "alias": "打开",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_chatting_trans_and_read",
+        "title": "语音输入上滑转文字，支持翻译和朗读",
+        "desc": "",
+        "version": {
+          "min": "8.0.67+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
           }
         ]
       },
@@ -389,6 +496,70 @@
     ]
   },
   {
+    "group": "文件",
+    "configs": [
+      {
+        "key": "clicfg_local_markdown_file_preview_enable",
+        "title": "markdown 文件支持预览",
+        "desc": "",
+        "version": {
+          "min": "8.0.71+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "好友",
+    "configs": [
+      {
+        "key": "clicfg_address_header_redesign",
+        "title": "通讯录头部改版",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_new_friend_page",
+        "title": "新的朋友改版",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "group": "全局配置",
     "configs": [
       {
@@ -512,6 +683,29 @@
     ]
   },
   {
+    "group": "通知",
+    "configs": [
+      {
+        "key": "clicfg_notification_avatar_switch",
+        "title": "通知显示内容 - 显示头像",
+        "desc": "",
+        "version": {
+          "min": "8.0.67+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "group": "扫一扫",
     "configs": [
       {
@@ -535,6 +729,24 @@
       {
         "key": "clicfg_scan_mix_drop_switch",
         "title": "面对面传文件",
+        "desc": "",
+        "version": {
+          "min": "8.0.69+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_scan_mix_main_switch",
+        "title": "扫一扫新版样式配置",
         "desc": "",
         "version": {
           "min": "8.0.69+"
@@ -737,6 +949,24 @@
         ]
       },
       {
+        "key": "clicfg_weclaw_shortcut_command",
+        "title": "WeClaw 快捷指令",
+        "desc": "",
+        "version": {
+          "min": "8.0.74+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_weclaw_show_status",
         "title": "WeClaw 在线状态",
         "desc": "",
@@ -777,6 +1007,11 @@
           }
         ]
       }
+    ]
+  },
+  {
+    "group": "测试",
+    "configs": [
     ]
   }
 ]
