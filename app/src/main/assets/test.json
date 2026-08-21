@@ -44,6 +44,24 @@
         ]
       },
       {
+        "key": "clicfg_chatting_avatar_long_press_menu",
+        "title": "联系人资料页编辑备注图标",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_chatting_inputbar_voice_command_mode",
         "title": "输入栏长按语音指令",
         "desc": "",
@@ -136,7 +154,7 @@
       {
         "key": "clicfg_markdown_preview_enable",
         "title": "Markdown消息双击预览",
-        "desc": "",
+        "desc": "待补图",
         "version": {
           "min": "8.0.74+"
         },
@@ -473,6 +491,29 @@
     ]
   },
   {
+    "group": "Edge2Edge",
+    "configs": [
+      {
+        "key": "clicfg_repairerconfig_enable_edge_to_edge_switch",
+        "title": "Edge2Edge-是否开启",
+        "desc": "待补图",
+        "version": {
+          "min": "8.0.72+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "group": "面对面",
     "configs": [
       {
@@ -791,6 +832,24 @@
     "group": "朋友圈",
     "configs": [
       {
+        "key": "clicfg_android_moments_private_publish",
+        "title": "朋友圈私密发表",
+        "desc": "",
+        "version": {
+          "min": "8.0.77+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_sns_xiao_wei_white_expt",
         "title": "朋友圈小微入口总开关",
         "desc": "",
@@ -951,7 +1010,7 @@
       {
         "key": "clicfg_weclaw_shortcut_command",
         "title": "WeClaw 快捷指令",
-        "desc": "",
+        "desc": "待补图",
         "version": {
           "min": "8.0.74+"
         },
