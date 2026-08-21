@@ -5,7 +5,7 @@
       {
         "key": "clicfg_android_image_gallery_ai_process_entrance",
         "title": "图片查看器「AI 处理」入口",
-        "desc": "待补图",
+        "desc": "",
         "version": {
           "min": "8.0.77+"
         },
@@ -23,7 +23,7 @@
       {
         "key": "clicfg_android_image_gallery_ai_watermark_suggestion",
         "title": "图片查看器 AI 处理「添加水印」建议",
-        "desc": "待补图",
+        "desc": "",
         "version": {
           "min": "8.0.77+"
         },
@@ -135,8 +135,8 @@
       },
       {
         "key": "clicfg_xiaowei_summary_file_and",
-        "title": "文件消息支持「小微总结」",
-        "desc": "",
+        "title": "文件消息支持「小微总结」总开关",
+        "desc": "未实现",
         "version": {
           "min": "8.0.77+"
         },
@@ -154,7 +154,7 @@
       {
         "key": "clicfg_xiaowei_summary_file_for_xw_and",
         "title": "文件消息支持「小微总结」（小微用户）",
-        "desc": "",
+        "desc": "未实现",
         "version": {
           "min": "8.0.77+"
         },
@@ -171,7 +171,7 @@
       },
       {
         "key": "clicfg_xiaowei_summary_url_and",
-        "title": "文章消息支持「小微总结」",
+        "title": "文章消息支持「小微总结」总开关",
         "desc": "",
         "version": {
           "min": "8.0.77+"
@@ -207,7 +207,7 @@
       },
       {
         "key": "clicfg_yuanbao_message_biz_article_summary_entry_and",
-        "title": "文章消息支持「元宝总结」",
+        "title": "文章消息支持「元宝总结」总开关",
         "desc": "",
         "version": {
           "min": "8.0.77+"
@@ -521,7 +521,7 @@
       },
       {
         "key": "clicfg_yuanbao_summary_entrance",
-        "title": "消息长按「总结」",
+        "title": "文章消息支持「元宝总结」",
         "desc": "",
         "version": {
           "min": "8.0.65+"
