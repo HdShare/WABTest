@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - '.github/**'
       - '!.github/workflows/**'
+      - '.previews/**'
       - '.editorconfig'
       - '.gitignore'
       - 'renovate.json'
