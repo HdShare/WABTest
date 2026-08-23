@@ -1052,6 +1052,24 @@
         ]
       },
       {
+        "key": "clicfg_android_sns_user_page_search_entrance",
+        "title": "朋友圈个人页搜索入口",
+        "desc": "",
+        "version": {
+          "min": "8.0.76+"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_sns_flutter_self_page",
         "title": "朋友圈个人页使用 Flutter",
         "desc": "",
