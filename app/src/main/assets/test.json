@@ -280,7 +280,7 @@
       {
         "key": "clicfg_markdown_preview_enable",
         "title": "Markdown消息双击预览",
-        "desc": "待补图",
+        "desc": "",
         "version": {
           "min": "8.0.74+"
         },
@@ -1190,7 +1190,7 @@
       {
         "key": "clicfg_weclaw_shortcut_command",
         "title": "WeClaw 快捷指令",
-        "desc": "待补图",
+        "desc": "未实现",
         "version": {
           "min": "8.0.74+"
         },
