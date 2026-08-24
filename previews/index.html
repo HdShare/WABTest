@@ -1,0 +1,1790 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="WABTest 预览图">
+  <title>WABTest 预览图</title>
+  <style>
+    :root {
+      --canvas: #f2f6f4;
+      --surface: #ffffff;
+      --surface-raised: #f8fbf9;
+      --surface-muted: #e8efec;
+      --ink: #17231f;
+      --muted: #66736e;
+      --faint: #89958f;
+      --line: #d7e1dd;
+      --line-strong: #b7c6c0;
+      --accent: #078c61;
+      --accent-strong: #046b49;
+      --accent-soft: #dff4eb;
+      --on-accent: #ffffff;
+      --warning: #a45c12;
+      --warning-soft: #fff0dd;
+      --ignored: #5966a6;
+      --ignored-soft: #edf0ff;
+      --image-ground: #dfe7e3;
+      --backdrop: rgba(7, 18, 14, 0.74);
+      --shadow-card: 0 12px 32px rgba(34, 64, 54, 0.08);
+      --shadow-dialog: 0 26px 80px rgba(2, 15, 10, 0.3);
+      --display: Bahnschrift, "Segoe UI Variable Display", "Segoe UI", sans-serif;
+      --body: "Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", "Segoe UI", sans-serif;
+      --mono: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      --radius-sm: 0.45rem;
+      --radius-lg: 1.15rem;
+      --content-width: 116rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --canvas: #0f1614;
+        --surface: #16201d;
+        --surface-raised: #1a2622;
+        --surface-muted: #1c2925;
+        --ink: #edf5f1;
+        --muted: #9aaba4;
+        --faint: #74857e;
+        --line: #2b3d36;
+        --line-strong: #40584f;
+        --accent: #42d39d;
+        --accent-strong: #78e3ba;
+        --accent-soft: #183d31;
+        --on-accent: #071a13;
+        --warning: #f0b466;
+        --warning-soft: #3a2a18;
+        --ignored: #b1bbff;
+        --ignored-soft: #252b47;
+        --image-ground: #0a0f0d;
+        --backdrop: rgba(0, 6, 4, 0.82);
+        --shadow-card: 0 14px 34px rgba(0, 0, 0, 0.22);
+        --shadow-dialog: 0 28px 90px rgba(0, 0, 0, 0.55);
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --canvas: #0f1614;
+      --surface: #16201d;
+      --surface-raised: #1a2622;
+      --surface-muted: #1c2925;
+      --ink: #edf5f1;
+      --muted: #9aaba4;
+      --faint: #74857e;
+      --line: #2b3d36;
+      --line-strong: #40584f;
+      --accent: #42d39d;
+      --accent-strong: #78e3ba;
+      --accent-soft: #183d31;
+      --on-accent: #071a13;
+      --warning: #f0b466;
+      --warning-soft: #3a2a18;
+      --ignored: #b1bbff;
+      --ignored-soft: #252b47;
+      --image-ground: #0a0f0d;
+      --backdrop: rgba(0, 6, 4, 0.82);
+      --shadow-card: 0 14px 34px rgba(0, 0, 0, 0.22);
+      --shadow-dialog: 0 28px 90px rgba(0, 0, 0, 0.55);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      min-width: 0;
+      background: var(--canvas);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 0;
+      min-height: 100vh;
+      margin: 0;
+      background:
+        linear-gradient(90deg, color-mix(in srgb, var(--line) 34%, transparent) 1px, transparent 1px) 0 0 / 3rem 3rem,
+        var(--canvas);
+      color: var(--ink);
+      font-family: var(--body);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    body.has-dialog { overflow: hidden; }
+    button, input, select { color: inherit; font: inherit; }
+    button, select { cursor: pointer; }
+    button:disabled { cursor: not-allowed; opacity: 0.42; }
+    img { max-width: 100%; }
+
+    .skip-link {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 1000;
+      padding: 0.65rem 0.9rem;
+      border-radius: var(--radius-sm);
+      background: var(--accent);
+      color: var(--on-accent);
+      font-weight: 700;
+      transform: translateY(-180%);
+      transition: transform 150ms ease;
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    :focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--accent) 75%, transparent);
+      outline-offset: 3px;
+    }
+
+    .workspace-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
+      background: color-mix(in srgb, var(--canvas) 90%, transparent);
+      backdrop-filter: blur(18px) saturate(135%);
+    }
+
+    .header-inner,
+    .workspace-main {
+      width: min(100% - 2.5rem, var(--content-width));
+      margin-inline: auto;
+    }
+
+    .header-inner {
+      display: grid;
+      gap: 1rem;
+      padding-block: 1.2rem 1.1rem;
+    }
+
+    .identity-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .identity {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(1.35rem, 2vw, 1.85rem);
+      font-weight: 650;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      text-wrap: balance;
+    }
+
+    .theme-button,
+    .tool-button,
+    .icon-button {
+      display: inline-flex;
+      min-height: 2.55rem;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      color: var(--ink);
+      transition: border-color 150ms ease, background 150ms ease;
+    }
+
+    .theme-button {
+      flex: none;
+      padding: 0.55rem 0.75rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .control-deck {
+      display: grid;
+      grid-template-columns: auto minmax(14rem, 1fr) minmax(11rem, 16rem) auto;
+      align-items: end;
+      gap: 0.8rem;
+    }
+
+    .status-tabs {
+      display: flex;
+      gap: 0.3rem;
+      padding: 0.28rem;
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius-sm) + 0.2rem);
+      background: var(--surface-muted);
+    }
+
+    .status-tab {
+      display: grid;
+      min-width: 5.1rem;
+      min-height: 3.55rem;
+      grid-template-columns: auto auto;
+      align-content: center;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.12rem 0.42rem;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      color: var(--muted);
+      line-height: 1;
+    }
+
+    .status-tab[aria-pressed="true"] {
+      border-color: var(--line);
+      background: var(--surface);
+      box-shadow: 0 3px 12px color-mix(in srgb, var(--ink) 6%, transparent);
+      color: var(--ink);
+    }
+
+    .status-tab strong {
+      font-family: var(--display);
+      font-size: 1.22rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .status-tab span { font-size: 0.72rem; }
+
+    .field {
+      display: grid;
+      gap: 0.35rem;
+      min-width: 0;
+    }
+
+    .field-label {
+      color: var(--muted);
+      font-family: var(--display);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .search-wrap { position: relative; }
+
+    .search-wrap svg {
+      position: absolute;
+      top: 50%;
+      left: 0.88rem;
+      width: 1.05rem;
+      height: 1.05rem;
+      color: var(--muted);
+      pointer-events: none;
+      transform: translateY(-50%);
+    }
+
+    .search-input,
+    .group-select {
+      width: 100%;
+      min-width: 0;
+      height: 3rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .search-input { padding: 0 2.7rem 0 2.65rem; }
+    .search-input::-webkit-search-cancel-button,
+    .search-input::-webkit-search-decoration {
+      display: none;
+      appearance: none;
+    }
+    .search-input::-ms-clear,
+    .search-input::-ms-reveal { display: none; }
+    .search-input::placeholder { color: var(--faint); }
+
+    .search-input:focus,
+    .group-select:focus {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 14%, transparent);
+    }
+
+    .search-clear {
+      position: absolute;
+      top: 50%;
+      right: 0.48rem;
+      display: grid;
+      width: 2rem;
+      height: 2rem;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--muted);
+      transform: translateY(-50%);
+    }
+
+    .group-select { padding: 0 2.3rem 0 0.85rem; }
+
+    .reset-button {
+      min-height: 3rem;
+      padding-inline: 1rem;
+      white-space: nowrap;
+    }
+
+    .workspace-main {
+      display: grid;
+      gap: 1.1rem;
+      padding-block: 1.35rem 2.8rem;
+    }
+
+    .result-bar {
+      display: flex;
+      min-height: 2.3rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .result-copy {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.45rem;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .result-copy strong {
+      color: var(--ink);
+      font-family: var(--display);
+      font-size: 1.04rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .result-hint { color: var(--faint); font-size: 0.76rem; }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .preview-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow-card);
+      content-visibility: auto;
+      contain-intrinsic-size: auto 43rem;
+      transition: border-color 170ms ease, box-shadow 170ms ease, transform 170ms ease;
+    }
+
+    .card-head {
+      display: grid;
+      gap: 0.7rem;
+      padding: 1rem 1rem 0.82rem;
+    }
+
+    .card-head:has(.card-desc:not([hidden])) {
+      row-gap: 0;
+    }
+
+    .card-head:has(.card-desc:not([hidden])) .card-title {
+      margin-top: 0.7rem;
+    }
+
+    .card-head:has(.card-desc:not([hidden])) .card-desc {
+      margin-top: 0.22rem;
+    }
+
+    .card-kicker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .group-chip,
+    .version-chip,
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .group-chip {
+      min-width: 0;
+      padding: 0.22rem 0.55rem;
+      overflow: hidden;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.69rem;
+      font-weight: 700;
+      text-overflow: ellipsis;
+    }
+
+    .version-chip {
+      flex: none;
+      color: var(--muted);
+      font-family: var(--display);
+      font-size: 0.72rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .card-title {
+      min-height: 2.9em;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 650;
+      line-height: 1.45;
+      text-wrap: balance;
+    }
+
+    .card-desc {
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 1.4;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .card-desc[hidden] { display: none; }
+
+    .preview-open {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      border-block: 1px solid var(--line);
+      background: var(--image-ground);
+      text-align: initial;
+    }
+
+    .preview-open::after {
+      position: absolute;
+      right: 0.65rem;
+      bottom: 0.65rem;
+      z-index: 2;
+      padding: 0.34rem 0.58rem;
+      border: 1px solid color-mix(in srgb, var(--line-strong) 72%, transparent);
+      border-radius: var(--radius-sm);
+      background: color-mix(in srgb, var(--surface) 90%, transparent);
+      box-shadow: 0 4px 14px color-mix(in srgb, var(--ink) 12%, transparent);
+      color: var(--ink);
+      content: "打开对照  ↗";
+      font-family: var(--display);
+      font-size: 0.66rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(0.25rem);
+      transition: opacity 150ms ease, transform 150ms ease;
+    }
+
+    .preview-open:focus-visible::after { opacity: 1; transform: translateY(0); }
+
+    .shot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line-strong);
+    }
+
+    .shot {
+      position: relative;
+      display: block;
+      aspect-ratio: 921 / 2048;
+      overflow: hidden;
+      background: var(--surface-raised);
+    }
+
+    .shot img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: filter 160ms ease, transform 220ms ease;
+    }
+
+    .shot-label {
+      position: absolute;
+      top: 0.55rem;
+      left: 0.55rem;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.32rem;
+      padding: 0.24rem 0.46rem;
+      border: 1px solid color-mix(in srgb, var(--line-strong) 58%, transparent);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      box-shadow: 0 3px 10px color-mix(in srgb, var(--ink) 8%, transparent);
+      color: var(--ink);
+      font-family: var(--display);
+      font-size: 0.63rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+    }
+
+    .shot-label::before {
+      width: 0.38rem;
+      height: 0.38rem;
+      border-radius: 50%;
+      background: var(--muted);
+      content: "";
+    }
+
+    .shot[data-kind="new"] .shot-label::before { background: var(--accent); }
+
+    .missing-shot,
+    .ignored-shot {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      gap: 0.45rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .missing-shot {
+      background:
+        repeating-linear-gradient(-45deg, transparent 0 0.55rem, color-mix(in srgb, var(--warning) 6%, transparent) 0.55rem 1.1rem),
+        var(--surface-raised);
+      color: var(--warning);
+    }
+
+    .ignored-shot {
+      background:
+        repeating-linear-gradient(-45deg, transparent 0 0.55rem, color-mix(in srgb, var(--ignored) 6%, transparent) 0.55rem 1.1rem),
+        var(--surface-raised);
+      color: var(--ignored);
+    }
+
+    .missing-shot[hidden],
+    .ignored-shot[hidden] { display: none; }
+
+    .missing-icon,
+    .ignored-icon {
+      font-family: var(--display);
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .missing-shot strong,
+    .ignored-shot strong { font-size: 0.74rem; }
+
+    .missing-shot small,
+    .ignored-shot small {
+      max-width: 12rem;
+      color: var(--muted);
+      font-size: 0.57rem;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .missing-shot small { font-family: var(--mono); }
+
+    .card-foot {
+      display: flex;
+      min-height: 3rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.7rem 1rem;
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
+
+    .pair-note { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .status-chip {
+      flex: none;
+      gap: 0.36rem;
+      padding: 0.22rem 0.5rem;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-weight: 700;
+    }
+
+    .status-chip::before {
+      width: 0.38rem;
+      height: 0.38rem;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+    }
+
+    .status-chip.is-missing { background: var(--warning-soft); color: var(--warning); }
+    .status-chip.is-ignored { background: var(--ignored-soft); color: var(--ignored); }
+
+    .empty-state {
+      display: grid;
+      min-height: 22rem;
+      place-items: center;
+      border: 1px dashed var(--line-strong);
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--surface) 70%, transparent);
+      text-align: center;
+    }
+
+    .empty-state[hidden] { display: none; }
+
+    .empty-inner {
+      display: grid;
+      max-width: 27rem;
+      justify-items: center;
+      gap: 0.65rem;
+      padding: 2rem;
+    }
+
+    .empty-mark {
+      display: grid;
+      width: 3.4rem;
+      height: 3.4rem;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--accent-strong);
+      font-family: var(--display);
+      font-size: 1.25rem;
+    }
+
+    .empty-state h2, .empty-state p { margin: 0; }
+    .empty-state h2 { font-family: var(--display); font-size: 1.2rem; }
+    .empty-state p { color: var(--muted); font-size: 0.85rem; }
+
+    .viewer {
+      width: min(96vw, 112rem);
+      max-width: none;
+      height: min(94vh, 70rem);
+      max-height: none;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow-dialog);
+      color: var(--ink);
+    }
+
+    .viewer::backdrop { background: var(--backdrop); backdrop-filter: blur(8px); }
+
+    .viewer-shell {
+      display: grid;
+      height: 100%;
+      grid-template-rows: auto auto minmax(0, 1fr);
+      overflow: hidden;
+    }
+
+    .viewer-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.1rem 0.88rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .viewer-heading { min-width: 0; }
+
+    .viewer-counter {
+      margin: 0 0 0.22rem;
+      color: var(--accent-strong);
+      font-family: var(--display);
+      font-size: 0.68rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .viewer-title {
+      margin: 0;
+      font-size: clamp(1.05rem, 2vw, 1.38rem);
+      font-weight: 650;
+      line-height: 1.25;
+      text-wrap: balance;
+    }
+
+    .viewer-desc {
+      margin: 0.3rem 0 0;
+      color: var(--muted);
+      font-size: 0.77rem;
+      line-height: 1.45;
+    }
+
+    .viewer-desc[hidden] { display: none; }
+
+    .viewer-actions {
+      display: flex;
+      flex: none;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.42rem;
+    }
+
+    .tool-button, .icon-button {
+      min-height: 2.45rem;
+      padding: 0.48rem 0.72rem;
+      font-family: var(--display);
+      font-size: 0.74rem;
+      font-weight: 650;
+    }
+
+    .tool-button[aria-pressed="true"] {
+      border-color: color-mix(in srgb, var(--accent) 54%, var(--line));
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+    }
+
+    .icon-button { width: 2.45rem; padding: 0; font-size: 1rem; }
+
+    .viewer-meta {
+      display: flex;
+      min-width: 0;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.48rem;
+      padding: 0.62rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-raised);
+    }
+
+
+    .viewer-grid {
+      display: grid;
+      min-height: 0;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      background: var(--line-strong);
+    }
+
+    .viewer-column {
+      display: grid;
+      min-width: 0;
+      min-height: 0;
+      grid-template-rows: auto minmax(0, 1fr);
+      background: var(--surface);
+    }
+
+    .viewer-column-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.62rem 0.85rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .viewer-column-title {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin: 0;
+      font-family: var(--display);
+      font-size: 0.76rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .viewer-column-title::before {
+      width: 0.48rem;
+      height: 0.48rem;
+      border-radius: 50%;
+      background: var(--muted);
+      content: "";
+    }
+
+    .viewer-column[data-kind="new"] .viewer-column-title::before { background: var(--accent); }
+    .viewer-file { color: var(--muted); font-family: var(--mono); font-size: 0.64rem; }
+
+    .viewer-scroll {
+      position: relative;
+      min-width: 0;
+      min-height: 0;
+      overflow: auto;
+      overscroll-behavior: contain;
+      background: var(--image-ground);
+      scrollbar-color: var(--line-strong) transparent;
+    }
+
+    .viewer-scroll img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      background: var(--surface);
+    }
+
+    .viewer-missing {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      gap: 0.55rem;
+      padding: 2rem;
+      background:
+        repeating-linear-gradient(-45deg, transparent 0 0.8rem, color-mix(in srgb, var(--warning) 7%, transparent) 0.8rem 1.6rem),
+        var(--surface-raised);
+      color: var(--warning);
+      text-align: center;
+    }
+
+    .viewer-missing.is-ignored {
+      background:
+        repeating-linear-gradient(-45deg, transparent 0 0.8rem, color-mix(in srgb, var(--ignored) 7%, transparent) 0.8rem 1.6rem),
+        var(--surface-raised);
+      color: var(--ignored);
+    }
+
+    .viewer-missing[hidden] { display: none; }
+    .viewer-missing strong { font-size: 1rem; }
+
+    .viewer-missing-detail {
+      max-width: 26rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .viewer-missing:not(.is-ignored) .viewer-missing-detail { font-family: var(--mono); }
+
+    @media (hover: hover) and (pointer: fine) {
+      .theme-button:hover,
+      .tool-button:hover:not(:disabled),
+      .icon-button:hover:not(:disabled) {
+        border-color: var(--line-strong);
+        background: var(--surface-muted);
+      }
+
+      .status-tab:hover { color: var(--ink); }
+      .search-clear:hover { background: var(--surface-muted); color: var(--ink); }
+
+      .preview-card:hover {
+        border-color: var(--line-strong);
+        box-shadow: 0 18px 42px color-mix(in srgb, var(--ink) 11%, transparent);
+        transform: translateY(-2px);
+      }
+
+      .preview-open:hover::after { opacity: 1; transform: translateY(0); }
+
+      .preview-open:hover .shot img {
+        filter: saturate(1.03) contrast(1.02);
+        transform: scale(1.012);
+      }
+    }
+
+    @media (max-width: 92rem) {
+      .preview-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 70rem) {
+      .control-deck { grid-template-columns: auto minmax(14rem, 1fr) minmax(10rem, 14rem); }
+      .reset-button {
+        grid-column: 3;
+        justify-self: end;
+        min-height: 2rem;
+        margin-top: -0.45rem;
+        border: 0;
+        background: transparent;
+      }
+      .preview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 48rem) {
+      body { background: var(--canvas); }
+      .workspace-header { position: static; backdrop-filter: none; }
+      .header-inner, .workspace-main { width: min(100% - 1.25rem, var(--content-width)); }
+      .result-hint { display: none; }
+      .control-deck { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.68rem; }
+      .status-tabs, .field-search { min-width: 0; grid-column: 1 / -1; }
+      .status-tab {
+        min-width: 0;
+        min-height: 3.25rem;
+        flex: 1;
+        grid-template-columns: 1fr;
+        align-content: center;
+        justify-items: center;
+        row-gap: 0.24rem;
+      }
+      .reset-button {
+        grid-column: auto;
+        align-self: end;
+        justify-self: stretch;
+        min-height: 3rem;
+        margin: 0;
+        border: 1px solid var(--line);
+        background: var(--surface);
+      }
+      .preview-grid { grid-template-columns: 1fr; }
+      .preview-card { contain-intrinsic-size: auto 52rem; }
+      .card-title { min-height: 0; }
+      .preview-open::after { opacity: 1; transform: none; }
+      .viewer {
+        width: 100vw;
+        height: 100dvh;
+        overflow-y: auto;
+        border: 0;
+        border-radius: 0;
+        overscroll-behavior-y: contain;
+      }
+      .viewer-shell {
+        display: block;
+        height: auto;
+        min-height: 100%;
+        overflow: visible;
+      }
+      .viewer-head { align-items: stretch; flex-direction: column; padding: 0.85rem; }
+      .viewer-actions { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .tool-button, .icon-button { width: auto; min-width: 0; padding-inline: 0.45rem; }
+      #viewer-sync[aria-pressed="false"] {
+        border-color: var(--line);
+        background: var(--surface);
+        color: var(--ink);
+      }
+      #viewer-sync[aria-pressed="true"] {
+        border-color: color-mix(in srgb, var(--accent) 54%, var(--line));
+        background: var(--accent-soft);
+        color: var(--accent-strong);
+      }
+      .viewer-meta { padding-inline: 0.85rem; }
+      .viewer-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        overflow: visible;
+      }
+      .viewer-column { min-height: 0; }
+      .viewer-scroll {
+        overflow: visible;
+        overscroll-behavior: auto;
+      }
+      .viewer-scroll:has(.viewer-missing:not([hidden])) {
+        min-height: min(72vh, 40rem);
+      }
+    }
+
+    @media (max-width: 25rem) {
+      .identity-row { align-items: center; }
+      .status-tab { min-height: 3.2rem; }
+      .status-tab span { font-size: 0.66rem; }
+      .viewer-actions .tool-label { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#preview-grid">跳到预览列表</a>
+
+  <header class="workspace-header">
+    <div class="header-inner">
+      <div class="identity-row">
+        <div class="identity">
+          <h1>WABTest 预览图</h1>
+        </div>
+        <button class="theme-button" id="theme-button" type="button" aria-label="切换页面主题">
+          <span class="theme-label" id="theme-label">跟随系统</span>
+        </button>
+      </div>
+
+      <div class="control-deck">
+        <div class="status-tabs" role="group" aria-label="预览状态">
+          <button class="status-tab" type="button" data-status="all" aria-pressed="false">
+            <strong id="count-all">0</strong><span>全部</span>
+          </button>
+          <button class="status-tab" type="button" data-status="complete" aria-pressed="true">
+            <strong id="count-complete">0</strong><span>完整</span>
+          </button>
+          <button class="status-tab" type="button" data-status="missing" aria-pressed="false">
+            <strong id="count-missing">0</strong><span>缺图</span>
+          </button>
+          <button class="status-tab" type="button" data-status="ignored" aria-pressed="false">
+            <strong id="count-ignored">0</strong><span>忽略</span>
+          </button>
+        </div>
+
+        <label class="field field-search">
+          <span class="field-label">搜索</span>
+          <span class="search-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            </svg>
+            <input class="search-input" id="search-input" type="search" autocomplete="off" placeholder="标题、描述、版本…" aria-describedby="search-hint">
+            <button class="search-clear" id="search-clear" type="button" aria-label="清空搜索" hidden>×</button>
+          </span>
+          <span class="visually-hidden" id="search-hint">按斜杠键可快速聚焦搜索</span>
+        </label>
+
+        <label class="field">
+          <span class="field-label">分组</span>
+          <select class="group-select" id="group-select">
+            <option value="all">全部分组</option>
+          </select>
+        </label>
+
+        <button class="tool-button reset-button" id="reset-button" type="button">重置筛选</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="workspace-main" id="main-content">
+    <div class="result-bar">
+      <p class="result-copy" id="result-copy" aria-live="polite">
+        <strong id="result-count">0</strong>
+        <span id="result-label">组对照图</span>
+      </p>
+      <span class="result-hint">点击任意卡片打开大图 · <kbd>←</kbd> <kbd>→</kbd> 切换</span>
+    </div>
+
+    <section class="preview-grid" id="preview-grid" aria-label="功能预览图列表"></section>
+
+    <section class="empty-state" id="empty-state" hidden>
+      <div class="empty-inner">
+        <div class="empty-mark" aria-hidden="true">∅</div>
+        <h2 id="empty-title">没有匹配的预览图</h2>
+        <p id="empty-message">换一个关键词或分组，或者重置当前筛选条件。</p>
+        <button class="tool-button" id="empty-reset" type="button">重置筛选</button>
+      </div>
+    </section>
+  </main>
+
+
+  <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-shell">
+      <header class="viewer-head">
+        <div class="viewer-heading">
+          <p class="viewer-counter" id="viewer-counter">1 / 1</p>
+          <h2 class="viewer-title" id="viewer-title"></h2>
+          <p class="viewer-desc" id="viewer-desc" hidden></p>
+        </div>
+        <div class="viewer-actions">
+          <button class="icon-button" id="viewer-prev" type="button" aria-label="上一项" title="上一项（←）">←</button>
+          <button class="icon-button" id="viewer-next" type="button" aria-label="下一项" title="下一项（→）">→</button>
+          <button class="tool-button" id="viewer-sync" type="button" aria-pressed="true" title="同步两侧滚动">
+            <span aria-hidden="true">⇅</span><span class="tool-label">同步</span>
+          </button>
+          <button class="icon-button" id="viewer-close" type="button" aria-label="关闭" title="关闭（Esc）">×</button>
+        </div>
+      </header>
+
+      <div class="viewer-meta">
+        <span class="group-chip" id="viewer-group"></span>
+        <span class="version-chip" id="viewer-version"></span>
+      </div>
+
+      <div class="viewer-grid">
+        <section class="viewer-column" data-kind="old" aria-labelledby="viewer-old-title">
+          <div class="viewer-column-head">
+            <h3 class="viewer-column-title" id="viewer-old-title">旧版</h3>
+            <code class="viewer-file">old.png</code>
+          </div>
+          <div class="viewer-scroll" id="viewer-old-scroll">
+            <img id="viewer-old-image" alt="" draggable="false">
+            <div class="viewer-missing" id="viewer-old-missing" hidden>
+              <strong id="viewer-old-missing-title">旧版截图缺失</strong>
+              <span class="viewer-missing-detail" id="viewer-old-missing-detail">old.png</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="viewer-column" data-kind="new" aria-labelledby="viewer-new-title">
+          <div class="viewer-column-head">
+            <h3 class="viewer-column-title" id="viewer-new-title">新版</h3>
+            <code class="viewer-file">new.png</code>
+          </div>
+          <div class="viewer-scroll" id="viewer-new-scroll">
+            <img id="viewer-new-image" alt="" draggable="false">
+            <div class="viewer-missing" id="viewer-new-missing" hidden>
+              <strong id="viewer-new-missing-title">新版截图缺失</strong>
+              <span class="viewer-missing-detail" id="viewer-new-missing-detail">new.png</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    (() => {
+      "use strict";
+
+      let groups = [];
+      let items = [];
+
+      const state = {
+        query: "",
+        group: "all",
+        status: "complete",
+        activeItems: [],
+        activeIndex: -1,
+        sync: true,
+        loadFailed: false
+      };
+
+      const elements = {
+        grid: document.getElementById("preview-grid"),
+        empty: document.getElementById("empty-state"),
+        emptyTitle: document.getElementById("empty-title"),
+        emptyMessage: document.getElementById("empty-message"),
+        search: document.getElementById("search-input"),
+        searchClear: document.getElementById("search-clear"),
+        group: document.getElementById("group-select"),
+        resultCount: document.getElementById("result-count"),
+        resultLabel: document.getElementById("result-label"),
+        reset: document.getElementById("reset-button"),
+        emptyReset: document.getElementById("empty-reset"),
+        themeButton: document.getElementById("theme-button"),
+        themeLabel: document.getElementById("theme-label"),
+        viewer: document.getElementById("viewer"),
+        viewerCounter: document.getElementById("viewer-counter"),
+        viewerTitle: document.getElementById("viewer-title"),
+        viewerGroup: document.getElementById("viewer-group"),
+        viewerVersion: document.getElementById("viewer-version"),
+        viewerDesc: document.getElementById("viewer-desc"),
+        viewerPrev: document.getElementById("viewer-prev"),
+        viewerNext: document.getElementById("viewer-next"),
+        viewerSync: document.getElementById("viewer-sync"),
+        viewerClose: document.getElementById("viewer-close"),
+        oldScroll: document.getElementById("viewer-old-scroll"),
+        newScroll: document.getElementById("viewer-new-scroll"),
+        oldImage: document.getElementById("viewer-old-image"),
+        newImage: document.getElementById("viewer-new-image"),
+        oldMissing: document.getElementById("viewer-old-missing"),
+        newMissing: document.getElementById("viewer-new-missing"),
+        oldMissingTitle: document.getElementById("viewer-old-missing-title"),
+        newMissingTitle: document.getElementById("viewer-new-missing-title"),
+        oldMissingDetail: document.getElementById("viewer-old-missing-detail"),
+        newMissingDetail: document.getElementById("viewer-new-missing-detail")
+      };
+
+      const statusButtons = [...document.querySelectorAll("[data-status]")];
+      const themeOrder = ["system", "light", "dark"];
+      const themeNames = { system: "跟随系统", light: "浅色模式", dark: "深色模式" };
+      let theme = readStoredTheme();
+      let renderTimer = 0;
+      let syncingScroll = false;
+
+      function createElement(tag, className, text) {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (text !== undefined) element.textContent = text;
+        return element;
+      }
+
+      function configPath(item, fileName) {
+        return `./config/${encodeURIComponent(item.key)}/${fileName}`;
+      }
+
+      function imagePath(item, kind) {
+        return configPath(item, `${kind}.png`);
+      }
+
+      function normalizeVersion(value) {
+        return String(value || "").trim().replace(/\+$/, "");
+      }
+
+      function formatVersion(min, max) {
+        const minimum = normalizeVersion(min);
+        const maximum = normalizeVersion(max);
+        if (minimum && maximum) return `${minimum} ~ ${maximum}`;
+        if (minimum) return `${minimum}+`;
+        if (maximum) return `≤ ${maximum}`;
+        return "版本不限";
+      }
+
+      function prepareItem(item) {
+        return {
+          ...item,
+          complete: !item.ignored && item.hasOld && item.hasNew,
+          versionLabel: formatVersion(item.versionMin, item.versionMax),
+          searchIndex: [
+            item.title,
+            item.versionMin,
+            item.versionMax,
+            item.desc,
+            item.ignoredReason,
+            ...item.options.flatMap((option) => [option.alias, option.value])
+          ].join(" ").toLocaleLowerCase("zh-CN")
+        };
+      }
+
+      async function loadIgnoreReason(item) {
+        const response = await fetch(configPath(item, "no-preview.json"), {
+          cache: "no-store"
+        });
+
+        if (response.status === 404) return "";
+        if (!response.ok) {
+          throw new Error(`${item.key}/no-preview.json 请求失败：HTTP ${response.status}`);
+        }
+
+        let marker;
+        try {
+          marker = await response.json();
+        } catch (_) {
+          throw new Error(`${item.key}/no-preview.json 不是有效 JSON`);
+        }
+
+        const reason = String(marker?.reason || "").trim();
+        if (!reason) {
+          throw new Error(`${item.key}/no-preview.json 缺少 reason`);
+        }
+        return reason;
+      }
+
+      async function imageExists(item, kind) {
+        const response = await fetch(imagePath(item, kind), {
+          method: "HEAD",
+          cache: "no-store"
+        });
+        if (!response.ok) return false;
+        const contentType = response.headers.get("content-type") || "";
+        return !contentType
+          || contentType.startsWith("image/")
+          || contentType === "application/octet-stream";
+      }
+
+      async function mapWithConcurrency(values, limit, mapper) {
+        const results = new Array(values.length);
+        let nextIndex = 0;
+
+        async function worker() {
+          while (nextIndex < values.length) {
+            const index = nextIndex;
+            nextIndex += 1;
+            results[index] = await mapper(values[index], index);
+          }
+        }
+
+        const workerCount = Math.min(limit, values.length);
+        if (workerCount === 0) return results;
+        await Promise.all(Array.from({ length: workerCount }, () => worker()));
+        return results;
+      }
+
+      async function loadPreviewData() {
+        const response = await fetch("./../app/src/main/assets/test.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`test.json 请求失败：HTTP ${response.status}`);
+        }
+
+        const source = await response.json();
+        if (!Array.isArray(source)) {
+          throw new Error("test.json 顶层必须是数组");
+        }
+
+        const nextGroups = [];
+        const nextItems = [];
+        const seenKeys = new Set();
+        source.forEach((group, groupIndex) => {
+          const groupName = String(group?.group || "").trim();
+          if (!groupName) {
+            throw new Error(`test.json 第 ${groupIndex + 1} 个分组缺少 group`);
+          }
+          const configs = Array.isArray(group.configs) ? group.configs : [];
+          nextGroups.push({ name: groupName, count: configs.length });
+
+          configs.forEach((config, configIndex) => {
+            const key = String(config?.key || "").trim();
+            if (!key) {
+              throw new Error(`${groupName} 第 ${configIndex + 1} 项缺少 key`);
+            }
+            if (seenKeys.has(key)) {
+              throw new Error(`test.json 存在重复 key：${key}`);
+            }
+            seenKeys.add(key);
+            const version = config.version || {};
+            nextItems.push({
+              group: groupName,
+              key,
+              title: String(config.title || key),
+              desc: String(config.desc || ""),
+              versionMin: String(version.min || ""),
+              versionMax: String(version.max || ""),
+              options: Array.isArray(config.options)
+                ? config.options.map((option) => ({
+                    alias: String(option?.alias || ""),
+                    value: String(option?.value || "")
+                  }))
+                : []
+            });
+          });
+        });
+
+        const resolvedItems = await mapWithConcurrency(nextItems, 6, async (item) => {
+          const ignoredReason = await loadIgnoreReason(item);
+          if (ignoredReason) {
+            return prepareItem({
+              ...item,
+              ignored: true,
+              ignoredReason,
+              hasOld: false,
+              hasNew: false
+            });
+          }
+
+          const [hasOld, hasNew] = await Promise.all([
+            imageExists(item, "old"),
+            imageExists(item, "new")
+          ]);
+          return prepareItem({
+            ...item,
+            ignored: false,
+            ignoredReason: "",
+            hasOld,
+            hasNew
+          });
+        });
+
+        return { groups: nextGroups, items: resolvedItems };
+      }
+
+      function populateGroups() {
+        groups.forEach((group) => {
+          const option = createElement("option", "", `${group.name} · ${group.count}`);
+          option.value = group.name;
+          option.disabled = group.count === 0;
+          elements.group.append(option);
+        });
+      }
+
+      function updateCounts() {
+        const completeCount = items.filter((item) => item.complete).length;
+        const ignoredCount = items.filter((item) => item.ignored).length;
+        const missingCount = items.filter((item) => !item.ignored && !item.complete).length;
+        document.getElementById("count-all").textContent = items.length;
+        document.getElementById("count-complete").textContent = completeCount;
+        document.getElementById("count-missing").textContent = missingCount;
+        document.getElementById("count-ignored").textContent = ignoredCount;
+      }
+
+      function setFilterControlsDisabled(disabled) {
+        statusButtons.forEach((button) => { button.disabled = disabled; });
+        elements.search.disabled = disabled;
+        elements.group.disabled = disabled;
+        elements.reset.disabled = disabled;
+      }
+
+      function showLoadError(error) {
+        state.loadFailed = true;
+        items = [];
+        state.activeItems = [];
+        elements.grid.setAttribute("aria-busy", "false");
+        elements.grid.hidden = true;
+        elements.empty.hidden = false;
+        elements.emptyTitle.textContent = "无法读取 test.json";
+        elements.emptyMessage.textContent = window.location.protocol === "file:"
+          ? "浏览器不允许 file:// 页面读取同目录 JSON。请在项目目录运行 python -m http.server 8000 --directory previews，再打开 http://localhost:8000/。"
+          : error.message;
+        elements.emptyReset.textContent = "重新加载";
+        elements.resultCount.textContent = "0";
+        elements.resultLabel.textContent = "项预览 · 数据加载失败";
+        console.error(error);
+      }
+
+      async function initialize() {
+        applyTheme(theme);
+        bindEvents();
+        setFilterControlsDisabled(true);
+        elements.grid.setAttribute("aria-busy", "true");
+        elements.resultCount.textContent = "…";
+        elements.resultLabel.textContent = "正在读取 test.json";
+
+        try {
+          const loaded = await loadPreviewData();
+          groups = loaded.groups;
+          items = loaded.items;
+          populateGroups();
+          updateCounts();
+          state.loadFailed = false;
+          setFilterControlsDisabled(false);
+          elements.grid.setAttribute("aria-busy", "false");
+          render();
+        } catch (error) {
+          showLoadError(error);
+        }
+      }
+
+      function bindEvents() {
+        statusButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            state.status = button.dataset.status;
+            updateStatusButtons();
+            render();
+          });
+        });
+
+        elements.search.addEventListener("input", () => {
+          state.query = elements.search.value.trim().toLocaleLowerCase("zh-CN");
+          elements.searchClear.hidden = state.query.length === 0;
+          window.clearTimeout(renderTimer);
+          renderTimer = window.setTimeout(render, 80);
+        });
+
+        elements.searchClear.addEventListener("click", () => {
+          elements.search.value = "";
+          state.query = "";
+          elements.searchClear.hidden = true;
+          elements.search.focus();
+          render();
+        });
+
+        elements.group.addEventListener("change", () => {
+          state.group = elements.group.value;
+          render();
+        });
+
+        elements.reset.addEventListener("click", resetFilters);
+        elements.emptyReset.addEventListener("click", () => {
+          if (state.loadFailed) {
+            window.location.reload();
+          } else {
+            resetFilters();
+          }
+        });
+        elements.themeButton.addEventListener("click", cycleTheme);
+        elements.viewerClose.addEventListener("click", closeViewer);
+        elements.viewerPrev.addEventListener("click", () => moveViewer(-1));
+        elements.viewerNext.addEventListener("click", () => moveViewer(1));
+        elements.viewerSync.addEventListener("click", toggleSync);
+
+        elements.viewer.addEventListener("click", (event) => {
+          if (event.target === elements.viewer) closeViewer();
+        });
+
+        elements.viewer.addEventListener("close", () => {
+          document.body.classList.remove("has-dialog");
+          state.activeIndex = -1;
+        });
+
+        elements.oldScroll.addEventListener("scroll", () => syncScroll(elements.oldScroll, elements.newScroll), { passive: true });
+        elements.newScroll.addEventListener("scroll", () => syncScroll(elements.newScroll, elements.oldScroll), { passive: true });
+        document.addEventListener("keydown", handleKeyboard);
+      }
+
+      function matchesFilters(item) {
+        const statusMatches = state.status === "all"
+          || (state.status === "complete" && item.complete)
+          || (state.status === "missing" && !item.ignored && !item.complete)
+          || (state.status === "ignored" && item.ignored);
+        const groupMatches = state.group === "all" || item.group === state.group;
+        const queryMatches = !state.query || item.searchIndex.includes(state.query);
+        return statusMatches && groupMatches && queryMatches;
+      }
+
+      function render() {
+        elements.emptyTitle.textContent = "没有匹配的预览图";
+        elements.emptyMessage.textContent = "换一个关键词或分组，或者重置当前筛选条件。";
+        elements.emptyReset.textContent = "重置筛选";
+        state.activeItems = items.filter(matchesFilters);
+        const fragment = document.createDocumentFragment();
+        state.activeItems.forEach((item, index) => fragment.append(createCard(item, index)));
+        elements.grid.replaceChildren(fragment);
+        elements.grid.hidden = state.activeItems.length === 0;
+        elements.empty.hidden = state.activeItems.length !== 0;
+        elements.resultCount.textContent = state.activeItems.length;
+        elements.resultLabel.textContent = state.activeItems.length === 1 ? "项预览" : `项预览 · 共 ${items.length} 项`;
+      }
+
+      function createCard(item, index) {
+        const card = createElement("article", `preview-card${item.ignored ? " is-ignored" : ""}`);
+
+        const head = createElement("div", "card-head");
+        const kicker = createElement("div", "card-kicker");
+        kicker.append(
+          createElement("span", "group-chip", item.group),
+          createElement("span", "version-chip", item.versionLabel)
+        );
+
+        const title = createElement("h2", "card-title", item.title);
+        const desc = createElement("p", "card-desc", item.desc);
+        desc.hidden = !item.desc;
+        head.append(kicker, title, desc);
+
+        const openButton = createElement("button", "preview-open");
+        openButton.type = "button";
+        openButton.setAttribute(
+          "aria-label",
+          item.ignored ? `打开“${item.title}”忽略详情` : `打开“${item.title}”新旧截图对照`
+        );
+        openButton.addEventListener("click", () => openViewer(index));
+
+        const shotGrid = createElement("span", "shot-grid");
+        shotGrid.append(createShot(item, "old", "旧版"), createShot(item, "new", "新版"));
+        openButton.append(shotGrid);
+
+        const foot = createElement("div", "card-foot");
+        const note = createElement(
+          "span",
+          "pair-note",
+          item.ignored ? `忽略原因：${item.ignoredReason}` : "old.png  /  new.png"
+        );
+        const statusClass = item.ignored ? " is-ignored" : item.complete ? "" : " is-missing";
+        const statusText = item.ignored ? "已忽略" : item.complete ? "截图完整" : missingLabel(item);
+        const status = createElement("span", `status-chip${statusClass}`, statusText);
+        foot.append(note, status);
+        card.append(head, openButton, foot);
+        return card;
+      }
+
+      function createShot(item, kind, labelText) {
+        const shot = createElement("span", "shot");
+        shot.dataset.kind = kind;
+        shot.append(createElement("span", "shot-label", labelText));
+
+        if (item.ignored) {
+          shot.append(createIgnoredShot(item));
+          return shot;
+        }
+
+        const hasImage = kind === "old" ? item.hasOld : item.hasNew;
+        const missing = createMissingShot(kind);
+        missing.hidden = hasImage;
+
+        if (hasImage) {
+          const image = document.createElement("img");
+          image.src = imagePath(item, kind);
+          image.alt = `${item.title} · ${labelText}`;
+          image.loading = "lazy";
+          image.decoding = "async";
+          image.width = 921;
+          image.height = 2048;
+          image.addEventListener("error", () => {
+            image.remove();
+            missing.hidden = false;
+          }, { once: true });
+          shot.append(image);
+        }
+
+        shot.append(missing);
+        return shot;
+      }
+
+      function createIgnoredShot(item) {
+        const ignored = createElement("span", "ignored-shot");
+        ignored.append(
+          createElement("span", "ignored-icon", "—"),
+          createElement("strong", "", "无需预览"),
+          createElement("small", "", item.ignoredReason)
+        );
+        return ignored;
+      }
+
+      function createMissingShot(kind) {
+        const missing = createElement("span", "missing-shot");
+        missing.append(
+          createElement("span", "missing-icon", "⊘"),
+          createElement("strong", "", kind === "old" ? "缺少旧版截图" : "缺少新版截图"),
+          createElement("small", "", `${kind}.png`)
+        );
+        return missing;
+      }
+
+      function missingLabel(item) {
+        if (!item.hasOld && !item.hasNew) return "缺少两张";
+        return item.hasOld ? "缺少新版" : "缺少旧版";
+      }
+
+      function resetFilters() {
+        state.query = "";
+        state.group = "all";
+        state.status = "complete";
+        elements.search.value = "";
+        elements.searchClear.hidden = true;
+        elements.group.value = "all";
+        updateStatusButtons();
+        render();
+      }
+
+      function updateStatusButtons() {
+        statusButtons.forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.status === state.status));
+        });
+      }
+
+      function openViewer(index) {
+        state.activeIndex = index;
+        renderViewer();
+        document.body.classList.add("has-dialog");
+        elements.viewer.showModal();
+      }
+
+      function closeViewer() {
+        if (elements.viewer.open) elements.viewer.close();
+      }
+
+      function moveViewer(delta) {
+        const nextIndex = state.activeIndex + delta;
+        if (nextIndex < 0 || nextIndex >= state.activeItems.length) return;
+        state.activeIndex = nextIndex;
+        renderViewer();
+      }
+
+      function renderViewer() {
+        const item = state.activeItems[state.activeIndex];
+        if (!item) return;
+
+        elements.viewerCounter.textContent = `${state.activeIndex + 1} / ${state.activeItems.length}`;
+        elements.viewerTitle.textContent = item.title;
+        elements.viewerGroup.textContent = item.group;
+        elements.viewerVersion.textContent = item.versionLabel;
+        const viewerDetails = [
+          item.desc,
+          item.ignored ? `忽略原因：${item.ignoredReason}` : ""
+        ].filter(Boolean).join(" · ");
+        elements.viewerDesc.textContent = viewerDetails;
+        elements.viewerDesc.hidden = !viewerDetails;
+        elements.viewerPrev.disabled = state.activeIndex === 0;
+        elements.viewerNext.disabled = state.activeIndex === state.activeItems.length - 1;
+
+        setViewerImage(item, "old");
+        setViewerImage(item, "new");
+        resetViewerScroll();
+      }
+
+      function setViewerImage(item, kind) {
+        const image = kind === "old" ? elements.oldImage : elements.newImage;
+        const missing = kind === "old" ? elements.oldMissing : elements.newMissing;
+        const missingTitle = kind === "old" ? elements.oldMissingTitle : elements.newMissingTitle;
+        const missingDetail = kind === "old" ? elements.oldMissingDetail : elements.newMissingDetail;
+        const hasImage = !item.ignored && (kind === "old" ? item.hasOld : item.hasNew);
+        const label = kind === "old" ? "旧版" : "新版";
+
+        missing.classList.toggle("is-ignored", item.ignored);
+        missingTitle.textContent = item.ignored ? "无需预览" : `${label}截图缺失`;
+        missingDetail.textContent = item.ignored ? item.ignoredReason : `${kind}.png`;
+        image.onload = null;
+        image.onerror = null;
+        image.hidden = !hasImage;
+        missing.hidden = hasImage;
+
+        if (!hasImage) {
+          image.removeAttribute("src");
+          image.alt = "";
+          return;
+        }
+
+        image.alt = `${item.title} · ${label}`;
+        image.onerror = () => {
+          image.hidden = true;
+          missing.hidden = false;
+        };
+        image.src = imagePath(item, kind);
+      }
+
+      function resetViewerScroll() {
+        requestAnimationFrame(() => {
+          syncingScroll = true;
+          elements.oldScroll.scrollTo({ top: 0, left: 0 });
+          elements.newScroll.scrollTo({ top: 0, left: 0 });
+          requestAnimationFrame(() => { syncingScroll = false; });
+        });
+      }
+
+      function toggleSync() {
+        state.sync = !state.sync;
+        elements.viewerSync.setAttribute("aria-pressed", String(state.sync));
+      }
+
+      function syncScroll(source, target) {
+        if (!state.sync || syncingScroll) return;
+        syncingScroll = true;
+        const sourceMaxY = source.scrollHeight - source.clientHeight;
+        const sourceMaxX = source.scrollWidth - source.clientWidth;
+        const targetMaxY = target.scrollHeight - target.clientHeight;
+        const targetMaxX = target.scrollWidth - target.clientWidth;
+        const yRatio = sourceMaxY > 0 ? source.scrollTop / sourceMaxY : 0;
+        const xRatio = sourceMaxX > 0 ? source.scrollLeft / sourceMaxX : 0;
+        target.scrollTop = yRatio * Math.max(0, targetMaxY);
+        target.scrollLeft = xRatio * Math.max(0, targetMaxX);
+        requestAnimationFrame(() => { syncingScroll = false; });
+      }
+
+      function handleKeyboard(event) {
+        const target = event.target;
+        const typing = target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement;
+
+        if (!elements.viewer.open && event.key === "/" && !typing) {
+          event.preventDefault();
+          elements.search.focus();
+          return;
+        }
+
+        if (!elements.viewer.open || typing) return;
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          moveViewer(-1);
+        } else if (event.key === "ArrowRight") {
+          event.preventDefault();
+          moveViewer(1);
+        }
+      }
+
+      function readStoredTheme() {
+        try {
+          const stored = window.localStorage.getItem("wab-preview-theme");
+          return themeOrder.includes(stored) ? stored : "system";
+        } catch (_) {
+          return "system";
+        }
+      }
+
+      function cycleTheme() {
+        const nextIndex = (themeOrder.indexOf(theme) + 1) % themeOrder.length;
+        theme = themeOrder[nextIndex];
+        applyTheme(theme);
+        try {
+          window.localStorage.setItem("wab-preview-theme", theme);
+        } catch (_) {
+          // Theme still works for this page view when storage is unavailable.
+        }
+      }
+
+      function applyTheme(nextTheme) {
+        if (nextTheme === "system") {
+          document.documentElement.removeAttribute("data-theme");
+        } else {
+          document.documentElement.dataset.theme = nextTheme;
+        }
+        elements.themeLabel.textContent = themeNames[nextTheme];
+        elements.themeButton.setAttribute("aria-label", `当前主题：${themeNames[nextTheme]}，点击切换`);
+        elements.themeButton.title = `当前：${themeNames[nextTheme]}，点击切换`;
+      }
+
+      initialize();
+    })();
+  </script>
+</body>
+</html>
