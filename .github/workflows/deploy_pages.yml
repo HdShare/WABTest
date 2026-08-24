@@ -30,6 +30,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
+      - name: Build Pages
+        run: |
+          cp app/src/main/assets/test.json previews/test.json
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v5
         with:

@@ -1295,7 +1295,7 @@
       }
 
       async function loadPreviewData() {
-        const response = await fetch("./../app/src/main/assets/test.json", { cache: "no-store" });
+        const response = await fetch("./test.json", { cache: "no-store" });
         if (!response.ok) {
           throw new Error(`test.json 请求失败：HTTP ${response.status}`);
         }
