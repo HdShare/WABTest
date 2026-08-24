@@ -3,6 +3,10 @@ name: Deploy Pages
 on:
   push:
     branches: [ master ]
+    paths:
+      - ".github/workflows/deploy_pages.yml"
+      - "app/src/main/assets/test.json"
+      - "previews/**"
   workflow_dispatch:
 
 permissions:
