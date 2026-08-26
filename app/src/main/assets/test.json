@@ -134,6 +134,42 @@
         ]
       },
       {
+        "key": "clicfg_emoticon_search_xiaowei_android",
+        "title": "表情搜索面板「AI 找表情」总开关",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_emoticon_search_xiaowei_android_for_xiaowei",
+        "title": "表情搜索面板「AI 找表情」（小微用户）",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_xiaowei_summary_file_and",
         "title": "文件消息支持「小微总结」总开关",
         "desc": "",
@@ -1017,7 +1053,29 @@
       },
       {
         "key": "clicfg_sns_ask_xiaowei_browse_android",
-        "title": "朋友圈浏览页「AI 点评」",
+        "title": "朋友圈浏览页问小微入口",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "直接启用",
+            "value": "1"
+          },
+          {
+            "alias": "小微用户",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_sns_ask_xiaowei_browse_android_for_xiaowei",
+        "title": "朋友圈浏览页「AI 点评」（小微用户）",
         "desc": "",
         "version": {
           "min": "8.0.77"
@@ -1035,7 +1093,29 @@
       },
       {
         "key": "clicfg_sns_ask_xiaowei_post_android",
-        "title": "朋友圈发表页「AI 帮写」",
+        "title": "朋友圈发表页问小微入口",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "直接启用",
+            "value": "1"
+          },
+          {
+            "alias": "小微用户",
+            "value": "2"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_sns_ask_xiaowei_post_android_for_xiaowei",
+        "title": "朋友圈发表页「AI 帮写」（小微用户）",
         "desc": "",
         "version": {
           "min": "8.0.77"
