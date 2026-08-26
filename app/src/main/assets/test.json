@@ -136,7 +136,7 @@
       {
         "key": "clicfg_xiaowei_summary_file_and",
         "title": "文件消息支持「小微总结」总开关",
-        "desc": "未实现",
+        "desc": "",
         "version": {
           "min": "8.0.77"
         },
@@ -154,7 +154,7 @@
       {
         "key": "clicfg_xiaowei_summary_file_for_xw_and",
         "title": "文件消息支持「小微总结」（小微用户）",
-        "desc": "未实现",
+        "desc": "",
         "version": {
           "min": "8.0.77"
         },
@@ -622,7 +622,7 @@
       {
         "key": "clicfg_repairerconfig_enable_edge_to_edge_switch",
         "title": "Edge2Edge-是否开启",
-        "desc": "待补图",
+        "desc": "",
         "version": {
           "min": "8.0.72"
         },
@@ -1190,7 +1190,7 @@
       {
         "key": "clicfg_weclaw_shortcut_command",
         "title": "WeClaw 快捷指令",
-        "desc": "未实现",
+        "desc": "",
         "version": {
           "min": "8.0.74"
         },
