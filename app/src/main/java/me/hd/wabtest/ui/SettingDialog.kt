@@ -49,21 +49,29 @@ class SettingDialog(ctx: Activity) : AlertDialog.Builder(ctx) {
     init {
         setTitle(BuildConfig.APP_NAME)
         setView(getContentView(ctx))
+        setNeutralButton("删除配置") { _, _ ->
+            if (ExptManager.delMmkvFiles()) {
+                ctx.restartApp()
+            }
+        }
         setNegativeButton("返回", null)
-        setPositiveButton("重启") { _, _ ->
-            val intent = ctx.packageManager.getLaunchIntentForPackage(ctx.packageName)
-            ctx.finishAffinity()
-            ctx.startActivity(intent)
-            exitProcess(0)
+        setPositiveButton("重启宿主") { _, _ ->
+            ctx.restartApp()
         }
     }
 
-    fun Context.dp2px(dpValue: Float): Int {
+    private fun Activity.restartApp() {
+        finishAffinity()
+        startActivity(packageManager.getLaunchIntentForPackage(packageName))
+        exitProcess(0)
+    }
+
+    private fun Context.dp2px(dpValue: Float): Int {
         val scale = resources.displayMetrics.density
         return (dpValue * scale + 0.5f).toInt()
     }
 
-    fun Context.isDarkMode(): Boolean {
+    private fun Context.isDarkMode(): Boolean {
         val nightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
         return nightMode == Configuration.UI_MODE_NIGHT_YES
     }

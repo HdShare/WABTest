@@ -21,6 +21,7 @@ class MMKVWrapper private constructor(private val mmkv: Any) {
 
     fun containsKey(key: String): Boolean {
         return mmkv.asResolver().firstMethod {
+            returnType = Boolean::class
             name = "containsKey"
             parameters(String::class)
         }.invoke<Boolean>(key)!!
@@ -35,6 +36,7 @@ class MMKVWrapper private constructor(private val mmkv: Any) {
 
     fun getInt(key: String, defValue: Int): Int {
         return mmkv.asResolver().firstMethod {
+            returnType = Int::class
             name = "getInt"
             parameters(String::class, Int::class)
         }.invoke<Int>(key, defValue)!!
@@ -49,6 +51,7 @@ class MMKVWrapper private constructor(private val mmkv: Any) {
 
     fun getString(key: String, defValue: String): String {
         return mmkv.asResolver().firstMethod {
+            returnType = String::class
             name = "getString"
             parameters(String::class, String::class)
         }.invoke<String>(key, defValue)!!
@@ -63,6 +66,7 @@ class MMKVWrapper private constructor(private val mmkv: Any) {
 
     fun getBytes(key: String, defValue: ByteArray): ByteArray {
         return mmkv.asResolver().firstMethod {
+            returnType = ByteArray::class
             name = "getBytes"
             parameters(String::class, ByteArray::class)
         }.invoke<ByteArray>(key, defValue)!!

@@ -1,16 +1,27 @@
 package me.hd.wabtest.core.expt
 
+import me.hd.wabtest.hook.HostData
 import me.hd.wabtest.hook.wrapper.ConfigWrapper
 import me.hd.wabtest.hook.wrapper.MMKVWrapper
 import me.hd.wabtest.util.Base64Util
 import me.hd.wabtest.util.JsonUtil
+import java.io.File
 
 object ExptManager {
     private val uin by lazy { ConfigWrapper.get("system_config_prefs").getUin() }
-    private val appKeyMmkv by lazy { MMKVWrapper.get("${uin}_WxExptAppKeyMmkv") }
-    private val appIdMmkv by lazy { MMKVWrapper.get("${uin}_WxExptAppIdMmkv") }
+    private val appKeyName by lazy { "${uin}_WxExptAppKeyMmkv" }
+    private val appKeyMmkv by lazy { MMKVWrapper.get(appKeyName) }
+    private val appIdName by lazy { "${uin}_WxExptAppIdMmkv" }
+    private val appIdMmkv by lazy { MMKVWrapper.get(appIdName) }
 
     private const val FAKE_EXPT_ID = 99999
+
+    fun delMmkvFiles(): Boolean {
+        val rootDir = "${HostData.appContext.filesDir.absolutePath}/mmkv"
+        val appKeyFile = File(rootDir, appKeyName)
+        val appIdFile = File(rootDir, appIdName)
+        return appKeyFile.delete() && appIdFile.delete()
+    }
 
     fun getArgValue(exptKey: String): String? {
         return if (appKeyMmkv.containsKey(exptKey)) {
