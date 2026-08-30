@@ -1,10 +1,10 @@
-package me.hd.wabtest.core.expt
+package io.github.wabtest.core.expt
 
-import me.hd.wabtest.hook.HostData
-import me.hd.wabtest.hook.wrapper.ConfigWrapper
-import me.hd.wabtest.hook.wrapper.MMKVWrapper
-import me.hd.wabtest.util.Base64Util
-import me.hd.wabtest.util.JsonUtil
+import io.github.wabtest.hook.HostData
+import io.github.wabtest.hook.wrapper.ConfigWrapper
+import io.github.wabtest.hook.wrapper.MMKVWrapper
+import io.github.wabtest.util.Base64Util
+import io.github.wabtest.util.JsonUtil
 import java.io.File
 
 object ExptManager {

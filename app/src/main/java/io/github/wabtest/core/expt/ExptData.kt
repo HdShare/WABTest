@@ -1,4 +1,4 @@
-package me.hd.wabtest.core.expt
+package io.github.wabtest.core.expt
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

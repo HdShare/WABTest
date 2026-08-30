@@ -1,9 +1,9 @@
-package me.hd.wabtest.core.test
+package io.github.wabtest.core.test
 
 import com.highcapable.yukihookapi.hook.factory.injectModuleAppResources
-import me.hd.wabtest.core.expt.ExptManager
-import me.hd.wabtest.hook.HostData.appContext
-import me.hd.wabtest.util.JsonUtil
+import io.github.wabtest.core.expt.ExptManager
+import io.github.wabtest.hook.HostData.appContext
+import io.github.wabtest.util.JsonUtil
 
 object TestManager {
     private const val JSON_FILE = "test.json"

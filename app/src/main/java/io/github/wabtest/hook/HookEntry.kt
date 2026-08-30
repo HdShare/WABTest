@@ -1,4 +1,4 @@
-package me.hd.wabtest.hook
+package io.github.wabtest.hook
 
 import android.app.Application
 import android.app.Instrumentation
@@ -7,8 +7,8 @@ import com.highcapable.yukihookapi.YukiHookAPI.configs
 import com.highcapable.yukihookapi.YukiHookAPI.encase
 import com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed
 import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
-import me.hd.wabtest.BuildConfig
-import me.hd.wabtest.hook.hooker.SettingHooker
+import io.github.wabtest.BuildConfig
+import io.github.wabtest.hook.hooker.SettingHooker
 
 @InjectYukiHookWithXposed(entryClassName = "Entry")
 object HookEntry : IYukiHookXposedInit {

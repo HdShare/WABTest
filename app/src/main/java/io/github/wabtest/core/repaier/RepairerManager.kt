@@ -1,6 +1,6 @@
-package me.hd.wabtest.core.repaier
+package io.github.wabtest.core.repaier
 
-import me.hd.wabtest.hook.wrapper.MMKVWrapper
+import io.github.wabtest.hook.wrapper.MMKVWrapper
 
 class RepairerManager {
     private val repairerMmkv by lazy { MMKVWrapper.get("Repairer") }

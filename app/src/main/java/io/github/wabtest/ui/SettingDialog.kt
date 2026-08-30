@@ -1,4 +1,4 @@
-package me.hd.wabtest.ui
+package io.github.wabtest.ui
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -27,11 +27,11 @@ import android.widget.ListView
 import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
-import me.hd.wabtest.BuildConfig
-import me.hd.wabtest.core.expt.ExptManager
-import me.hd.wabtest.core.test.ConfigItem
-import me.hd.wabtest.core.test.ConfigOption
-import me.hd.wabtest.core.test.TestManager
+import io.github.wabtest.BuildConfig
+import io.github.wabtest.core.expt.ExptManager
+import io.github.wabtest.core.test.ConfigItem
+import io.github.wabtest.core.test.ConfigOption
+import io.github.wabtest.core.test.TestManager
 import kotlin.system.exitProcess
 
 class SettingDialog(ctx: Activity) : AlertDialog.Builder(ctx) {

@@ -1,4 +1,4 @@
-package me.hd.wabtest.hook.hooker
+package io.github.wabtest.hook.hooker
 
 import android.app.Activity
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.view.MenuItem
 import com.highcapable.kavaref.KavaRef.Companion.asResolver
 import com.highcapable.kavaref.KavaRef.Companion.resolve
 import com.highcapable.yukihookapi.hook.entity.YukiBaseHooker
-import me.hd.wabtest.hook.HostData.toHostClazzOrNull
-import me.hd.wabtest.ui.SettingDialog
+import io.github.wabtest.hook.HostData.toHostClazzOrNull
+import io.github.wabtest.ui.SettingDialog
 
 object SettingHooker : YukiBaseHooker() {
     private const val NEW_BASE_SETTING_CLASS = "com.tencent.mm.plugin.setting.ui.setting_new.base.BaseSettingPrefUI"

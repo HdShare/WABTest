@@ -13,9 +13,6 @@
             android:name="xposedminversion"
             android:value="89" />
         <meta-data
-            android:name="xposedsharedprefs"
-            android:value="true" />
-        <meta-data
             android:name="xposedscope"
             android:value="com.tencent.mm" />
     </application>

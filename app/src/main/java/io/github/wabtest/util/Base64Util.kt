@@ -1,4 +1,4 @@
-package me.hd.wabtest.util
+package io.github.wabtest.util
 
 import android.util.Base64
 import java.nio.charset.Charset

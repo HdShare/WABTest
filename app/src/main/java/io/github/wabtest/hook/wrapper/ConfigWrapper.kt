@@ -1,8 +1,8 @@
-package me.hd.wabtest.hook.wrapper
+package io.github.wabtest.hook.wrapper
 
 import android.content.Context
 import android.content.SharedPreferences
-import me.hd.wabtest.hook.HostData.appContext
+import io.github.wabtest.hook.HostData.appContext
 
 class ConfigWrapper private constructor(private val pref: SharedPreferences) {
 

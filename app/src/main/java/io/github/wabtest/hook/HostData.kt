@@ -1,4 +1,4 @@
-package me.hd.wabtest.hook
+package io.github.wabtest.hook
 
 import android.content.Context
 import com.highcapable.kavaref.extension.toClass

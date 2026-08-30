@@ -8,21 +8,21 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
-val gitVersionCode: Int by rootProject.extra
-val gitVersionSuffix: String by rootProject.extra
+val gitVersionCode = rootProject.extra["gitVersionCode"] as Int
+val gitVersionSuffix = rootProject.extra["gitVersionSuffix"] as String
 
 val ketStorePath: String? = System.getenv("KEY_STORE_PATH")
 
 android {
-    namespace = "me.hd.wabtest"
+    namespace = "io.github.wabtest"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "me.hd.wabtest"
-        minSdk = 27
+        applicationId = "io.github.wabtest"
+        minSdk = 28
         targetSdk = 37
         versionCode = gitVersionCode
-        versionName = "1.2.0.$gitVersionSuffix"
+        versionName = "1.2.1.$gitVersionSuffix"
         buildConfigField("String", "APP_NAME", "\"WABTest\"")
     }
 
