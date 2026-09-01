@@ -26,7 +26,6 @@ import android.widget.LinearLayout.VERTICAL
 import android.widget.ListView
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
 import io.github.wabtest.BuildConfig
 import io.github.wabtest.core.expt.ExptManager
 import io.github.wabtest.core.test.ConfigItem
@@ -37,11 +36,22 @@ import kotlin.system.exitProcess
 class SettingDialog(ctx: Activity) : AlertDialog.Builder(ctx) {
 
     companion object {
+        fun Activity.restartApp() {
+            finishAffinity()
+            startActivity(packageManager.getLaunchIntentForPackage(packageName))
+            exitProcess(0)
+        }
+
         fun show(ctx: Activity) {
             try {
                 SettingDialog(ctx).show()
-            } catch (_: Exception) {
-                Toast.makeText(ctx, "发生异常", Toast.LENGTH_LONG).show()
+            } catch (e: Exception) {
+                AlertDialog.Builder(ctx)
+                    .setTitle("发生异常")
+                    .setMessage("异常信息:\n$e")
+                    .setPositiveButton("重启宿主") { _, _ ->
+                        ctx.restartApp()
+                    }.show()
             }
         }
     }
@@ -58,12 +68,6 @@ class SettingDialog(ctx: Activity) : AlertDialog.Builder(ctx) {
         setPositiveButton("重启宿主") { _, _ ->
             ctx.restartApp()
         }
-    }
-
-    private fun Activity.restartApp() {
-        finishAffinity()
-        startActivity(packageManager.getLaunchIntentForPackage(packageName))
-        exitProcess(0)
     }
 
     private fun Context.dp2px(dpValue: Float): Int {
