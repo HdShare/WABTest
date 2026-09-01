@@ -242,6 +242,24 @@
         ]
       },
       {
+        "key": "clicfg_yuanbao_message_file_summary_entry_and",
+        "title": "文件消息支持「元宝总结」总开关",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_yuanbao_message_biz_article_summary_entry_and",
         "title": "文章消息支持「元宝总结」总开关",
         "desc": "",
@@ -557,7 +575,7 @@
       },
       {
         "key": "clicfg_yuanbao_summary_entrance",
-        "title": "文章消息支持「元宝总结」",
+        "title": "消息支持「元宝总结」",
         "desc": "",
         "version": {
           "min": "8.0.65"
@@ -894,6 +912,29 @@
         "desc": "",
         "version": {
           "min": "8.0.67"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": "资料",
+    "configs": [
+      {
+        "key": "clicfg_chatroom_join_info",
+        "title": "群资料页显示进群方式和进群时间",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
         },
         "options": [
           {
