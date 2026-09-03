@@ -5,8 +5,14 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class TestItem(
-    @SerialName("group") var group: String = "",
+    @SerialName("group") var group: GroupItem = GroupItem(),
     @SerialName("configs") var configs: List<ConfigItem> = emptyList(),
+)
+
+@Serializable
+data class GroupItem(
+    @SerialName("key") var key: String = "",
+    @SerialName("title") var title: String = "",
 )
 
 @Serializable

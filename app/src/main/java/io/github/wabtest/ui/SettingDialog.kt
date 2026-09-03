@@ -186,7 +186,7 @@ class SettingDialog(ctx: Activity) : AlertDialog.Builder(ctx) {
             val keyword = query?.toString()?.trim().orEmpty()
             listItems.clear()
             testItems.forEach { testItem ->
-                val configs = if (keyword.isEmpty() || testItem.group.contains(keyword)) {
+                val configs = if (keyword.isEmpty() || testItem.group.title.contains(keyword)) {
                     testItem.configs
                 } else {
                     testItem.configs.filter { config ->
@@ -194,7 +194,7 @@ class SettingDialog(ctx: Activity) : AlertDialog.Builder(ctx) {
                     }
                 }
                 if (configs.isNotEmpty()) {
-                    listItems.add(ListItem(group = testItem.group + "(${configs.size})"))
+                    listItems.add(ListItem(group = testItem.group.title + "(${configs.size})"))
                     configs.forEach { config ->
                         listItems.add(ListItem(config = config))
                     }

@@ -1,6 +1,9 @@
 [
   {
-    "group": "ChatBot",
+    "group": {
+      "key": "ChatBot",
+      "title": "ChatBot 配置"
+    },
     "configs": [
       {
         "key": "clicfg_android_image_gallery_ai_process_entrance",
@@ -59,7 +62,10 @@
     ]
   },
   {
-    "group": "会话配置",
+    "group": {
+      "key": "Chatting",
+      "title": "会话"
+    },
     "configs": [
       {
         "key": "clicfg_android_select_contact_search_chat_history",
@@ -720,7 +726,10 @@
     ]
   },
   {
-    "group": "会话列表",
+    "group": {
+      "key": "Conversation",
+      "title": "会话列表"
+    },
     "configs": [
       {
         "key": "clicfg_conv_unread_mode_android",
@@ -743,7 +752,10 @@
     ]
   },
   {
-    "group": "Edge2Edge",
+    "group": {
+      "key": "Edge2Edge",
+      "title": "Edge2Edge"
+    },
     "configs": [
       {
         "key": "clicfg_repairerconfig_enable_edge_to_edge_switch",
@@ -766,7 +778,10 @@
     ]
   },
   {
-    "group": "面对面",
+    "group": {
+      "key": "F2F",
+      "title": "面对面"
+    },
     "configs": [
       {
         "key": "clicfg_use_new_my_qrcode",
@@ -789,7 +804,10 @@
     ]
   },
   {
-    "group": "文件",
+    "group": {
+      "key": "File",
+      "title": "文件"
+    },
     "configs": [
       {
         "key": "clicfg_local_markdown_file_preview_enable",
@@ -812,7 +830,10 @@
     ]
   },
   {
-    "group": "好友",
+    "group": {
+      "key": "Friend",
+      "title": "好友"
+    },
     "configs": [
       {
         "key": "clicfg_address_header_redesign",
@@ -853,7 +874,10 @@
     ]
   },
   {
-    "group": "全局配置",
+    "group": {
+      "key": "Global",
+      "title": "全局"
+    },
     "configs": [
       {
         "key": "clicfg_new_setting",
@@ -894,7 +918,10 @@
     ]
   },
   {
-    "group": "消息发送",
+    "group": {
+      "key": "MsgSend",
+      "title": "消息发送"
+    },
     "configs": [
       {
         "key": "clicfg_batch_revoke_msg_enable",
@@ -917,7 +944,10 @@
     ]
   },
   {
-    "group": "星标",
+    "group": {
+      "key": "MultiTask",
+      "title": "星标"
+    },
     "configs": [
       {
         "key": "clicfg_multi_floatball_new_style",
@@ -976,7 +1006,10 @@
     ]
   },
   {
-    "group": "通知",
+    "group": {
+      "key": "Notification",
+      "title": "通知"
+    },
     "configs": [
       {
         "key": "clicfg_notification_avatar_switch",
@@ -999,7 +1032,10 @@
     ]
   },
   {
-    "group": "资料",
+    "group": {
+      "key": "Profile",
+      "title": "资料"
+    },
     "configs": [
       {
         "key": "clicfg_chatroom_join_info",
@@ -1022,7 +1058,10 @@
     ]
   },
   {
-    "group": "扫一扫",
+    "group": {
+      "key": "Scan",
+      "title": "扫一扫"
+    },
     "configs": [
       {
         "key": "clicfg_scan_ask_ai_android",
@@ -1081,7 +1120,10 @@
     ]
   },
   {
-    "group": "截图组件",
+    "group": {
+      "key": "ScreenShot",
+      "title": "截图组件"
+    },
     "configs": [
       {
         "key": "clicfg_screenshot_share_service",
@@ -1104,7 +1146,10 @@
     ]
   },
   {
-    "group": "朋友圈",
+    "group": {
+      "key": "Sns",
+      "title": "朋友圈"
+    },
     "configs": [
       {
         "key": "clicfg_android_moments_private_publish",
@@ -1337,7 +1382,10 @@
     ]
   },
   {
-    "group": "WebView",
+    "group": {
+      "key": "WebView",
+      "title": "WebView 配置"
+    },
     "configs": [
       {
         "key": "clicfg_webview_debug",
@@ -1360,7 +1408,10 @@
     ]
   },
   {
-    "group": "WeClaw",
+    "group": {
+      "key": "WeClaw",
+      "title": "WeClaw 配置"
+    },
     "configs": [
       {
         "key": "clicfg_clawbot_plugin_unbind_enable_disable_open_switch_and",
@@ -1419,7 +1470,10 @@
     ]
   },
   {
-    "group": "元宝",
+    "group": {
+      "key": "YuanBao",
+      "title": "元宝"
+    },
     "configs": [
       {
         "key": "clicfg_yuanbao_making_avatar_enable",
@@ -1442,7 +1496,10 @@
     ]
   },
   {
-    "group": "测试",
+    "group": {
+      "key": "Debug",
+      "title": "调试"
+    },
     "configs": [
     ]
   }
