@@ -1,6 +1,32 @@
 [
   {
     "group": {
+      "key": "Debug",
+      "title": "调试"
+    },
+    "configs": [
+      {
+        "key": "clicfg_conv_recycler_view",
+        "title": "会话列表 使用 RecyclerView",
+        "desc": "Conversation 会话列表",
+        "version": {
+          "min": "8.0.78.0x28002E10"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": {
       "key": "ChatBot",
       "title": "ChatBot 配置"
     },
@@ -67,6 +93,28 @@
       "title": "会话"
     },
     "configs": [
+      {
+        "key": "clicfg_chatfooter_paste_entry",
+        "title": "聊天输入框剪贴板粘贴入口",
+        "desc": "",
+        "version": {
+          "min": "8.0.78.0x28002E10"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "按钮",
+            "value": "1"
+          },
+          {
+            "alias": "提示",
+            "value": "2"
+          }
+        ]
+      },
       {
         "key": "clicfg_android_select_contact_search_chat_history",
         "title": "选人页支持按聊天记录搜索",
@@ -1059,6 +1107,32 @@
   },
   {
     "group": {
+      "key": "Remark",
+      "title": "备注"
+    },
+    "configs": [
+      {
+        "key": "clicfg_android_remark_name_voice_input",
+        "title": "备注名语音输入",
+        "desc": "",
+        "version": {
+          "min": "8.0.78.0x28002E10"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": {
       "key": "Scan",
       "title": "扫一扫"
     },
@@ -1414,6 +1488,24 @@
     },
     "configs": [
       {
+        "key": "clicfg_android_fts_weclaw_msg_search_enabled",
+        "title": "WeClaw 消息搜索",
+        "desc": "",
+        "version": {
+          "min": "8.0.78.0x28002E10"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_clawbot_plugin_unbind_enable_disable_open_switch_and",
         "title": "ClawBot 插件管理与解除连接",
         "desc": "",
@@ -1493,14 +1585,6 @@
           }
         ]
       }
-    ]
-  },
-  {
-    "group": {
-      "key": "Debug",
-      "title": "调试"
-    },
-    "configs": [
     ]
   }
 ]
