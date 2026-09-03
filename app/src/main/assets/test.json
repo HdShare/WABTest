@@ -80,8 +80,62 @@
         ]
       },
       {
+        "key": "clicfg_c2c_sight_take_photo_ask_xiaowei",
+        "title": "图片编辑页「AI 处理」入口",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_c2c_sight_take_photo_ask_xiaowei_for_xiaowei",
+        "title": "图片编辑页「AI 处理」（小微用户）",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_chatting_avatar_long_press_menu",
         "title": "联系人资料页编辑备注图标",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_chatting_forward_voice_input_without_keyboard",
+        "title": "转发输入栏无键盘时显示小话筒",
         "desc": "",
         "version": {
           "min": "8.0.77"
@@ -170,6 +224,24 @@
         ]
       },
       {
+        "key": "clicfg_local_media_picker_chatting_opt",
+        "title": "半屏相册 - 提高发图效率和选图体验",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_xiaowei_summary_file_and",
         "title": "文件消息支持「小微总结」总开关",
         "desc": "",
@@ -242,8 +314,8 @@
         ]
       },
       {
-        "key": "clicfg_yuanbao_message_file_summary_entry_and",
-        "title": "文件消息支持「元宝总结」总开关",
+        "key": "clicfg_yuanbao_message_biz_article_summary_entry_and",
+        "title": "文章消息支持「元宝总结」总开关",
         "desc": "",
         "version": {
           "min": "8.0.77"
@@ -260,8 +332,8 @@
         ]
       },
       {
-        "key": "clicfg_yuanbao_message_biz_article_summary_entry_and",
-        "title": "文章消息支持「元宝总结」总开关",
+        "key": "clicfg_yuanbao_message_file_summary_entry_and",
+        "title": "文件消息支持「元宝总结」总开关",
         "desc": "",
         "version": {
           "min": "8.0.77"
@@ -1053,48 +1125,8 @@
         ]
       },
       {
-        "key": "clicfg_sns_xiao_wei_white_expt",
-        "title": "朋友圈小微入口总开关",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_sns_xiaowei_post_entry_enabled_network",
-        "title": "朋友圈小微入口状态",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "启用",
-            "value": "1"
-          },
-          {
-            "alias": "隐藏",
-            "value": "2"
-          }
-        ]
-      },
-      {
         "key": "clicfg_sns_ask_xiaowei_browse_android",
-        "title": "朋友圈浏览页问小微入口",
+        "title": "朋友圈浏览页「AI 点评」入口",
         "desc": "",
         "version": {
           "min": "8.0.77"
@@ -1134,7 +1166,7 @@
       },
       {
         "key": "clicfg_sns_ask_xiaowei_post_android",
-        "title": "朋友圈发表页问小微入口",
+        "title": "朋友圈发表页「AI 帮写」入口",
         "desc": "",
         "version": {
           "min": "8.0.77"
@@ -1169,6 +1201,46 @@
           {
             "alias": "打开",
             "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_sns_xiao_wei_white_expt",
+        "title": "朋友圈小微入口总开关",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_sns_xiaowei_post_entry_enabled_network",
+        "title": "朋友圈小微入口状态",
+        "desc": "",
+        "version": {
+          "min": "8.0.77"
+        },
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "启用",
+            "value": "1"
+          },
+          {
+            "alias": "隐藏",
+            "value": "2"
           }
         ]
       },
