@@ -12,6 +12,7 @@
         "version": {
           "min": "8.0.78.0x28002E10"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -38,6 +39,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -56,6 +58,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -74,6 +77,7 @@
         "version": {
           "min": "8.0.67"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -100,6 +104,7 @@
         "version": {
           "min": "8.0.78.0x28002E10"
         },
+        "type": "single_choice",
         "options": [
           {
             "alias": "关闭",
@@ -122,6 +127,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -140,6 +146,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -158,6 +165,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -176,6 +184,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -194,6 +203,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -212,6 +222,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -230,6 +241,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -248,6 +260,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -266,6 +279,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -284,6 +298,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -302,6 +317,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -320,6 +336,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -338,6 +355,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -356,6 +374,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -374,6 +393,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -392,6 +412,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -410,6 +431,7 @@
         "version": {
           "min": "8.0.76"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -428,6 +450,7 @@
         "version": {
           "min": "8.0.74"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -446,6 +469,7 @@
         "version": {
           "min": "8.0.74"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -464,6 +488,7 @@
         "version": {
           "min": "8.0.74"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -482,6 +507,7 @@
         "version": {
           "min": "8.0.74"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -500,6 +526,7 @@
         "version": {
           "min": "8.0.70"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -518,6 +545,7 @@
         "version": {
           "min": "8.0.70"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -536,6 +564,7 @@
         "version": {
           "min": "8.0.69"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -554,6 +583,7 @@
         "version": {
           "min": "8.0.69"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -572,6 +602,7 @@
         "version": {
           "min": "8.0.69"
         },
+        "type": "single_choice",
         "options": [
           {
             "alias": "关闭",
@@ -594,6 +625,7 @@
         "version": {
           "min": "8.0.69"
         },
+        "type": "single_choice",
         "options": [
           {
             "alias": "关闭",
@@ -616,6 +648,7 @@
         "version": {
           "min": "8.0.67"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -634,6 +667,7 @@
         "version": {
           "min": "8.0.67"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -652,6 +686,7 @@
         "version": {
           "min": "8.0.67"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -670,6 +705,7 @@
         "version": {
           "min": "8.0.65"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -688,6 +724,7 @@
         "version": {
           "min": "8.0.65"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -706,6 +743,7 @@
         "version": {
           "min": "8.0.65"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -724,6 +762,7 @@
         "version": {
           "min": "8.0.64"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -742,6 +781,7 @@
         "version": {
           "min": "8.0.63"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -760,6 +800,7 @@
         "version": {
           "min": "8.0.62"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -786,6 +827,7 @@
         "version": {
           "min": "8.0.72"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -812,6 +854,7 @@
         "version": {
           "min": "8.0.72"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -838,6 +881,7 @@
         "version": {
           "min": "8.0.70"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -864,6 +908,7 @@
         "version": {
           "min": "8.0.71"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -890,6 +935,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -908,6 +954,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -934,6 +981,7 @@
         "version": {
           "min": "8.0.66"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -952,6 +1000,7 @@
         "version": {
           "min": "8.0.66"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -978,6 +1027,7 @@
         "version": {
           "min": "8.0.66"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1004,6 +1054,7 @@
         "version": {
           "min": "8.0.70"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1022,6 +1073,7 @@
         "version": {
           "min": "8.0.61"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1040,6 +1092,7 @@
         "version": {
           "min": "8.0.54"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1066,6 +1119,7 @@
         "version": {
           "min": "8.0.67"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1092,6 +1146,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1118,6 +1173,7 @@
         "version": {
           "min": "8.0.78.0x28002E10"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1144,6 +1200,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1162,6 +1219,7 @@
         "version": {
           "min": "8.0.69"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1180,6 +1238,7 @@
         "version": {
           "min": "8.0.69"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1206,6 +1265,7 @@
         "version": {
           "min": "8.0.63"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1232,6 +1292,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1250,6 +1311,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "single_choice",
         "options": [
           {
             "alias": "关闭",
@@ -1272,6 +1334,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1290,6 +1353,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "single_choice",
         "options": [
           {
             "alias": "关闭",
@@ -1312,6 +1376,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1330,6 +1395,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1348,6 +1414,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "single_choice",
         "options": [
           {
             "alias": "关闭",
@@ -1370,6 +1437,7 @@
         "version": {
           "min": "8.0.76"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1388,6 +1456,7 @@
         "version": {
           "min": "8.0.76"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1406,6 +1475,7 @@
         "version": {
           "min": "8.0.72"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1424,6 +1494,7 @@
         "version": {
           "min": "8.0.68"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1442,6 +1513,7 @@
         "version": {
           "min": "8.0.64"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1468,6 +1540,7 @@
         "version": {
           "min": "8.0.40"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1494,6 +1567,7 @@
         "version": {
           "min": "8.0.78.0x28002E10"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1512,6 +1586,7 @@
         "version": {
           "min": "8.0.77"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1530,6 +1605,7 @@
         "version": {
           "min": "8.0.74"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1548,6 +1624,7 @@
         "version": {
           "min": "8.0.72"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",
@@ -1574,6 +1651,7 @@
         "version": {
           "min": "8.0.65"
         },
+        "type": "switch",
         "options": [
           {
             "alias": "关闭",

@@ -20,9 +20,19 @@ data class ConfigItem(
     @SerialName("key") var key: String = "",
     @SerialName("title") var title: String = "",
     @SerialName("desc") var desc: String = "",
+    @SerialName("type") var type: ConfigType = ConfigType.SINGLE_CHOICE,
     @SerialName("version") var version: ConfigVersion = ConfigVersion(),
     @SerialName("options") var options: List<ConfigOption> = emptyList(),
 )
+
+@Serializable
+enum class ConfigType {
+    @SerialName("switch")
+    SWITCH,
+
+    @SerialName("single_choice")
+    SINGLE_CHOICE,
+}
 
 @Serializable
 data class ConfigVersion(

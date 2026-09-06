@@ -1,7 +1,6 @@
 package io.github.wabtest.core.test
 
 import com.highcapable.yukihookapi.hook.factory.injectModuleAppResources
-import io.github.wabtest.core.expt.ExptManager
 import io.github.wabtest.hook.HostData.appContext
 import io.github.wabtest.util.JsonUtil
 
@@ -14,9 +13,9 @@ object TestManager {
         return JsonUtil.fromJson<List<TestItem>>(jsonString)
     }
 
-    fun getOptionsAlias(options: List<ConfigOption>, key: String): String {
-        return ExptManager.getArgValue(key)?.let { value ->
+    fun getOptionAlias(options: List<ConfigOption>, value: String?): String? {
+        return value?.let {
             options.firstOrNull { it.value == value }?.alias ?: "未知$value"
-        } ?: "未下发"
+        }
     }
 }
