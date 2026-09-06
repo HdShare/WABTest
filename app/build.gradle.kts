@@ -22,7 +22,7 @@ android {
         minSdk = 28
         targetSdk = 37
         versionCode = gitVersionCode
-        versionName = "1.2.1.$gitVersionSuffix"
+        versionName = "1.2.2.$gitVersionSuffix"
         buildConfigField("String", "APP_NAME", "\"WABTest\"")
     }
 
