@@ -1308,18 +1308,15 @@
         const nextGroups = [];
         const nextItems = [];
         const seenKeys = new Set();
-        source.forEach((group, groupIndex) => {
-          const groupName = String(group?.group || "").trim();
-          if (!groupName) {
-            throw new Error(`test.json 第 ${groupIndex + 1} 个分组缺少 group`);
-          }
-          const configs = Array.isArray(group.configs) ? group.configs : [];
-          nextGroups.push({ name: groupName, count: configs.length });
+        source.forEach((groupEntry) => {
+          const groupTitle = groupEntry.group.title;
+          const configs = Array.isArray(groupEntry.configs) ? groupEntry.configs : [];
+          nextGroups.push({ name: groupTitle, count: configs.length });
 
           configs.forEach((config, configIndex) => {
             const key = String(config?.key || "").trim();
             if (!key) {
-              throw new Error(`${groupName} 第 ${configIndex + 1} 项缺少 key`);
+              throw new Error(`${groupTitle} 第 ${configIndex + 1} 项缺少 key`);
             }
             if (seenKeys.has(key)) {
               throw new Error(`test.json 存在重复 key：${key}`);
@@ -1327,7 +1324,7 @@
             seenKeys.add(key);
             const version = config.version || {};
             nextItems.push({
-              group: groupName,
+              group: groupTitle,
               key,
               title: String(config.title || key),
               desc: String(config.desc || ""),
