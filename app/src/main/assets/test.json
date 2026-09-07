@@ -10,7 +10,7 @@
         "title": "会话列表 使用 RecyclerView",
         "desc": "Conversation 会话列表",
         "version": {
-          "min": "8.0.78.0x28002E10"
+          "min": "8.0.78.0x28004E10"
         },
         "type": "switch",
         "options": [
@@ -37,7 +37,7 @@
         "title": "图片查看器「AI 处理」入口",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D30"
         },
         "type": "switch",
         "options": [
@@ -56,7 +56,7 @@
         "title": "图片查看器 AI 处理「添加水印」建议",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D30"
         },
         "type": "switch",
         "options": [
@@ -102,7 +102,7 @@
         "title": "按住说话按钮圆角样式",
         "desc": "",
         "version": {
-          "min": "8.0.78.0x28002E12"
+          "min": "8.0.78.0x28004E12"
         },
         "type": "switch",
         "options": [
@@ -121,7 +121,7 @@
         "title": "键盘弹起时长按输入框语音转文字策略",
         "desc": "",
         "version": {
-          "min": "8.0.78.0x28002E12"
+          "min": "8.0.78.0x28004E12"
         },
         "type": "single_choice",
         "options": [
@@ -144,7 +144,7 @@
         "title": "聊天输入框剪贴板粘贴入口",
         "desc": "",
         "version": {
-          "min": "8.0.78.0x28002E10"
+          "min": "8.0.78.0x28004E10"
         },
         "type": "single_choice",
         "options": [
@@ -163,30 +163,11 @@
         ]
       },
       {
-        "key": "clicfg_android_select_contact_search_chat_history",
-        "title": "选人页支持按聊天记录搜索",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
         "key": "clicfg_c2c_sight_take_photo_ask_xiaowei",
         "title": "图片编辑页「AI 处理」入口",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D35"
         },
         "type": "switch",
         "options": [
@@ -205,26 +186,7 @@
         "title": "图片编辑页「AI 处理」（小微用户）",
         "desc": "",
         "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_chatting_avatar_long_press_menu",
-        "title": "联系人资料页编辑备注图标",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D35"
         },
         "type": "switch",
         "options": [
@@ -243,83 +205,7 @@
         "title": "转发输入栏无键盘时显示小话筒",
         "desc": "",
         "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_chatting_inputbar_voice_command_mode",
-        "title": "输入栏长按语音指令",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_chatting_inputbar_voice_input",
-        "title": "输入栏长按语音输入",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_emoticon_search_xiaowei_android",
-        "title": "表情搜索面板「AI 找表情」总开关",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_emoticon_search_xiaowei_android_for_xiaowei",
-        "title": "表情搜索面板「AI 找表情」（小微用户）",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D35"
         },
         "type": "switch",
         "options": [
@@ -338,102 +224,7 @@
         "title": "半屏相册 - 提高发图效率和选图体验",
         "desc": "",
         "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_xiaowei_summary_file_and",
-        "title": "文件消息支持「小微总结」总开关",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_xiaowei_summary_file_for_xw_and",
-        "title": "文件消息支持「小微总结」（小微用户）",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_xiaowei_summary_url_and",
-        "title": "文章消息支持「小微总结」总开关",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_xiaowei_summary_url_for_xw_and",
-        "title": "文章消息支持「小微总结」（小微用户）",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_yuanbao_message_biz_article_summary_entry_and",
-        "title": "文章消息支持「元宝总结」总开关",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D35"
         },
         "type": "switch",
         "options": [
@@ -452,7 +243,216 @@
         "title": "文件消息支持「元宝总结」总开关",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D33"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_emoticon_search_xiaowei_android_for_xiaowei",
+        "title": "表情搜索面板「AI 找表情」（小微用户）",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D32"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_xiaowei_summary_file_and",
+        "title": "文件消息支持「小微总结」总开关",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D30"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_xiaowei_summary_file_for_xw_and",
+        "title": "文件消息支持「小微总结」（小微用户）",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D30"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_xiaowei_summary_url_and",
+        "title": "文章消息支持「小微总结」总开关",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D30"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_xiaowei_summary_url_for_xw_and",
+        "title": "文章消息支持「小微总结」（小微用户）",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D30"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_yuanbao_message_biz_article_summary_entry_and",
+        "title": "文章消息支持「元宝总结」总开关",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D30"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_emoticon_search_xiaowei_android",
+        "title": "表情搜索面板「AI 找表情」总开关",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D1B"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_android_select_contact_search_chat_history",
+        "title": "选人页支持按聊天记录搜索",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D10"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_chatting_avatar_long_press_menu",
+        "title": "联系人资料页编辑备注图标",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D10"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_chatting_inputbar_voice_command_mode",
+        "title": "输入栏长按语音指令",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D10"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_chatting_inputbar_voice_input",
+        "title": "输入栏长按语音输入",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D10"
         },
         "type": "switch",
         "options": [
@@ -471,7 +471,7 @@
         "title": "媒体文件折叠合集新长按菜单",
         "desc": "",
         "version": {
-          "min": "8.0.76"
+          "min": "8.0.76.0x28004C30"
         },
         "type": "switch",
         "options": [
@@ -490,7 +490,7 @@
         "title": "输入框为空时长按唤起键盘",
         "desc": "",
         "version": {
-          "min": "8.0.74"
+          "min": "8.0.74.0x28004A34"
         },
         "type": "switch",
         "options": [
@@ -509,7 +509,7 @@
         "title": "系统文件选择器支持多选",
         "desc": "",
         "version": {
-          "min": "8.0.74"
+          "min": "8.0.74.0x28004A34"
         },
         "type": "switch",
         "options": [
@@ -528,7 +528,7 @@
         "title": "Markdown消息双击预览",
         "desc": "",
         "version": {
-          "min": "8.0.74"
+          "min": "8.0.74.0x28004A34"
         },
         "type": "switch",
         "options": [
@@ -547,7 +547,7 @@
         "title": "系统消息和拍一拍长按删除",
         "desc": "",
         "version": {
-          "min": "8.0.74"
+          "min": "8.0.74.0x28004A34"
         },
         "type": "switch",
         "options": [
@@ -975,7 +975,7 @@
         "title": "通讯录头部改版",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D10"
         },
         "type": "switch",
         "options": [
@@ -994,7 +994,7 @@
         "title": "新的朋友改版",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D10"
         },
         "type": "switch",
         "options": [
@@ -1186,7 +1186,7 @@
         "title": "群资料页显示进群方式和进群时间",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D33"
         },
         "type": "switch",
         "options": [
@@ -1213,7 +1213,7 @@
         "title": "备注名语音输入",
         "desc": "",
         "version": {
-          "min": "8.0.78.0x28002E10"
+          "min": "8.0.78.0x28004E10"
         },
         "type": "switch",
         "options": [
@@ -1240,7 +1240,7 @@
         "title": "扫一扫问小微",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D10"
         },
         "type": "switch",
         "options": [
@@ -1328,11 +1328,68 @@
     },
     "configs": [
       {
+        "key": "clicfg_sns_ask_xiaowei_browse_android_for_xiaowei",
+        "title": "朋友圈浏览页「AI 点评」（小微用户）",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D32"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_sns_ask_xiaowei_post_android_for_xiaowei",
+        "title": "朋友圈发表页「AI 帮写」（小微用户）",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D32"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_android_moments_private_publish",
         "title": "朋友圈私密发表",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D1B"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_moments_read_count_display_enabled",
+        "title": "朋友圈本人动态显示阅读数",
+        "desc": "",
+        "version": {
+          "min": "8.0.77.0x28004D1B"
         },
         "type": "switch",
         "options": [
@@ -1351,7 +1408,7 @@
         "title": "朋友圈浏览页「AI 点评」入口",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D1B"
         },
         "type": "single_choice",
         "options": [
@@ -1366,25 +1423,6 @@
           {
             "alias": "小微用户",
             "value": "2"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_sns_ask_xiaowei_browse_android_for_xiaowei",
-        "title": "朋友圈浏览页「AI 点评」（小微用户）",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
           }
         ]
       },
@@ -1393,7 +1431,7 @@
         "title": "朋友圈发表页「AI 帮写」入口",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D10"
         },
         "type": "single_choice",
         "options": [
@@ -1412,30 +1450,11 @@
         ]
       },
       {
-        "key": "clicfg_sns_ask_xiaowei_post_android_for_xiaowei",
-        "title": "朋友圈发表页「AI 帮写」（小微用户）",
-        "desc": "",
-        "version": {
-          "min": "8.0.77"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
         "key": "clicfg_sns_xiao_wei_white_expt",
         "title": "朋友圈小微入口总开关",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D10"
         },
         "type": "switch",
         "options": [
@@ -1454,7 +1473,7 @@
         "title": "朋友圈小微入口状态",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D10"
         },
         "type": "single_choice",
         "options": [
@@ -1477,7 +1496,7 @@
         "title": "朋友圈个人页搜索入口",
         "desc": "",
         "version": {
-          "min": "8.0.76"
+          "min": "8.0.76.0x28004C30"
         },
         "type": "switch",
         "options": [
@@ -1496,7 +1515,7 @@
         "title": "朋友圈可见性使用 Complex 开关",
         "desc": "",
         "version": {
-          "min": "8.0.76"
+          "min": "8.0.74.0x28004A34"
         },
         "type": "switch",
         "options": [
@@ -1607,7 +1626,7 @@
         "title": "WeClaw 消息搜索",
         "desc": "",
         "version": {
-          "min": "8.0.78.0x28002E10"
+          "min": "8.0.78.0x28004E10"
         },
         "type": "switch",
         "options": [
@@ -1626,7 +1645,7 @@
         "title": "ClawBot 插件管理与解除连接",
         "desc": "",
         "version": {
-          "min": "8.0.77"
+          "min": "8.0.77.0x28004D10"
         },
         "type": "switch",
         "options": [
@@ -1645,7 +1664,7 @@
         "title": "WeClaw 快捷指令",
         "desc": "",
         "version": {
-          "min": "8.0.74"
+          "min": "8.0.74.0x28004A34"
         },
         "type": "switch",
         "options": [
