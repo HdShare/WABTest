@@ -98,6 +98,48 @@
     },
     "configs": [
       {
+        "key": "clicfg_voice_record_button_border_disabled_andr",
+        "title": "按住说话按钮圆角样式",
+        "desc": "",
+        "version": {
+          "min": "8.0.78.0x28002E12"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_voice_trans_keyboard_up_only_mic_enabled_andr",
+        "title": "键盘弹起时长按输入框语音转文字策略",
+        "desc": "",
+        "version": {
+          "min": "8.0.78.0x28002E12"
+        },
+        "type": "single_choice",
+        "options": [
+          {
+            "alias": "不禁用",
+            "value": "0"
+          },
+          {
+            "alias": "全部禁用",
+            "value": "1"
+          },
+          {
+            "alias": "右侧1/4可长按转文字",
+            "value": "2"
+          }
+        ]
+      },
+      {
         "key": "clicfg_chatfooter_paste_entry",
         "title": "聊天输入框剪贴板粘贴入口",
         "desc": "",
