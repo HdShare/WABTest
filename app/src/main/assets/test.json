@@ -75,7 +75,7 @@
         "title": "负一屏小微入口",
         "desc": "",
         "version": {
-          "min": "8.0.67"
+          "min": "8.0.67.0x28004310"
         },
         "type": "switch",
         "options": [
@@ -566,7 +566,7 @@
         "title": "聊天消息放大镜",
         "desc": "",
         "version": {
-          "min": "8.0.70"
+          "min": "8.0.70.0x28004633"
         },
         "type": "switch",
         "options": [
@@ -585,26 +585,7 @@
         "title": "启用译文朗读",
         "desc": "",
         "version": {
-          "min": "8.0.70"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_chatting_chatfooter_fix_big_font",
-        "title": "聊天输入栏大字体适配",
-        "desc": "",
-        "version": {
-          "min": "8.0.69"
+          "min": "8.0.70.0x28004633"
         },
         "type": "switch",
         "options": [
@@ -623,7 +604,7 @@
         "title": "快捷语音输入支持长按",
         "desc": "",
         "version": {
-          "min": "8.0.69"
+          "min": "8.0.69.0x28004633"
         },
         "type": "switch",
         "options": [
@@ -638,34 +619,11 @@
         ]
       },
       {
-        "key": "clicfg_enable_chat_records_tts_entrance",
-        "title": "聊天记录朗读",
-        "desc": "",
-        "version": {
-          "min": "8.0.69"
-        },
-        "type": "single_choice",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "开启（从当前听）",
-            "value": "1"
-          },
-          {
-            "alias": "开启（连续朗读）",
-            "value": "2"
-          }
-        ]
-      },
-      {
         "key": "clicfg_mediagroup_sender_ui_visibility_2",
         "title": "媒体文件折叠合集",
         "desc": "",
         "version": {
-          "min": "8.0.69"
+          "min": "8.0.69.0x28004633"
         },
         "type": "single_choice",
         "options": [
@@ -684,11 +642,53 @@
         ]
       },
       {
+        "key": "clicfg_chatting_chatfooter_fix_big_font",
+        "title": "聊天输入栏大字体适配",
+        "desc": "",
+        "version": {
+          "min": "8.0.69.0x28004530"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_enable_chat_records_tts_entrance",
+        "title": "聊天记录朗读",
+        "desc": "",
+        "version": {
+          "min": "8.0.69.0x28004530"
+        },
+        "type": "single_choice",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "开启（从当前听）",
+            "value": "1"
+          },
+          {
+            "alias": "开启（连续朗读）",
+            "value": "2"
+          }
+        ]
+      },
+      {
         "key": "clicfg_chatting_trans_and_read",
         "title": "语音输入上滑转文字，支持翻译和朗读",
         "desc": "",
         "version": {
-          "min": "8.0.67"
+          "min": "8.0.67.0x28004310"
         },
         "type": "switch",
         "options": [
@@ -707,7 +707,7 @@
         "title": "消息多选「复制」",
         "desc": "",
         "version": {
-          "min": "8.0.67"
+          "min": "8.0.67.0x28004310"
         },
         "type": "switch",
         "options": [
@@ -726,83 +726,7 @@
         "title": "隐藏消息多选「邮件」",
         "desc": "",
         "version": {
-          "min": "8.0.67"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_yuanbao_analyze_chat_records_entrance",
-        "title": "消息多选「分析聊天记录」",
-        "desc": "",
-        "version": {
-          "min": "8.0.65"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_yuanbao_analyze_private_chat",
-        "title": "消息多选「分析聊天记录」支持私聊",
-        "desc": "",
-        "version": {
-          "min": "8.0.65"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_yuanbao_summary_entrance",
-        "title": "消息支持「元宝总结」",
-        "desc": "",
-        "version": {
-          "min": "8.0.65"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
-      {
-        "key": "clicfg_notification_half_screen_chat_enable_new",
-        "title": "微信内消息通知半屏",
-        "desc": "",
-        "version": {
-          "min": "8.0.64"
+          "min": "8.0.67.0x28004310"
         },
         "type": "switch",
         "options": [
@@ -821,7 +745,83 @@
         "title": "聊天支持发送实况",
         "desc": "",
         "version": {
-          "min": "8.0.63"
+          "min": "8.0.65.0x28004137"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_yuanbao_analyze_chat_records_entrance",
+        "title": "消息多选「分析聊天记录」",
+        "desc": "",
+        "version": {
+          "min": "8.0.65.0x28004137"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_yuanbao_analyze_private_chat",
+        "title": "消息多选「分析聊天记录」支持私聊",
+        "desc": "",
+        "version": {
+          "min": "8.0.65.0x28004137"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_yuanbao_summary_entrance",
+        "title": "消息支持「元宝总结」",
+        "desc": "",
+        "version": {
+          "min": "8.0.65.0x28004137"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
+        "key": "clicfg_notification_half_screen_chat_enable_new",
+        "title": "微信内消息通知半屏",
+        "desc": "",
+        "version": {
+          "min": "8.0.64.0x28004033"
         },
         "type": "switch",
         "options": [
@@ -840,7 +840,7 @@
         "title": "输入栏快捷语音输入",
         "desc": "",
         "version": {
-          "min": "8.0.62"
+          "min": "8.0.62.0x28003E39"
         },
         "type": "switch",
         "options": [
@@ -867,7 +867,7 @@
         "title": "会话列表未读模式",
         "desc": "",
         "version": {
-          "min": "8.0.72"
+          "min": "8.0.72.0x28004835"
         },
         "type": "switch",
         "options": [
@@ -894,7 +894,7 @@
         "title": "Edge2Edge-是否开启",
         "desc": "",
         "version": {
-          "min": "8.0.72"
+          "min": "8.0.74.0x28004A10"
         },
         "type": "switch",
         "options": [
@@ -921,7 +921,7 @@
         "title": "个人二维码页面使用新样式",
         "desc": "",
         "version": {
-          "min": "8.0.70"
+          "min": "8.0.70.0x28004633"
         },
         "type": "switch",
         "options": [
@@ -948,7 +948,7 @@
         "title": "markdown 文件支持预览",
         "desc": "",
         "version": {
-          "min": "8.0.71"
+          "min": "8.0.72.0x28004835"
         },
         "type": "switch",
         "options": [
@@ -1021,7 +1021,7 @@
         "title": "新设置页",
         "desc": "",
         "version": {
-          "min": "8.0.66"
+          "min": "8.0.66.0x28004234"
         },
         "type": "switch",
         "options": [
@@ -1040,7 +1040,7 @@
         "title": "新设置页搜索",
         "desc": "",
         "version": {
-          "min": "8.0.66"
+          "min": "8.0.66.0x28004234"
         },
         "type": "switch",
         "options": [
@@ -1067,7 +1067,7 @@
         "title": "批量撤回菜单",
         "desc": "",
         "version": {
-          "min": "8.0.66"
+          "min": "8.0.66.0x28004234"
         },
         "type": "switch",
         "options": [
@@ -1094,7 +1094,7 @@
         "title": "浮窗新样式",
         "desc": "",
         "version": {
-          "min": "8.0.70"
+          "min": "8.0.70.0x28004633"
         },
         "type": "switch",
         "options": [
@@ -1113,7 +1113,7 @@
         "title": "新版网页浮窗",
         "desc": "",
         "version": {
-          "min": "8.0.61"
+          "min": "8.0.61.0x28003D34"
         },
         "type": "switch",
         "options": [
@@ -1132,7 +1132,7 @@
         "title": "星标总开关",
         "desc": "",
         "version": {
-          "min": "8.0.54"
+          "min": "8.0.54.0x28003634"
         },
         "type": "switch",
         "options": [
@@ -1159,7 +1159,7 @@
         "title": "通知显示内容 - 显示头像",
         "desc": "",
         "version": {
-          "min": "8.0.67"
+          "min": "8.0.67.0x28004310"
         },
         "type": "switch",
         "options": [
@@ -1259,7 +1259,7 @@
         "title": "面对面传文件",
         "desc": "",
         "version": {
-          "min": "8.0.69"
+          "min": "8.0.69.0x2800453E"
         },
         "type": "switch",
         "options": [
@@ -1278,7 +1278,7 @@
         "title": "扫一扫新版样式配置",
         "desc": "",
         "version": {
-          "min": "8.0.69"
+          "min": "8.0.69.0x2800453E"
         },
         "type": "switch",
         "options": [
@@ -1305,7 +1305,7 @@
         "title": "转发截图入口",
         "desc": "",
         "version": {
-          "min": "8.0.63"
+          "min": "8.0.63.0x28003F32"
         },
         "type": "switch",
         "options": [
@@ -1534,7 +1534,7 @@
         "title": "朋友圈可见性使用 Flutter 开关",
         "desc": "",
         "version": {
-          "min": "8.0.72"
+          "min": "8.0.72.0x28004835"
         },
         "type": "switch",
         "options": [
@@ -1553,7 +1553,7 @@
         "title": "朋友圈个人页使用 Flutter",
         "desc": "",
         "version": {
-          "min": "8.0.68"
+          "min": "8.0.68.0x28004434"
         },
         "type": "switch",
         "options": [
@@ -1572,7 +1572,7 @@
         "title": "朋友圈视频扩展进度条",
         "desc": "",
         "version": {
-          "min": "8.0.64"
+          "min": "8.0.64.0x28004033"
         },
         "type": "switch",
         "options": [
@@ -1683,34 +1683,7 @@
         "title": "WeClaw 在线状态",
         "desc": "",
         "version": {
-          "min": "8.0.72"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "group": {
-      "key": "YuanBao",
-      "title": "元宝"
-    },
-    "configs": [
-      {
-        "key": "clicfg_yuanbao_making_avatar_enable",
-        "title": "元宝制作头像",
-        "desc": "",
-        "version": {
-          "min": "8.0.65"
+          "min": "8.0.72.0x28004835"
         },
         "type": "switch",
         "options": [
