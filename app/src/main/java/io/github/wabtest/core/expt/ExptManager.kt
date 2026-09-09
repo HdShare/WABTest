@@ -23,7 +23,7 @@ object ExptManager {
         return appKeyFile.delete() && appIdFile.delete()
     }
 
-    fun getArgValue(exptKey: String): String? {
+    fun getValue(exptKey: String): String? {
         return if (appKeyMmkv.containsKey(exptKey)) {
             val exptId = appKeyMmkv.getInt(exptKey, FAKE_EXPT_ID)
             val itemStr = if (exptId != FAKE_EXPT_ID) { // 读取 下发
@@ -41,7 +41,7 @@ object ExptManager {
         } else null
     }
 
-    fun putArgValue(exptKey: String, argValue: String) {
+    fun putValue(exptKey: String, argValue: String) {
         val exptId = appKeyMmkv.getInt(exptKey, FAKE_EXPT_ID)
         val defStr = JsonUtil.toJson(ExptItem(exptId))
         val itemStr = appIdMmkv.getString(exptId.toString(), defStr)

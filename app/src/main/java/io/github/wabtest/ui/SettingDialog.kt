@@ -11,11 +11,13 @@ import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.StateListDrawable
 import android.text.Editable
 import android.text.InputType
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.widget.BaseAdapter
 import android.widget.EditText
@@ -35,7 +37,8 @@ import io.github.wabtest.R
 import io.github.wabtest.core.expt.ExptManager
 import io.github.wabtest.core.test.ConfigItem
 import io.github.wabtest.core.test.ConfigOption
-import io.github.wabtest.core.test.ConfigType
+import io.github.wabtest.core.test.ConfigUiType
+import io.github.wabtest.core.util.ConfigValueManager
 import io.github.wabtest.core.test.TestManager
 import kotlin.system.exitProcess
 
@@ -127,6 +130,98 @@ class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
             }.show()
         }
 
+        fun showInputDialog(config: ConfigItem, currentValue: String?, onSaved: (String) -> Unit) {
+            val dialog = Dialog(ctx).apply {
+                requestWindowFeature(Window.FEATURE_NO_TITLE)
+            }
+            val input = EditText(ctx).apply {
+                layoutParams = LayoutParams(MATCH_PARENT, WRAP_CONTENT).apply {
+                    setMargins(0, dp8, 0, 0)
+                }
+                setText(currentValue.orEmpty())
+                setSelection(text.length)
+                inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
+                minLines = 1
+                maxLines = 6
+                minHeight = ctx.dp2px(48f)
+                gravity = Gravity.START or Gravity.CENTER_VERTICAL
+                textSize = 14f
+                setTextColor(onSurfaceColor)
+                setHintTextColor(outlineColor)
+                setPadding(dp12, dp8, dp12, dp8)
+                background = StateListDrawable().apply {
+                    fun fieldBackground(strokeColor: Int) = GradientDrawable().apply {
+                        setColor(surfaceContainerColor)
+                        cornerRadius = dp8.toFloat()
+                        setStroke(ctx.dp2px(1f), strokeColor)
+                    }
+                    addState(intArrayOf(android.R.attr.state_focused), fieldBackground(outlineColor))
+                    addState(intArrayOf(), fieldBackground(outlineVariantColor))
+                }
+            }
+
+            fun actionButton(label: String, onClick: () -> Unit) = TextView(ctx).apply {
+                layoutParams = LayoutParams(WRAP_CONTENT, MATCH_PARENT)
+                minWidth = ctx.dp2px(64f)
+                gravity = Gravity.CENTER
+                text = label
+                textSize = 13f
+                setTextColor(onSurfaceColor)
+                setPadding(dp12, dp8, dp12, dp8)
+                background = StateListDrawable().apply {
+                    addState(intArrayOf(android.R.attr.state_pressed), ColorDrawable(outlineVariantColor))
+                    addState(intArrayOf(), ColorDrawable(Color.TRANSPARENT))
+                }
+                isClickable = true
+                isFocusable = true
+                setOnClickListener { onClick() }
+            }
+
+            dialog.setContentView(LinearLayout(ctx).apply {
+                orientation = VERTICAL
+                setPadding(dp12, dp12, dp12, dp8)
+                background = GradientDrawable().apply {
+                    setColor(surfaceColor)
+                    cornerRadius = dp8.toFloat()
+                }
+
+                addView(TextView(ctx).apply {
+                    layoutParams = LayoutParams(MATCH_PARENT, WRAP_CONTENT)
+                    text = config.title
+                    textSize = 16f
+                    maxLines = 2
+                    ellipsize = TextUtils.TruncateAt.END
+                    setTextColor(onSurfaceColor)
+                })
+                addView(input)
+                addView(LinearLayout(ctx).apply {
+                    layoutParams = LayoutParams(MATCH_PARENT, ctx.dp2px(48f)).apply {
+                        setMargins(0, dp8, 0, 0)
+                    }
+                    gravity = Gravity.END or Gravity.CENTER_VERTICAL
+                    addView(actionButton("取消") { dialog.dismiss() })
+                    addView(actionButton("确定") {
+                        onSaved(input.text.toString())
+                        dialog.dismiss()
+                    })
+                })
+            })
+
+            dialog.show()
+            dialog.window?.apply {
+                val metrics = ctx.resources.displayMetrics
+                setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+                setDimAmount(0.32f)
+                setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
+                setLayout(
+                    minOf(metrics.widthPixels - ctx.dp2px(48f), ctx.dp2px(480f)),
+                    WRAP_CONTENT,
+                )
+            }
+            input.requestFocus()
+        }
+
         fun showActionMenu(view: View, onEnableAll: () -> Unit) {
             PopupMenu(view.context, view).apply {
                 gravity = Gravity.END
@@ -190,8 +285,12 @@ class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
                 addView(TextView(ctx).apply {
                     layoutParams = LayoutParams(WRAP_CONTENT, WRAP_CONTENT).apply {
                         gravity = Gravity.END or Gravity.CENTER_VERTICAL
+                        setMargins(dp8, 0, 0, 0)
                     }
                     tag = "label"
+                    maxWidth = ctx.dp2px(80f)
+                    setSingleLine(true)
+                    ellipsize = TextUtils.TruncateAt.MIDDLE
                     textSize = 12f
                     setTextColor(onSurfaceVariantColor)
                 })
@@ -270,7 +369,7 @@ class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
             val keyword = query?.toString()?.trim().orEmpty()
             listItems.clear()
             testItems.forEach { testItem ->
-                val configs = if (keyword.isEmpty() || testItem.group.title.contains(keyword)) {
+                val configs = if (keyword.isEmpty() || testItem.group.contains(keyword)) {
                     testItem.configs
                 } else {
                     testItem.configs.filter { config ->
@@ -278,7 +377,7 @@ class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
                     }
                 }
                 if (configs.isNotEmpty()) {
-                    listItems.add(ListItem(group = testItem.group.title + "(${configs.size})"))
+                    listItems.add(ListItem(group = testItem.group + "(${configs.size})"))
                     configs.forEachIndexed { index, config ->
                         listItems.add(
                             ListItem(
@@ -328,40 +427,53 @@ class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
                             val tvLabel = view.findViewWithTag("label") as? TextView
                             val arrowView = view.findViewWithTag("arrow") as? ImageView
                             val switchView = view.findViewWithTag("switch") as? Switch
-                            val currentValue = ExptManager.getArgValue(config.key)
-                            val alias = TestManager.getOptionAlias(config.options, currentValue)
+                            val currentValue = ConfigValueManager.getValue(config)
                             view.alpha = if (currentValue == null) 0.6f else 1f
 
-                            when (config.type) {
-                                ConfigType.SWITCH -> {
-                                    val offOption = config.options.getOrNull(0)
-                                    val onOption = config.options.getOrNull(1)
+                            when (config.ui.type) {
+                                ConfigUiType.INPUT -> {
+                                    switchView?.setOnCheckedChangeListener(null)
+                                    switchView?.visibility = View.GONE
+                                    tvLabel?.visibility = if (currentValue == null) View.GONE else View.VISIBLE
+                                    tvLabel?.text = currentValue.orEmpty()
+                                    arrowView?.visibility = View.VISIBLE
+                                    view.setOnClickListener {
+                                        val value = ConfigValueManager.getValue(config)
+                                        showInputDialog(config, value) { newValue ->
+                                            ConfigValueManager.putValue(config, newValue)
+                                            view.alpha = 1f
+                                            tvLabel?.visibility = View.VISIBLE
+                                            tvLabel?.text = newValue
+                                        }
+                                    }
+                                }
+
+                                ConfigUiType.SWITCH -> {
                                     tvLabel?.visibility = View.GONE
                                     arrowView?.visibility = View.GONE
                                     switchView?.visibility = View.VISIBLE
                                     switchView?.setOnCheckedChangeListener(null)
-                                    switchView?.isChecked = currentValue == onOption?.value
+                                    switchView?.isChecked = currentValue == config.ui.values.on
                                     switchView?.setOnCheckedChangeListener { _, isChecked ->
-                                        val selectedOption = if (isChecked) onOption else offOption
-                                        selectedOption?.let {
-                                            ExptManager.putArgValue(config.key, it.value)
-                                            view.alpha = 1f
-                                        }
+                                        val value = if (isChecked) config.ui.values.on else config.ui.values.off
+                                        ConfigValueManager.putValue(config, value)
+                                        view.alpha = 1f
                                     }
                                     view.setOnClickListener { switchView?.performClick() }
                                 }
 
-                                ConfigType.SINGLE_CHOICE -> {
+                                ConfigUiType.SINGLE_CHOICE -> {
+                                    val alias = TestManager.getOptionAlias(config.ui.options, currentValue)
                                     switchView?.setOnCheckedChangeListener(null)
                                     switchView?.visibility = View.GONE
                                     tvLabel?.visibility = if (alias == null) View.GONE else View.VISIBLE
                                     tvLabel?.text = alias.orEmpty()
                                     arrowView?.visibility = View.VISIBLE
                                     view.setOnClickListener { row ->
-                                        val value = ExptManager.getArgValue(config.key)
-                                        val checkedAlias = TestManager.getOptionAlias(config.options, value)
-                                        showPopupMenu(row, config.options, checkedAlias) { selectedOption ->
-                                            ExptManager.putArgValue(config.key, selectedOption.value)
+                                        val value = ConfigValueManager.getValue(config)
+                                        val checkedAlias = TestManager.getOptionAlias(config.ui.options, value)
+                                        showPopupMenu(row, config.ui.options, checkedAlias) { selectedOption ->
+                                            ConfigValueManager.putValue(config, selectedOption.value)
                                             view.alpha = 1f
                                             tvLabel?.visibility = View.VISIBLE
                                             tvLabel?.text = selectedOption.alias
@@ -419,11 +531,9 @@ class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
                         showActionMenu(anchor) {
                             testItems.asSequence()
                                 .flatMap { it.configs.asSequence() }
-                                .filter { it.type == ConfigType.SWITCH }
+                                .filter { it.ui.type == ConfigUiType.SWITCH }
                                 .forEach { config ->
-                                    config.options.getOrNull(1)?.let { option ->
-                                        ExptManager.putArgValue(config.key, option.value)
-                                    }
+                                    ConfigValueManager.putValue(config, config.ui.values.on)
                                 }
                             listAdapter.notifyDataSetChanged()
                         }

@@ -1041,7 +1041,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
             </svg>
-            <input class="search-input" id="search-input" type="search" autocomplete="off" placeholder="标题、描述、版本…" aria-describedby="search-hint">
+            <input class="search-input" id="search-input" type="search" autocomplete="off" placeholder="键名、标题、描述、版本…" aria-describedby="search-hint">
             <button class="search-clear" id="search-clear" type="button" aria-label="清空搜索" hidden>×</button>
           </span>
           <span class="visually-hidden" id="search-hint">按斜杠键可快速聚焦搜索</span>
@@ -1230,10 +1230,16 @@
           complete: !item.ignored && item.hasOld && item.hasNew,
           versionLabel: formatVersion(item.versionMin, item.versionMax),
           searchIndex: [
+            item.group,
+            item.key,
             item.title,
             item.versionMin,
             item.versionMax,
             item.desc,
+            item.configType,
+            item.uiType,
+            item.offValue,
+            item.onValue,
             item.ignoredReason,
             ...item.options.flatMap((option) => [option.alias, option.value])
           ].join(" ").toLocaleLowerCase("zh-CN")
@@ -1308,8 +1314,13 @@
         const nextGroups = [];
         const nextItems = [];
         const seenKeys = new Set();
-        source.forEach((groupEntry) => {
-          const groupTitle = groupEntry.group.title;
+        source.forEach((groupEntry, groupIndex) => {
+          const groupTitle = typeof groupEntry?.group === "string"
+            ? groupEntry.group.trim()
+            : "";
+          if (!groupTitle) {
+            throw new Error(`test.json 第 ${groupIndex + 1} 个分组缺少 group`);
+          }
           const configs = Array.isArray(groupEntry.configs) ? groupEntry.configs : [];
           nextGroups.push({ name: groupTitle, count: configs.length });
 
@@ -1323,15 +1334,29 @@
             }
             seenKeys.add(key);
             const version = config.version || {};
+            const configType = String(config.type || "client");
+            if (!["client", "repairer"].includes(configType)) {
+              throw new Error(`${key} 的配置类型无效：${configType}`);
+            }
+            const ui = config.ui || {};
+            const uiType = String(ui.type || "input");
+            if (!["input", "switch", "single_choice"].includes(uiType)) {
+              throw new Error(`${key} 的 UI 类型无效：${uiType}`);
+            }
+            const values = ui.values || {};
             nextItems.push({
               group: groupTitle,
               key,
               title: String(config.title || key),
               desc: String(config.desc || ""),
+              configType,
+              uiType,
               versionMin: String(version.min || ""),
               versionMax: String(version.max || ""),
-              options: Array.isArray(config.options)
-                ? config.options.map((option) => ({
+              offValue: uiType === "switch" ? String(values.off ?? "0") : "",
+              onValue: uiType === "switch" ? String(values.on ?? "1") : "",
+              options: uiType === "single_choice" && Array.isArray(ui.options)
+                ? ui.options.map((option) => ({
                     alias: String(option?.alias || ""),
                     value: String(option?.value || "")
                   }))

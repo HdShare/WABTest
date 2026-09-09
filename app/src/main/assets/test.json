@@ -1,9 +1,6 @@
 [
   {
-    "group": {
-      "key": "Debug",
-      "title": "调试"
-    },
+    "group": "Debug 调试",
     "configs": [
       {
         "key": "clicfg_conv_recycler_view",
@@ -12,1755 +9,1041 @@
         "version": {
           "min": "8.0.78.0x28004E10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "type": "repairer",
+        "key": "RepairerConfig_Camera_CameraKitIsUseImproveILayout_Int",
+        "title": "新版拍摄页面",
+        "ui": {
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "x实验",
+              "value": "0"
+            },
+            {
+              "alias": "新功能页面",
+              "value": "1"
+            },
+            {
+              "alias": "屏蔽方案页面",
+              "value": "2"
+            },
+            {
+              "alias": "专业拍摄界面(flash)",
+              "value": "3"
+            },
+            {
+              "alias": "专业拍摄界面(torch)",
+              "value": "4"
+            },
+            {
+              "alias": "关闭",
+              "value": "5"
+            }
+          ]
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "ChatBot",
-      "title": "ChatBot 配置"
-    },
+    "group": "ChatBot 配置",
     "configs": [
       {
         "key": "clicfg_android_image_gallery_ai_process_entrance",
         "title": "图片查看器「AI 处理」入口",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D30"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_android_image_gallery_ai_watermark_suggestion",
         "title": "图片查看器 AI 处理「添加水印」建议",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D30"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_enable_optimize_config",
         "title": "负一屏小微入口",
-        "desc": "",
         "version": {
           "min": "8.0.67.0x28004310"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Chatting",
-      "title": "会话"
-    },
+    "group": "Chatting 会话",
     "configs": [
       {
         "key": "clicfg_voice_record_button_border_disabled_andr",
         "title": "按住说话按钮圆角样式",
-        "desc": "",
         "version": {
           "min": "8.0.78.0x28004E12"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_voice_trans_keyboard_up_only_mic_enabled_andr",
         "title": "键盘弹起时长按输入框语音转文字策略",
-        "desc": "",
         "version": {
           "min": "8.0.78.0x28004E12"
         },
-        "type": "single_choice",
-        "options": [
-          {
-            "alias": "不禁用",
-            "value": "0"
-          },
-          {
-            "alias": "全部禁用",
-            "value": "1"
-          },
-          {
-            "alias": "右侧1/4可长按转文字",
-            "value": "2"
-          }
-        ]
+        "ui": {
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "不禁用",
+              "value": "0"
+            },
+            {
+              "alias": "全部禁用",
+              "value": "1"
+            },
+            {
+              "alias": "右侧1/4可长按",
+              "value": "2"
+            }
+          ]
+        }
       },
       {
         "key": "clicfg_chatfooter_paste_entry",
         "title": "聊天输入框剪贴板粘贴入口",
-        "desc": "",
         "version": {
           "min": "8.0.78.0x28004E10"
         },
-        "type": "single_choice",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "按钮",
-            "value": "1"
-          },
-          {
-            "alias": "提示",
-            "value": "2"
-          }
-        ]
+        "ui": {
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "关闭",
+              "value": "0"
+            },
+            {
+              "alias": "按钮",
+              "value": "1"
+            },
+            {
+              "alias": "提示",
+              "value": "2"
+            }
+          ]
+        }
       },
       {
         "key": "clicfg_c2c_sight_take_photo_ask_xiaowei",
         "title": "图片编辑页「AI 处理」入口",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D35"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_c2c_sight_take_photo_ask_xiaowei_for_xiaowei",
         "title": "图片编辑页「AI 处理」（小微用户）",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D35"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_chatting_forward_voice_input_without_keyboard",
         "title": "转发输入栏无键盘时显示小话筒",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D35"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_local_media_picker_chatting_opt",
         "title": "半屏相册 - 提高发图效率和选图体验",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D35"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_yuanbao_message_file_summary_entry_and",
         "title": "文件消息支持「元宝总结」总开关",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D33"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_emoticon_search_xiaowei_android_for_xiaowei",
         "title": "表情搜索面板「AI 找表情」（小微用户）",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D32"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_xiaowei_summary_file_and",
         "title": "文件消息支持「小微总结」总开关",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D30"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_xiaowei_summary_file_for_xw_and",
         "title": "文件消息支持「小微总结」（小微用户）",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D30"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_xiaowei_summary_url_and",
         "title": "文章消息支持「小微总结」总开关",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D30"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_xiaowei_summary_url_for_xw_and",
         "title": "文章消息支持「小微总结」（小微用户）",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D30"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_yuanbao_message_biz_article_summary_entry_and",
         "title": "文章消息支持「元宝总结」总开关",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D30"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_emoticon_search_xiaowei_android",
         "title": "表情搜索面板「AI 找表情」总开关",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D1B"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_android_select_contact_search_chat_history",
         "title": "选人页支持按聊天记录搜索",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_c2c_android_sight_zoom_factor_control_function_enabled",
+        "title": "相机拍摄缩放系数",
+        "version": {
+          "min": "8.0.77.0x28004D10"
+        },
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_chatting_avatar_long_press_menu",
         "title": "联系人资料页编辑备注图标",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_chatting_inputbar_voice_command_mode",
         "title": "输入栏长按语音指令",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_chatting_inputbar_voice_input",
         "title": "输入栏长按语音输入",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_chatting_voice_dialect_recognize",
         "title": "语音转文字方言识别",
-        "desc": "",
         "version": {
           "min": "8.0.76.0x28004C30"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_mediagroup_new_longclick_menu",
         "title": "媒体文件折叠合集新长按菜单",
-        "desc": "",
         "version": {
           "min": "8.0.76.0x28004C30"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_chatfooter_longpress_suppress_menu",
         "title": "输入框为空时长按唤起键盘",
-        "desc": "",
         "version": {
           "min": "8.0.74.0x28004A34"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_file_selector_multi_select_and",
         "title": "系统文件选择器支持多选",
-        "desc": "",
         "version": {
           "min": "8.0.74.0x28004A34"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_markdown_preview_enable",
         "title": "Markdown消息双击预览",
-        "desc": "",
         "version": {
           "min": "8.0.74.0x28004A34"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_sys_msg_delete",
         "title": "系统消息和拍一拍长按删除",
-        "desc": "",
         "version": {
           "min": "8.0.74.0x28004A34"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_chat_msg_text_magnifier",
         "title": "聊天消息放大镜",
-        "desc": "",
         "version": {
           "min": "8.0.70.0x28004633"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_translation_speech",
         "title": "启用译文朗读",
-        "desc": "",
         "version": {
           "min": "8.0.70.0x28004633"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_chatting_voice_input_long_click",
         "title": "快捷语音输入支持长按",
-        "desc": "",
         "version": {
           "min": "8.0.69.0x28004633"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_mediagroup_sender_ui_visibility_2",
         "title": "媒体文件折叠合集",
-        "desc": "",
         "version": {
           "min": "8.0.69.0x28004633"
         },
-        "type": "single_choice",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "仅接收",
-            "value": "1"
-          },
-          {
-            "alias": "打开",
-            "value": "2"
-          }
-        ]
+        "ui": {
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "关闭",
+              "value": "0"
+            },
+            {
+              "alias": "仅接收",
+              "value": "1"
+            },
+            {
+              "alias": "打开",
+              "value": "2"
+            }
+          ]
+        }
       },
       {
         "key": "clicfg_chatting_chatfooter_fix_big_font",
         "title": "聊天输入栏大字体适配",
-        "desc": "",
         "version": {
           "min": "8.0.69.0x28004530"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_enable_chat_records_tts_entrance",
         "title": "聊天记录朗读",
-        "desc": "",
         "version": {
           "min": "8.0.69.0x28004530"
         },
-        "type": "single_choice",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "开启（从当前听）",
-            "value": "1"
-          },
-          {
-            "alias": "开启（连续朗读）",
-            "value": "2"
-          }
-        ]
+        "ui": {
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "关闭",
+              "value": "0"
+            },
+            {
+              "alias": "从当前听",
+              "value": "1"
+            },
+            {
+              "alias": "连续朗读",
+              "value": "2"
+            }
+          ]
+        }
       },
       {
         "key": "clicfg_chatting_trans_and_read",
         "title": "语音输入上滑转文字，支持翻译和朗读",
-        "desc": "",
         "version": {
           "min": "8.0.67.0x28004310"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_msg_multi_select_copy_entrance",
         "title": "消息多选「复制」",
-        "desc": "",
         "version": {
           "min": "8.0.67.0x28004310"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_msg_multi_select_hide_mail_entrance",
         "title": "隐藏消息多选「邮件」",
-        "desc": "",
         "version": {
           "min": "8.0.67.0x28004310"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_chatting_c2c_live_send_v4",
         "title": "聊天支持发送实况",
-        "desc": "",
         "version": {
           "min": "8.0.65.0x28004137"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_yuanbao_analyze_chat_records_entrance",
         "title": "消息多选「分析聊天记录」",
-        "desc": "",
         "version": {
           "min": "8.0.65.0x28004137"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_yuanbao_analyze_private_chat",
         "title": "消息多选「分析聊天记录」支持私聊",
-        "desc": "",
         "version": {
           "min": "8.0.65.0x28004137"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_yuanbao_summary_entrance",
         "title": "消息支持「元宝总结」",
-        "desc": "",
         "version": {
           "min": "8.0.65.0x28004137"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_notification_half_screen_chat_enable_new",
         "title": "微信内消息通知半屏",
-        "desc": "",
         "version": {
           "min": "8.0.64.0x28004033"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_chatting_voice_input",
         "title": "输入栏快捷语音输入",
-        "desc": "",
         "version": {
           "min": "8.0.62.0x28003E39"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Conversation",
-      "title": "会话列表"
-    },
+    "group": "Conversation 会话列表",
     "configs": [
       {
         "key": "clicfg_conv_unread_mode_android",
         "title": "会话列表未读模式",
-        "desc": "",
         "version": {
           "min": "8.0.72.0x28004835"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Edge2Edge",
-      "title": "Edge2Edge"
-    },
+    "group": "Edge2Edge 配置",
     "configs": [
       {
         "key": "clicfg_repairerconfig_enable_edge_to_edge_switch",
         "title": "Edge2Edge-是否开启",
-        "desc": "",
         "version": {
           "min": "8.0.74.0x28004A10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "F2F",
-      "title": "面对面"
-    },
+    "group": "F2F 面对面",
     "configs": [
       {
         "key": "clicfg_use_new_my_qrcode",
         "title": "个人二维码页面使用新样式",
-        "desc": "",
         "version": {
           "min": "8.0.70.0x28004633"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Fav",
-      "title": "收藏"
-    },
-    "configs": [
-      {
-        "key": "clicfg_fav_note_forward_md_to_html_local",
-        "title": "收藏笔记转发md转html(本地转换)",
-        "desc": "",
-        "version": {
-          "min": "8.0.78.0x28004E30"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "group": {
-      "key": "File",
-      "title": "文件"
-    },
+    "group": "File 文件",
     "configs": [
       {
         "key": "clicfg_local_markdown_file_preview_enable",
         "title": "markdown 文件支持预览",
-        "desc": "",
         "version": {
           "min": "8.0.72.0x28004835"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Friend",
-      "title": "好友"
-    },
+    "group": "Friend 好友",
     "configs": [
       {
         "key": "clicfg_address_header_redesign",
         "title": "通讯录头部改版",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_new_friend_page",
         "title": "新的朋友改版",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Global",
-      "title": "全局"
-    },
+    "group": "Global 全局",
     "configs": [
       {
         "key": "clicfg_new_setting",
         "title": "新设置页",
-        "desc": "",
         "version": {
           "min": "8.0.66.0x28004234"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_setting_search",
         "title": "新设置页搜索",
-        "desc": "",
         "version": {
           "min": "8.0.66.0x28004234"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "MsgSend",
-      "title": "消息发送"
-    },
+    "group": "MsgSend 消息发送",
     "configs": [
       {
         "key": "clicfg_batch_revoke_msg_enable",
         "title": "批量撤回菜单",
-        "desc": "",
         "version": {
           "min": "8.0.66.0x28004234"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "MultiTask",
-      "title": "星标"
-    },
+    "group": "MultiTask 星标",
     "configs": [
       {
         "key": "clicfg_multi_floatball_new_style",
         "title": "浮窗新样式",
-        "desc": "",
         "version": {
           "min": "8.0.70.0x28004633"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_webview_new_float_ball",
         "title": "新版网页浮窗",
-        "desc": "",
         "version": {
           "min": "8.0.61.0x28003D34"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "启用",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_direct_to_multitask_enable",
         "title": "星标总开关",
-        "desc": "",
         "version": {
           "min": "8.0.54.0x28003634"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Notification",
-      "title": "通知"
-    },
+    "group": "Notification 通知",
     "configs": [
       {
         "key": "clicfg_notification_avatar_switch",
         "title": "通知显示内容 - 显示头像",
-        "desc": "",
         "version": {
           "min": "8.0.67.0x28004310"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Profile",
-      "title": "资料"
-    },
+    "group": "Profile 资料",
     "configs": [
       {
         "key": "clicfg_chatroom_join_info",
         "title": "群资料页显示进群方式和进群时间",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D33"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Remark",
-      "title": "备注"
-    },
+    "group": "Remark 备注",
     "configs": [
       {
         "key": "clicfg_android_remark_name_voice_input",
         "title": "备注名语音输入",
-        "desc": "",
         "version": {
           "min": "8.0.78.0x28004E10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Scan",
-      "title": "扫一扫"
-    },
+    "group": "Scan 扫一扫",
     "configs": [
       {
         "key": "clicfg_scan_ask_ai_android",
         "title": "扫一扫问小微",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_scan_mix_drop_switch",
         "title": "面对面传文件",
-        "desc": "",
         "version": {
           "min": "8.0.69.0x2800453E"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_scan_mix_main_switch",
         "title": "扫一扫新版样式配置",
-        "desc": "",
         "version": {
           "min": "8.0.69.0x2800453E"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "ScreenShot",
-      "title": "截图组件"
-    },
+    "group": "ScreenShot 截图组件",
     "configs": [
       {
         "key": "clicfg_screenshot_share_service",
         "title": "转发截图入口",
-        "desc": "",
         "version": {
           "min": "8.0.63.0x28003F32"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "Sns",
-      "title": "朋友圈"
-    },
+    "group": "Sns 朋友圈",
     "configs": [
-      {
-        "key": "clicfg_sns_visibility_setting_show_use_my_group_switch_2026",
-        "title": "朋友圈发表页使用过的分组入口",
-        "desc": "",
-        "version": {
-          "min": "8.0.78.0x28004E30"
-        },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
-      },
       {
         "key": "clicfg_sns_ask_xiaowei_browse_android_for_xiaowei",
         "title": "朋友圈浏览页「AI 点评」（小微用户）",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D32"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_sns_ask_xiaowei_post_android_for_xiaowei",
         "title": "朋友圈发表页「AI 帮写」（小微用户）",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D32"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_android_moments_private_publish",
         "title": "朋友圈私密发表",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D1B"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_moments_read_count_display_enabled",
         "title": "朋友圈本人动态显示阅读数",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D1B"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_sns_ask_xiaowei_browse_android",
         "title": "朋友圈浏览页「AI 点评」入口",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D1B"
         },
-        "type": "single_choice",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "直接启用",
-            "value": "1"
-          },
-          {
-            "alias": "小微用户",
-            "value": "2"
-          }
-        ]
+        "ui": {
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "关闭",
+              "value": "0"
+            },
+            {
+              "alias": "直接启用",
+              "value": "1"
+            },
+            {
+              "alias": "小微用户",
+              "value": "2"
+            }
+          ]
+        }
       },
       {
         "key": "clicfg_sns_ask_xiaowei_post_android",
         "title": "朋友圈发表页「AI 帮写」入口",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "single_choice",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "直接启用",
-            "value": "1"
-          },
-          {
-            "alias": "小微用户",
-            "value": "2"
-          }
-        ]
+        "ui": {
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "关闭",
+              "value": "0"
+            },
+            {
+              "alias": "直接启用",
+              "value": "1"
+            },
+            {
+              "alias": "小微用户",
+              "value": "2"
+            }
+          ]
+        }
       },
       {
         "key": "clicfg_sns_xiao_wei_white_expt",
         "title": "朋友圈小微入口总开关",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_sns_xiaowei_post_entry_enabled_network",
         "title": "朋友圈小微入口状态",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "single_choice",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "启用",
-            "value": "1"
-          },
-          {
-            "alias": "隐藏",
-            "value": "2"
-          }
-        ]
+        "ui": {
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "关闭",
+              "value": "0"
+            },
+            {
+              "alias": "启用",
+              "value": "1"
+            },
+            {
+              "alias": "隐藏",
+              "value": "2"
+            }
+          ]
+        }
       },
       {
         "key": "clicfg_android_sns_user_page_search_entrance",
         "title": "朋友圈个人页搜索入口",
-        "desc": "",
         "version": {
           "min": "8.0.76.0x28004C30"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_sns_visibility_setting_with_complex_switch",
         "title": "朋友圈可见性使用 Complex 开关",
-        "desc": "",
         "version": {
           "min": "8.0.74.0x28004A34"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_sns_visibility_setting_use_flutter_switch_2026",
         "title": "朋友圈可见性使用 Flutter 开关",
-        "desc": "",
         "version": {
           "min": "8.0.72.0x28004835"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_sns_flutter_self_page",
         "title": "朋友圈个人页使用 Flutter",
-        "desc": "",
         "version": {
           "min": "8.0.68.0x28004434"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_sns_use_expandable_video_seek_bar",
         "title": "朋友圈视频扩展进度条",
-        "desc": "",
         "version": {
           "min": "8.0.64.0x28004033"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "WebView",
-      "title": "WebView 配置"
-    },
+    "group": "WebView 配置",
     "configs": [
       {
         "key": "clicfg_webview_debug",
         "title": "WebView 调试菜单",
-        "desc": "",
         "version": {
           "min": "8.0.40"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
   {
-    "group": {
-      "key": "WeClaw",
-      "title": "WeClaw 配置"
-    },
+    "group": "WeClaw 配置",
     "configs": [
       {
         "key": "clicfg_android_fts_weclaw_msg_search_enabled",
         "title": "WeClaw 消息搜索",
-        "desc": "",
         "version": {
           "min": "8.0.78.0x28004E10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_clawbot_plugin_unbind_enable_disable_open_switch_and",
         "title": "ClawBot 插件管理与解除连接",
-        "desc": "",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_weclaw_shortcut_command",
         "title": "WeClaw 快捷指令",
-        "desc": "",
         "version": {
           "min": "8.0.74.0x28004A34"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       },
       {
         "key": "clicfg_weclaw_show_status",
         "title": "WeClaw 在线状态",
-        "desc": "",
         "version": {
           "min": "8.0.72.0x28004835"
         },
-        "type": "switch",
-        "options": [
-          {
-            "alias": "关闭",
-            "value": "0"
-          },
-          {
-            "alias": "打开",
-            "value": "1"
-          }
-        ]
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   }
