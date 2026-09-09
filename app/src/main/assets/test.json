@@ -467,6 +467,25 @@
         ]
       },
       {
+        "key": "clicfg_chatting_voice_dialect_recognize",
+        "title": "语音转文字方言识别",
+        "desc": "",
+        "version": {
+          "min": "8.0.76.0x28004C30"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
+      {
         "key": "clicfg_mediagroup_new_longclick_menu",
         "title": "媒体文件折叠合集新长按菜单",
         "desc": "",
@@ -939,6 +958,33 @@
   },
   {
     "group": {
+      "key": "Fav",
+      "title": "收藏"
+    },
+    "configs": [
+      {
+        "key": "clicfg_fav_note_forward_md_to_html_local",
+        "title": "收藏笔记转发md转html(本地转换)",
+        "desc": "",
+        "version": {
+          "min": "8.0.78.0x28004E30"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group": {
       "key": "File",
       "title": "文件"
     },
@@ -1327,6 +1373,25 @@
       "title": "朋友圈"
     },
     "configs": [
+      {
+        "key": "clicfg_sns_visibility_setting_show_use_my_group_switch_2026",
+        "title": "朋友圈发表页使用过的分组入口",
+        "desc": "",
+        "version": {
+          "min": "8.0.78.0x28004E30"
+        },
+        "type": "switch",
+        "options": [
+          {
+            "alias": "关闭",
+            "value": "0"
+          },
+          {
+            "alias": "打开",
+            "value": "1"
+          }
+        ]
+      },
       {
         "key": "clicfg_sns_ask_xiaowei_browse_android_for_xiaowei",
         "title": "朋友圈浏览页「AI 点评」（小微用户）",
