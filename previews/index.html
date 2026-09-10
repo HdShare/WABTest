@@ -1236,12 +1236,7 @@
             item.versionMin,
             item.versionMax,
             item.desc,
-            item.configType,
-            item.uiType,
-            item.offValue,
-            item.onValue,
-            item.ignoredReason,
-            ...item.options.flatMap((option) => [option.alias, option.value])
+            item.ignoredReason
           ].join(" ").toLocaleLowerCase("zh-CN")
         };
       }
@@ -1314,13 +1309,8 @@
         const nextGroups = [];
         const nextItems = [];
         const seenKeys = new Set();
-        source.forEach((groupEntry, groupIndex) => {
-          const groupTitle = typeof groupEntry?.group === "string"
-            ? groupEntry.group.trim()
-            : "";
-          if (!groupTitle) {
-            throw new Error(`test.json 第 ${groupIndex + 1} 个分组缺少 group`);
-          }
+        source.forEach((groupEntry) => {
+          const groupTitle = groupEntry.group.trim();
           const configs = Array.isArray(groupEntry.configs) ? groupEntry.configs : [];
           nextGroups.push({ name: groupTitle, count: configs.length });
 
@@ -1334,8 +1324,8 @@
             }
             seenKeys.add(key);
             const version = config.version || {};
-            const configType = String(config.type || "client");
-            if (!["client", "repairer"].includes(configType)) {
+            const configType = String(config.type || "expt");
+            if (!["expt", "repairer"].includes(configType)) {
               throw new Error(`${key} 的配置类型无效：${configType}`);
             }
             const ui = config.ui || {};
@@ -1343,24 +1333,13 @@
             if (!["input", "switch", "single_choice"].includes(uiType)) {
               throw new Error(`${key} 的 UI 类型无效：${uiType}`);
             }
-            const values = ui.values || {};
             nextItems.push({
               group: groupTitle,
               key,
               title: String(config.title || key),
               desc: String(config.desc || ""),
-              configType,
-              uiType,
               versionMin: String(version.min || ""),
-              versionMax: String(version.max || ""),
-              offValue: uiType === "switch" ? String(values.off ?? "0") : "",
-              onValue: uiType === "switch" ? String(values.on ?? "1") : "",
-              options: uiType === "single_choice" && Array.isArray(ui.options)
-                ? ui.options.map((option) => ({
-                    alias: String(option?.alias || ""),
-                    value: String(option?.value || "")
-                  }))
-                : []
+              versionMax: String(version.max || "")
             });
           });
         });
