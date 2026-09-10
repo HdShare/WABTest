@@ -1,7 +1,7 @@
 [versions]
-agp = "9.2.1"
-kotlin = "2.4.0"
-devtools-ksp = "2.3.11"
+agp = "9.4.0"
+kotlin = "2.4.20"
+devtools-ksp = "2.3.12"
 
 [libraries]
 annotation = { module = "androidx.annotation:annotation", version = "1.10.0" }
