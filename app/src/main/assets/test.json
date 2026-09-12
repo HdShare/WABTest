@@ -88,6 +88,16 @@
     "group": "Chatting 会话",
     "configs": [
       {
+        "key": "clicfg_enable_xiaowei_task",
+        "title": "聊天栏顶部小微任务入口",
+        "version": {
+          "min": "8.0.78.0x28004E32"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_voice_record_button_border_disabled_andr",
         "title": "按住说话按钮圆角样式",
         "version": {
@@ -586,6 +596,21 @@
     ]
   },
   {
+    "group": "Fav 收藏",
+    "configs": [
+      {
+        "key": "clicfg_fav_search_audio_input_android",
+        "title": "收藏搜索栏语音输入",
+        "version": {
+          "min": "8.0.78.0x28004E32"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      }
+    ]
+  },
+  {
     "group": "F2F 面对面",
     "configs": [
       {
@@ -603,6 +628,20 @@
   {
     "group": "File 文件",
     "configs": [
+      {
+        "key": "clicfg_enable_localfile_preview_support_exts",
+        "title": "html 本地文件支持预览",
+        "version": {
+          "min": "8.0.77.0x28004D10"
+        },
+        "ui": {
+          "type": "switch",
+          "values": {
+            "off": "",
+            "on": "html/htm"
+          }
+        }
+      },
       {
         "key": "clicfg_local_markdown_file_preview_enable",
         "title": "markdown 文件支持预览",
@@ -753,6 +792,21 @@
         "title": "备注名语音输入",
         "version": {
           "min": "8.0.78.0x28004E10"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      }
+    ]
+  },
+  {
+    "group": "Search 搜索",
+    "configs": [
+      {
+        "key": "clicfg_fts_search_voice_input_xiaowei_android",
+        "title": "本地搜索问小微语音按钮",
+        "version": {
+          "min": "8.0.78.0x28004E32"
         },
         "ui": {
           "type": "switch"
