@@ -301,7 +301,7 @@ class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
                     }
                     tag = "arrow"
                     visibility = View.GONE
-                    setImageResource(R.drawable.ic_right)
+                    setImageResource(R.drawable.ic_right_24dp)
                     setColorFilter(onSurfaceVariantColor)
                 })
                 addView(Switch(ctx).apply {
@@ -519,7 +519,7 @@ class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
                     }
                     contentDescription = "更多操作"
                     setPadding(dp4, dp4, dp4, dp4)
-                    setImageResource(R.drawable.ic_menu)
+                    setImageResource(R.drawable.ic_menu_24dp)
                     setColorFilter(onSurfaceVariantColor)
                     background = StateListDrawable().apply {
                         addState(intArrayOf(android.R.attr.state_pressed), ColorDrawable(outlineVariantColor))
@@ -588,7 +588,7 @@ class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
                         }
                         isClickable = true
                         isFocusable = true
-                        setImageResource(R.drawable.ic_close)
+                        setImageResource(R.drawable.ic_close_24dp)
                         setColorFilter(onSurfaceVariantColor)
                         setOnClickListener {
                             editView.setText("")
