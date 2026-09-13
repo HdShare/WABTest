@@ -85,6 +85,21 @@
     ]
   },
   {
+    "group": "ChatListMvvmItem 聊天列表消息项",
+    "configs": [
+      {
+        "key": "clicfg_chat_msg_time_detail",
+        "title": "聊天时间点击切换显示详情",
+        "version": {
+          "min": "8.0.62.0x28003E39"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      }
+    ]
+  },
+  {
     "group": "Chatting 会话",
     "configs": [
       {
@@ -339,7 +354,8 @@
         "key": "clicfg_mediagroup_new_longclick_menu",
         "title": "媒体文件折叠合集新长按菜单",
         "version": {
-          "min": "8.0.76.0x28004C30"
+          "min": "8.0.76.0x28004C30",
+          "max": "8.0.77.0x28004D35"
         },
         "ui": {
           "type": "switch"
@@ -379,7 +395,18 @@
         "key": "clicfg_sys_msg_delete",
         "title": "系统消息和拍一拍长按删除",
         "version": {
-          "min": "8.0.74.0x28004A34"
+          "min": "8.0.74.0x28004A34",
+          "max": "8.0.77.0x28004D35"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_file_bubble_middle_ellipsize",
+        "title": "文件消息省略标题中间",
+        "version": {
+          "min": "8.0.72.0x28004835"
         },
         "ui": {
           "type": "switch"
@@ -406,6 +433,16 @@
         }
       },
       {
+        "key": "clicfg_voice_60min_auto_send",
+        "title": "聊天语音支持连续截断60s自动发送",
+        "version": {
+          "min": "8.0.70.0x28004633"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_chatting_voice_input_long_click",
         "title": "快捷语音输入支持长按",
         "version": {
@@ -419,7 +456,8 @@
         "key": "clicfg_mediagroup_sender_ui_visibility_2",
         "title": "媒体文件折叠合集",
         "version": {
-          "min": "8.0.69.0x28004633"
+          "min": "8.0.69.0x28004633",
+          "max": "8.0.77.0x28004D35"
         },
         "ui": {
           "type": "single_choice",
@@ -504,8 +542,28 @@
         }
       },
       {
+        "key": "clicfg_chatting_trans_keep",
+        "title": "聊天消息长按「翻译」菜单常驻",
+        "version": {
+          "min": "8.0.66.0x28004234"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_chatting_c2c_live_send_v4",
         "title": "聊天支持发送实况",
+        "version": {
+          "min": "8.0.65.0x28004137"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_file_src_btn",
+        "title": "「查看包含该图片/视频/文件的聊天」菜单入口",
         "version": {
           "min": "8.0.65.0x28004137"
         },
@@ -517,7 +575,8 @@
         "key": "clicfg_yuanbao_analyze_chat_records_entrance",
         "title": "消息多选「分析聊天记录」",
         "version": {
-          "min": "8.0.65.0x28004137"
+          "min": "8.0.65.0x28004137",
+          "max": "8.0.76.0x28004C30"
         },
         "ui": {
           "type": "switch"
@@ -527,7 +586,8 @@
         "key": "clicfg_yuanbao_analyze_private_chat",
         "title": "消息多选「分析聊天记录」支持私聊",
         "version": {
-          "min": "8.0.65.0x28004137"
+          "min": "8.0.65.0x28004137",
+          "max": "8.0.76.0x28004C30"
         },
         "ui": {
           "type": "switch"
@@ -554,10 +614,21 @@
         }
       },
       {
+        "key": "clicfg_chatting_c2c_live_preview_v2",
+        "title": "聊天支持预览实况",
+        "version": {
+          "min": "8.0.63.0x28003F32"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_chatting_voice_input",
         "title": "输入栏快捷语音输入",
         "version": {
-          "min": "8.0.62.0x28003E39"
+          "min": "8.0.62.0x28003E39",
+          "max": "8.0.70.0x28004633"
         },
         "ui": {
           "type": "switch"
@@ -596,13 +667,14 @@
     ]
   },
   {
-    "group": "Fav 收藏",
+    "group": "F2F 面对面",
     "configs": [
       {
-        "key": "clicfg_fav_search_audio_input_android",
-        "title": "收藏搜索栏语音输入",
+        "key": "clicfg_use_new_my_qrcode",
+        "title": "个人二维码页面使用新样式",
         "version": {
-          "min": "8.0.78.0x28004E32"
+          "min": "8.0.70.0x28004633",
+          "max": "8.0.72.0x28004835"
         },
         "ui": {
           "type": "switch"
@@ -611,13 +683,13 @@
     ]
   },
   {
-    "group": "F2F 面对面",
+    "group": "Fav 收藏",
     "configs": [
       {
-        "key": "clicfg_use_new_my_qrcode",
-        "title": "个人二维码页面使用新样式",
+        "key": "clicfg_fav_search_audio_input_android",
+        "title": "收藏搜索栏语音输入",
         "version": {
-          "min": "8.0.70.0x28004633"
+          "min": "8.0.78.0x28004E32"
         },
         "ui": {
           "type": "switch"
@@ -655,6 +727,41 @@
     ]
   },
   {
+    "group": "Forward 转发",
+    "configs": [
+      {
+        "key": "clicfg_forward_to_clawbot_contact",
+        "title": "转发聊天记录 到 WeClawBot 走 ZIP文件",
+        "version": {
+          "min": "8.0.77.0x28004D10"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_forward_to_yuanbao_contact",
+        "title": "转发聊天记录 到 元宝 走 ZIP文件",
+        "version": {
+          "min": "8.0.77.0x28004D10"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_forward_to_yuanbao_contact_per_msg_text",
+        "title": "逐条转发聊天记录 带上昵称及时间",
+        "version": {
+          "min": "8.0.77.0x28004D10"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      }
+    ]
+  },
+  {
     "group": "Friend 好友",
     "configs": [
       {
@@ -676,6 +783,16 @@
         "ui": {
           "type": "switch"
         }
+      },
+      {
+        "key": "clicfg_batch_label_enable",
+        "title": "未设置标签的朋友 显示 批量设置 菜单",
+        "version": {
+          "min": "8.0.70.0x28004633"
+        },
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
@@ -686,7 +803,8 @@
         "key": "clicfg_new_setting",
         "title": "新设置页",
         "version": {
-          "min": "8.0.66.0x28004234"
+          "min": "8.0.66.0x28004234",
+          "max": "8.0.74.0x28004A34"
         },
         "ui": {
           "type": "switch"
@@ -696,7 +814,23 @@
         "key": "clicfg_setting_search",
         "title": "新设置页搜索",
         "version": {
-          "min": "8.0.66.0x28004234"
+          "min": "8.0.66.0x28004234",
+          "max": "8.0.74.0x28004A34"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      }
+    ]
+  },
+  {
+    "group": "Location 位置",
+    "configs": [
+      {
+        "key": "clicfg_location_share_v2",
+        "title": "位置共享V2",
+        "version": {
+          "min": "8.0.77.0x28004D32"
         },
         "ui": {
           "type": "switch"
@@ -781,6 +915,16 @@
         "ui": {
           "type": "switch"
         }
+      },
+      {
+        "key": "clicfg_chatroom_info_search",
+        "title": "群资料页搜索成员入口",
+        "version": {
+          "min": "8.0.57.0x28003933"
+        },
+        "ui": {
+          "type": "switch"
+        }
       }
     ]
   },
@@ -792,21 +936,6 @@
         "title": "备注名语音输入",
         "version": {
           "min": "8.0.78.0x28004E10"
-        },
-        "ui": {
-          "type": "switch"
-        }
-      }
-    ]
-  },
-  {
-    "group": "Search 搜索",
-    "configs": [
-      {
-        "key": "clicfg_fts_search_voice_input_xiaowei_android",
-        "title": "本地搜索问小微语音按钮",
-        "version": {
-          "min": "8.0.78.0x28004E32"
         },
         "ui": {
           "type": "switch"
@@ -856,7 +985,23 @@
         "key": "clicfg_screenshot_share_service",
         "title": "转发截图入口",
         "version": {
-          "min": "8.0.63.0x28003F32"
+          "min": "8.0.63.0x28003F32",
+          "max": "8.0.70.0x28004633"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      }
+    ]
+  },
+  {
+    "group": "Search 搜索",
+    "configs": [
+      {
+        "key": "clicfg_fts_search_voice_input_xiaowei_android",
+        "title": "本地搜索问小微语音按钮",
+        "version": {
+          "min": "8.0.78.0x28004E32"
         },
         "ui": {
           "type": "switch"
@@ -1057,11 +1202,11 @@
     ]
   },
   {
-    "group": "WeClaw 配置",
+    "group": "WeClawBot 配置",
     "configs": [
       {
         "key": "clicfg_android_fts_weclaw_msg_search_enabled",
-        "title": "WeClaw 消息搜索",
+        "title": "WeClawBot 消息搜索",
         "version": {
           "min": "8.0.78.0x28004E10"
         },
@@ -1071,7 +1216,7 @@
       },
       {
         "key": "clicfg_clawbot_plugin_unbind_enable_disable_open_switch_and",
-        "title": "ClawBot 插件管理与解除连接",
+        "title": "WeClawBot 插件管理与解除连接",
         "version": {
           "min": "8.0.77.0x28004D10"
         },
@@ -1081,7 +1226,7 @@
       },
       {
         "key": "clicfg_weclaw_shortcut_command",
-        "title": "WeClaw 快捷指令",
+        "title": "WeClawBot 快捷指令",
         "version": {
           "min": "8.0.74.0x28004A34"
         },
@@ -1090,8 +1235,18 @@
         }
       },
       {
+        "key": "clicfg_android_show_weclaw_bot_forward_entrance",
+        "title": "转到其他应用 显示 WeClawBot 入口",
+        "version": {
+          "min": "8.0.72.0x28004835"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_weclaw_show_status",
-        "title": "WeClaw 在线状态",
+        "title": "WeClawBot 在线状态",
         "version": {
           "min": "8.0.72.0x28004835"
         },
