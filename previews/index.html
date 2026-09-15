@@ -1108,13 +1108,13 @@
         <section class="viewer-column" data-kind="old" aria-labelledby="viewer-old-title">
           <div class="viewer-column-head">
             <h3 class="viewer-column-title" id="viewer-old-title">旧版</h3>
-            <code class="viewer-file">old.png</code>
+            <code class="viewer-file">old.webp</code>
           </div>
           <div class="viewer-scroll" id="viewer-old-scroll">
             <img id="viewer-old-image" alt="" draggable="false">
             <div class="viewer-missing" id="viewer-old-missing" hidden>
               <strong id="viewer-old-missing-title">旧版截图缺失</strong>
-              <span class="viewer-missing-detail" id="viewer-old-missing-detail">old.png</span>
+              <span class="viewer-missing-detail" id="viewer-old-missing-detail">old.webp</span>
             </div>
           </div>
         </section>
@@ -1122,13 +1122,13 @@
         <section class="viewer-column" data-kind="new" aria-labelledby="viewer-new-title">
           <div class="viewer-column-head">
             <h3 class="viewer-column-title" id="viewer-new-title">新版</h3>
-            <code class="viewer-file">new.png</code>
+            <code class="viewer-file">new.webp</code>
           </div>
           <div class="viewer-scroll" id="viewer-new-scroll">
             <img id="viewer-new-image" alt="" draggable="false">
             <div class="viewer-missing" id="viewer-new-missing" hidden>
               <strong id="viewer-new-missing-title">新版截图缺失</strong>
-              <span class="viewer-missing-detail" id="viewer-new-missing-detail">new.png</span>
+              <span class="viewer-missing-detail" id="viewer-new-missing-detail">new.webp</span>
             </div>
           </div>
         </section>
@@ -1208,7 +1208,7 @@
       }
 
       function imagePath(item, kind) {
-        return configPath(item, `${kind}.png`);
+        return configPath(item, `${kind}.webp`);
       }
 
       function normalizeVersion(value) {
@@ -1550,7 +1550,7 @@
         const note = createElement(
           "span",
           "pair-note",
-          item.ignored ? `忽略原因：${item.ignoredReason}` : "old.png  /  new.png"
+          item.ignored ? `忽略原因：${item.ignoredReason}` : "old.webp  /  new.webp"
         );
         const statusClass = item.ignored ? " is-ignored" : item.complete ? "" : " is-missing";
         const statusText = item.ignored ? "已忽略" : item.complete ? "截图完整" : missingLabel(item);
@@ -1608,7 +1608,7 @@
         missing.append(
           createElement("span", "missing-icon", "⊘"),
           createElement("strong", "", kind === "old" ? "缺少旧版截图" : "缺少新版截图"),
-          createElement("small", "", `${kind}.png`)
+          createElement("small", "", `${kind}.webp`)
         );
         return missing;
       }
@@ -1685,7 +1685,7 @@
 
         missing.classList.toggle("is-ignored", item.ignored);
         missingTitle.textContent = item.ignored ? "无需预览" : `${label}截图缺失`;
-        missingDetail.textContent = item.ignored ? item.ignoredReason : `${kind}.png`;
+        missingDetail.textContent = item.ignored ? item.ignoredReason : `${kind}.webp`;
         image.onload = null;
         image.onerror = null;
         image.hidden = !hasImage;
