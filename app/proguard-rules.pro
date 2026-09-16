@@ -18,6 +18,6 @@
     ** requireNonNull(...);
 }
 
--keep class io.github.wabtest.hook.HookEntry
+-keep class io.github.hdshare.wabtest.hook.HookEntry
 
 -dontwarn java.lang.reflect.AnnotatedType

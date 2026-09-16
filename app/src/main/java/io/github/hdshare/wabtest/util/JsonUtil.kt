@@ -1,4 +1,4 @@
-package io.github.wabtest.util
+package io.github.hdshare.wabtest.util
 
 import kotlinx.serialization.json.Json
 

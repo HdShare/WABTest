@@ -1,9 +1,9 @@
-package io.github.wabtest.core.util
+package io.github.hdshare.wabtest.core.util
 
-import io.github.wabtest.core.expt.ExptManager
-import io.github.wabtest.core.repairer.RepairerManager
-import io.github.wabtest.core.test.ConfigItem
-import io.github.wabtest.core.test.ConfigType
+import io.github.hdshare.wabtest.core.expt.ExptManager
+import io.github.hdshare.wabtest.core.repairer.RepairerManager
+import io.github.hdshare.wabtest.core.test.ConfigItem
+import io.github.hdshare.wabtest.core.test.ConfigType
 
 object ConfigValueManager {
     fun getValue(config: ConfigItem): String? {

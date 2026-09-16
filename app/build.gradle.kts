@@ -14,11 +14,11 @@ val gitVersionSuffix = rootProject.extra["gitVersionSuffix"] as String
 val ketStorePath: String? = System.getenv("KEY_STORE_PATH")
 
 android {
-    namespace = "io.github.wabtest"
+    namespace = "io.github.hdshare.wabtest"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "io.github.wabtest"
+        applicationId = "io.github.hdshare.wabtest"
         minSdk = 28
         targetSdk = 37
         versionCode = gitVersionCode
@@ -48,7 +48,7 @@ android {
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.findByName("ci")
+            signingConfig = if (!ketStorePath.isNullOrBlank()) signingConfigs.findByName("ci") else signingConfigs.findByName("debug")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")

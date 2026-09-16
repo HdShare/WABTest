@@ -1,8 +1,8 @@
-package io.github.wabtest.hook.wrapper
+package io.github.hdshare.wabtest.hook.wrapper
 
 import com.highcapable.kavaref.KavaRef.Companion.asResolver
 import com.highcapable.kavaref.KavaRef.Companion.resolve
-import io.github.wabtest.hook.HostData.toHostClazz
+import io.github.hdshare.wabtest.hook.HostData.toHostClazz
 
 class MMKVWrapper private constructor(private val mmkv: Any) {
 

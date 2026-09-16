@@ -1,4 +1,4 @@
-package io.github.wabtest.ui
+package io.github.hdshare.wabtest.ui
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -32,14 +32,14 @@ import android.widget.PopupMenu
 import android.widget.Switch
 import android.widget.TextView
 import com.highcapable.yukihookapi.hook.factory.injectModuleAppResources
-import io.github.wabtest.BuildConfig
-import io.github.wabtest.R
-import io.github.wabtest.core.expt.ExptManager
-import io.github.wabtest.core.test.ConfigItem
-import io.github.wabtest.core.test.ConfigOption
-import io.github.wabtest.core.test.ConfigUiType
-import io.github.wabtest.core.util.ConfigValueManager
-import io.github.wabtest.core.test.TestManager
+import io.github.hdshare.wabtest.BuildConfig
+import io.github.hdshare.wabtest.R
+import io.github.hdshare.wabtest.core.expt.ExptManager
+import io.github.hdshare.wabtest.core.test.ConfigItem
+import io.github.hdshare.wabtest.core.test.ConfigOption
+import io.github.hdshare.wabtest.core.test.ConfigUiType
+import io.github.hdshare.wabtest.core.util.ConfigValueManager
+import io.github.hdshare.wabtest.core.test.TestManager
 import kotlin.system.exitProcess
 
 class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
