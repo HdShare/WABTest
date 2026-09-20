@@ -341,6 +341,16 @@
         }
       },
       {
+        "key": "clicfg_voip_ignore_ability_enhancement_android",
+        "title": "语音视频通话忽略增强",
+        "version": {
+          "min": "8.0.77.0x28004D10"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_chatting_voice_dialect_recognize",
         "title": "语音转文字方言识别",
         "version": {
@@ -719,6 +729,21 @@
         "title": "markdown 文件支持预览",
         "version": {
           "min": "8.0.72.0x28004835"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      }
+    ]
+  },
+  {
+    "group": "Finder 视频号配置",
+    "configs": [
+      {
+        "key": "clicfg_finder_comment_voice_input",
+        "title": "视频号评论语音输入",
+        "version": {
+          "min": "8.0.78.0x28004E35"
         },
         "ui": {
           "type": "switch"
