@@ -1023,6 +1023,16 @@
     "group": "Search 搜索",
     "configs": [
       {
+        "key": "clicfg_search_green_mic_android",
+        "title": "本地搜索栏语音输入",
+        "version": {
+          "min": "8.0.78.0x28004E36"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_fts_search_voice_input_xiaowei_android",
         "title": "本地搜索问小微语音按钮",
         "version": {
