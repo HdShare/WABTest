@@ -31,15 +31,15 @@ import android.widget.ListView
 import android.widget.PopupMenu
 import android.widget.Switch
 import android.widget.TextView
-import com.highcapable.yukihookapi.hook.factory.injectModuleAppResources
+import com.highcapable.yukihookapi.hook.factory.injectModuleResources
 import io.github.hdshare.wabtest.BuildConfig
 import io.github.hdshare.wabtest.R
 import io.github.hdshare.wabtest.core.expt.ExptManager
 import io.github.hdshare.wabtest.core.test.ConfigItem
 import io.github.hdshare.wabtest.core.test.ConfigOption
 import io.github.hdshare.wabtest.core.test.ConfigUiType
-import io.github.hdshare.wabtest.core.util.ConfigValueManager
 import io.github.hdshare.wabtest.core.test.TestManager
+import io.github.hdshare.wabtest.core.util.ConfigValueManager
 import kotlin.system.exitProcess
 
 class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
@@ -53,7 +53,7 @@ class SettingDialog(private val ctx: Activity) : Dialog(ctx) {
 
         fun show(ctx: Activity) {
             try {
-                SettingDialog(ctx.apply { injectModuleAppResources() }).show()
+                SettingDialog(ctx.apply { injectModuleResources() }).show()
             } catch (e: Exception) {
                 AlertDialog.Builder(ctx)
                     .setTitle("发生异常")

@@ -3,19 +3,19 @@ package io.github.hdshare.wabtest.hook
 import android.app.Application
 import android.app.Instrumentation
 import com.highcapable.kavaref.KavaRef.Companion.resolve
-import com.highcapable.yukihookapi.YukiHookAPI.configs
-import com.highcapable.yukihookapi.YukiHookAPI.encase
-import com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed
-import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
+import com.highcapable.yukihookapi.YukiHook.configure
+import com.highcapable.yukihookapi.YukiHook.encase
+import com.highcapable.yukihookapi.annotation.xposed.YukiHookXposed82Entry
+import com.highcapable.yukihookapi.hook.xposed.YukiHookXposedModule
 import io.github.hdshare.wabtest.BuildConfig
 import io.github.hdshare.wabtest.hook.hooker.SettingHooker
 
-@InjectYukiHookWithXposed(entryClassName = "Entry")
-object HookEntry : IYukiHookXposedInit {
-    override fun onInit() = configs {
-        debugLog { tag = BuildConfig.APP_NAME }
-        isDebug = false
-        isEnableDataChannel = false
+@YukiHookXposed82Entry(entryClassName = "Entry")
+object HookEntry : YukiHookXposedModule {
+    override fun onInit() = configure {
+        logging { tag = BuildConfig.APP_NAME }
+        debug = false
+        dataChannel = false
     }
 
     override fun onHook() = encase {
@@ -26,7 +26,7 @@ object HookEntry : IYukiHookXposedInit {
                     parameters(Application::class)
                 }.hook {
                     after {
-                        val application = args(0).cast<Application>()!!
+                        val application = arg(0).get<Application>()!!
                         val context = application.baseContext
                         HostData.init(context)
                         withProcess(mainProcessName) {

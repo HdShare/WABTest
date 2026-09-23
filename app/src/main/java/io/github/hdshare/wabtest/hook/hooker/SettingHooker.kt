@@ -29,7 +29,7 @@ object SettingHooker : YukiBaseHooker() {
                 parameters(Bundle::class)
             }.hook {
                 after {
-                    if (instanceClass?.name != NEW_SETTING_CLASS) return@after
+                    if (instanceOrNull?.javaClass?.name != NEW_SETTING_CLASS) return@after
                     val activity = instance<Activity>()
                     activity.addTextOptionMenu(itemId = hashCode(), text = "AB") {
                         SettingDialog.show(activity)

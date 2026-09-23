@@ -57,6 +57,7 @@ android {
 
     packaging {
         resources {
+            merges += "assets/xposed_init"
             excludes += "**"
         }
         dex {
@@ -92,17 +93,20 @@ kotlin {
 }
 
 dependencies {
-    compileOnly(libs.annotation)
+    //compileOnly(libs.libxposed.api)
     compileOnly(libs.xposed.api)
-    implementation(libs.yukihookapi.api) {
-        exclude(group = "androidx.appcompat", module = "appcompat")
-        exclude(group = "androidx.preference", module = "preference-ktx")
-        exclude(group = "com.google.android.material", module = "material")
-    }
-    ksp(libs.yukihookapi.ksp.xposed)
+
+    implementation(platform(libs.yukihook.bom))
+    ksp(platform(libs.yukihook.bom))
+    implementation(libs.yukihook.core)
+    //implementation(libs.yukihook.runtime.libxposed)
+    implementation(libs.yukihook.runtime.xposed82)
+    ksp(libs.yukihook.compiler)
+
     implementation(platform(libs.kavaref.bom))
     implementation(libs.kavaref.android)
     implementation(libs.kavaref.core)
     implementation(libs.kavaref.extension)
+
     implementation(libs.kotlinx.serialization.json)
 }

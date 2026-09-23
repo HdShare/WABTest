@@ -1,6 +1,6 @@
 package io.github.hdshare.wabtest.core.test
 
-import com.highcapable.yukihookapi.hook.factory.injectModuleAppResources
+import com.highcapable.yukihookapi.hook.factory.injectModuleResources
 import io.github.hdshare.wabtest.hook.HostData.appContext
 import io.github.hdshare.wabtest.util.JsonUtil
 
@@ -8,7 +8,7 @@ object TestManager {
     private const val JSON_FILE = "test.json"
 
     fun getList(): List<TestItem> {
-        val ctx = appContext.also { it.injectModuleAppResources() }
+        val ctx = appContext.also { it.injectModuleResources() }
         val jsonString = ctx.assets.open(JSON_FILE).bufferedReader().use { it.readText() }
         return JsonUtil.fromJson<List<TestItem>>(jsonString)
     }
