@@ -2,18 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
+        android:description="@string/module_desc"
         android:icon="@drawable/icon_wabtest"
-        android:label="WABTest">
-
-        <meta-data
-            android:name="xposedmodule"
-            android:value="true" />
-        <meta-data
-            android:name="xposeddescription"
-            android:value="WeChat ABTest by HdShare@github" />
-        <meta-data
-            android:name="xposedscope"
-            android:value="com.tencent.mm" />
-    </application>
+        android:label="@string/module_name" />
 
 </manifest>

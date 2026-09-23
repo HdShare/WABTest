@@ -20,6 +20,11 @@ dependencyResolutionManagement {
         google()
         mavenLocal()
         mavenCentral()
+        maven("https://maven.aliyun.com/repository/public") {
+            content {
+                includeGroup("io.github.libxposed")
+            }
+        }
         maven("https://api.xposed.info") {
             content {
                 includeGroup("de.robv.android.xposed")

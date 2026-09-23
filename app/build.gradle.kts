@@ -57,7 +57,7 @@ android {
 
     packaging {
         resources {
-            merges += "assets/xposed_init"
+            merges += "META-INF/xposed/*"
             excludes += "**"
         }
         dex {
@@ -93,14 +93,14 @@ kotlin {
 }
 
 dependencies {
-    //compileOnly(libs.libxposed.api)
-    compileOnly(libs.xposed.api)
+    compileOnly(libs.libxposed.api)
+    //compileOnly(libs.xposed.api)
 
     implementation(platform(libs.yukihook.bom))
     ksp(platform(libs.yukihook.bom))
     implementation(libs.yukihook.core)
-    //implementation(libs.yukihook.runtime.libxposed)
-    implementation(libs.yukihook.runtime.xposed82)
+    implementation(libs.yukihook.runtime.libxposed)
+    //implementation(libs.yukihook.runtime.xposed82)
     ksp(libs.yukihook.compiler)
 
     implementation(platform(libs.kavaref.bom))
