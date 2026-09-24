@@ -2,7 +2,7 @@
 agp = "9.2.1"
 kotlin = "2.4.0"
 devtools-ksp = "2.3.12"
-yukihook-bom = "1.5.0-pre01"
+yukihook-bom = "1.5.0-beta.3"
 
 [libraries]
 libxposed-api = { module = "io.github.libxposed:api", version = "102.0.0" }

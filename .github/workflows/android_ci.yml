@@ -42,7 +42,7 @@ jobs:
       - name: Setup Maven Local
         run: |
           mkdir -p "$HOME/.m2/repository"
-          unzip -oq .github/dependencies/1.5.0-pre01.zip -d "$HOME/.m2/repository"
+          unzip -oq .github/dependencies/1.5.0-beta.3.zip -d "$HOME/.m2/repository"
 
       - name: Build with Gradle
         env:
