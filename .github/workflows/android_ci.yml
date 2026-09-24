@@ -3,14 +3,16 @@ name: Android CI
 on:
   push:
     branches: [ master ]
-    paths-ignore:
-      - '.github/**'
-      - '!.github/workflows/**'
-      - 'previews/**'
-      - '.editorconfig'
-      - '.gitignore'
-      - 'renovate.json'
-      - '**.md'
+    paths:
+      - '**'
+      - '!.github/**'
+      - '.github/workflows/**'
+      - '.github/dependencies/**'
+      - '!previews/**'
+      - '!.editorconfig'
+      - '!.gitignore'
+      - '!renovate.json'
+      - '!**.md'
   workflow_dispatch:
 
 concurrency:
@@ -37,6 +39,11 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
 
+      - name: Setup Maven Local
+        run: |
+          mkdir -p "$HOME/.m2/repository"
+          unzip -oq .github/dependencies/1.5.0-pre01.zip -d "$HOME/.m2/repository"
+
       - name: Build with Gradle
         env:
           KEY_STORE_PATH: '../keystore.jks'
@@ -49,12 +56,13 @@ jobs:
 
           chmod +x gradlew
           ./gradlew :app:assembleRelease
-          echo "APK_FILE_RELEASE=$(find app/build/outputs/apk/release -type f -name '*.apk')" >> $GITHUB_ENV
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v7
         with:
-          path: ${{ env.APK_FILE_RELEASE }}
+          path: |
+            app/build/outputs/apk/modern/release/*.apk
+            app/build/outputs/apk/legacy/release/*.apk
           name: WABTest-release-${{ github.event.head_commit.id }}
 
   tg-bot-api:
@@ -132,7 +140,8 @@ jobs:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHANNEL_ID: ${{ secrets.TG_CHANNEL_ID }}
         run: |
-          export apk=$(find artifacts -name "*.apk")
+          apk_modern=$(find artifacts -type f -name '*-modern-release-*.apk' -print -quit)
+          apk_legacy=$(find artifacts -type f -name '*-legacy-release-*.apk' -print -quit)
 
           chmod +x tg-bot-api-binary
           ./tg-bot-api-binary  --api-id="${TG_APP_ID}" --api-hash="${TG_APP_HASH}" --local > /dev/null 2>&1 &
@@ -141,7 +150,10 @@ jobs:
            --arg caption "$COMMIT_MESSAGE" \
            '[{
               "type":"document",
-              "media":"attach://apk",
+              "media":"attach://modern"
+           }, {
+              "type":"document",
+              "media":"attach://legacy",
               "parse_mode":"MarkdownV2",
               "caption": $caption
            }]'
@@ -150,6 +162,7 @@ jobs:
           curl -v "http://127.0.0.1:8081/bot${TG_BOT_TOKEN}/sendMediaGroup" \
            -F chat_id="$TG_CHANNEL_ID" \
            -F media="$MEDIA_JSON" \
-           -F apk="@$apk"
+           -F modern="@$apk_modern" \
+           -F legacy="@$apk_legacy"
           
           pkill tg-bot-api

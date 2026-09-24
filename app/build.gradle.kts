@@ -55,9 +55,20 @@ android {
         }
     }
 
+    flavorDimensions += "runtime"
+
+    productFlavors {
+        create("modern") {
+            dimension = "runtime"
+        }
+        create("legacy") {
+            dimension = "runtime"
+        }
+    }
+
     packaging {
         resources {
-            merges += "META-INF/xposed/*"
+            merges += setOf("META-INF/xposed/*", "assets/xposed_init")
             excludes += "**"
         }
         dex {
@@ -69,7 +80,7 @@ android {
         outputs.filterIsInstance<BaseVariantOutputImpl>()
             .forEach { output ->
                 val projectName = rootProject.name
-                output.outputFileName = "${projectName}-v$versionName.apk"
+                output.outputFileName = "${projectName}-${flavorName}-${buildType.name}-v$versionName.apk"
             }
     }
 
@@ -93,14 +104,14 @@ kotlin {
 }
 
 dependencies {
-    compileOnly(libs.libxposed.api)
-    //compileOnly(libs.xposed.api)
+    add("modernCompileOnly", libs.libxposed.api)
+    add("modernImplementation", libs.yukihook.runtime.libxposed)
+    add("legacyCompileOnly", libs.xposed.api)
+    add("legacyImplementation", libs.yukihook.runtime.xposed82)
 
     implementation(platform(libs.yukihook.bom))
     ksp(platform(libs.yukihook.bom))
     implementation(libs.yukihook.core)
-    implementation(libs.yukihook.runtime.libxposed)
-    //implementation(libs.yukihook.runtime.xposed82)
     ksp(libs.yukihook.compiler)
 
     implementation(platform(libs.kavaref.bom))

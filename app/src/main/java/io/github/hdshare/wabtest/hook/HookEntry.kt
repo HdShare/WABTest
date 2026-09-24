@@ -5,17 +5,10 @@ import android.app.Instrumentation
 import com.highcapable.kavaref.KavaRef.Companion.resolve
 import com.highcapable.yukihookapi.YukiHook.configure
 import com.highcapable.yukihookapi.YukiHook.encase
-import com.highcapable.yukihookapi.annotation.xposed.YukiHookLibXposedEntry
 import com.highcapable.yukihookapi.hook.xposed.YukiHookXposedModule
 import io.github.hdshare.wabtest.BuildConfig
 import io.github.hdshare.wabtest.hook.hooker.SettingHooker
 
-@YukiHookLibXposedEntry(
-    entryClassName = "Entry",
-    targetApiVersion = 102,
-    scope = ["com.tencent.mm"],
-    staticScope = true,
-)
 object HookEntry : YukiHookXposedModule {
     override fun onInit() = configure {
         logging { tag = BuildConfig.APP_NAME }

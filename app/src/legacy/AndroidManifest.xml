@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <meta-data
+            android:name="xposeddescription"
+            android:value="@string/module_desc" />
+        <meta-data
+            android:name="xposedscope"
+            android:value="com.tencent.mm" />
+    </application>
+
+</manifest>
