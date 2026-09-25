@@ -1108,6 +1108,16 @@
     "group": "Sns 朋友圈",
     "configs": [
       {
+        "key": "clicfg_android_flutter_sns_user_page_v3",
+        "title": "朋友圈用户页使用 Flutter",
+        "version": {
+          "min": "8.0.78.3180.0x28004E35"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_sns_ask_xiaowei_browse_android_for_xiaowei",
         "title": "朋友圈浏览页「AI 点评」（小微用户）",
         "version": {
@@ -1169,6 +1179,26 @@
               "value": "2"
             }
           ]
+        }
+      },
+      {
+        "key": "clicfg_android_sns_force_new_preview_like",
+        "title": "朋友圈新版预览点赞评论样式",
+        "version": {
+          "min": "8.0.77.3141.0x28004D10"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_android_sns_new_album_all",
+        "title": "朋友圈新版相册",
+        "version": {
+          "min": "8.0.77.3141.0x28004D10"
+        },
+        "ui": {
+          "type": "switch"
         }
       },
       {
