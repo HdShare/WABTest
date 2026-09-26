@@ -1,0 +1,28 @@
+name: 问题反馈
+description: 问题反馈
+labels: [ "Question" ]
+title: "[问题反馈] "
+body:
+  - type: input
+    attributes:
+      label: 模块版本
+      placeholder: "如: 1.2.2.r118.95a82a8"
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: 微信版本
+      placeholder: "如: 8.0.78(3180)_0x28004E36"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 相关描述
+      placeholder: |
+        1. 
+        2. 
+        3.
+    validations:
+      required: true
