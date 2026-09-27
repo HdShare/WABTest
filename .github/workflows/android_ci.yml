@@ -2,7 +2,7 @@ name: Android CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - '**'
       - '!.github/**'
@@ -22,7 +22,7 @@ concurrency:
 jobs:
   build-ci:
     name: Build CI
-    if: ${{ !startsWith(github.event.head_commit.message, '[skip ci]') && github.ref == 'refs/heads/master' }}
+    if: ${{ !startsWith(github.event.head_commit.message, '[skip ci]') && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -108,7 +108,7 @@ jobs:
 
   upload-channel:
     name: Upload Channel
-    if: ${{ success() && github.ref == 'refs/heads/master' }}
+    if: ${{ success() && github.ref == 'refs/heads/main' }}
     needs:
       - build-ci
       - tg-bot-api

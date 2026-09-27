@@ -2,7 +2,7 @@ name: Deploy Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - ".github/workflows/deploy_pages.yml"
       - "app/src/main/assets/test.json"
