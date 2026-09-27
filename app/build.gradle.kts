@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import com.android.build.gradle.internal.api.BaseVariantOutputImpl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -32,6 +34,7 @@ android {
 
     androidResources {
         additionalParameters += listOf("--allow-reserved-package-id", "--package-id", "0x78")
+        localeFilters += listOf("zh")
     }
 
     signingConfigs {
@@ -101,6 +104,10 @@ kotlin {
             )
         )
     }
+}
+
+configurations.configureEach {
+    exclude(group = "androidx.preference", module = "preference-ktx")
 }
 
 dependencies {
