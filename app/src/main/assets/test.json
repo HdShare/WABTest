@@ -1083,6 +1083,16 @@
     "group": "Search 搜索",
     "configs": [
       {
+        "key": "clicfg_search_chat_room_management_open_switch",
+        "title": "搜索更多群聊管理入口",
+        "version": {
+          "min": "8.0.79.3180.0x28004F10"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_search_green_mic_android",
         "title": "本地搜索栏语音输入",
         "version": {
