@@ -5,6 +5,7 @@ import android.app.Instrumentation
 import com.highcapable.kavaref.KavaRef.Companion.resolve
 import com.highcapable.yukihookapi.YukiHook.configure
 import com.highcapable.yukihookapi.YukiHook.encase
+import com.highcapable.yukihookapi.extension.kavaref.hook
 import com.highcapable.yukihookapi.hook.xposed.YukiHookXposedModule
 import io.github.hdshare.wabtest.BuildConfig
 import io.github.hdshare.wabtest.hook.hooker.SettingHooker

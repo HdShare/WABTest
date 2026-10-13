@@ -6,7 +6,7 @@ import com.highcapable.yukihookapi.hook.xposed.YukiHookXposedModule
 
 @YukiHookLibXposedEntry(
     entryClassName = "Entry",
-    minApiVersion = 102,
+    minApiVersion = 101,
     targetApiVersion = 102,
     scope = ["com.tencent.mm"],
     staticScope = true,

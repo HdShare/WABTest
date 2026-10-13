@@ -111,15 +111,15 @@ configurations.configureEach {
 }
 
 dependencies {
-    add("modernCompileOnly", libs.libxposed.api)
-    add("modernImplementation", libs.yukihook.runtime.libxposed)
-    add("legacyCompileOnly", libs.xposed.api)
-    add("legacyImplementation", libs.yukihook.runtime.xposed82)
-
     implementation(platform(libs.yukihook.bom))
-    ksp(platform(libs.yukihook.bom))
-    implementation(libs.yukihook.core)
     ksp(libs.yukihook.compiler)
+    implementation(libs.yukihook.core)
+    implementation(libs.yukihook.extension.kavaref)
+
+    "modernCompileOnly"(libs.libxposed.api)
+    "modernImplementation"(libs.yukihook.runtime.libxposed)
+    "legacyCompileOnly"(libs.xposed.api)
+    "legacyImplementation"(libs.yukihook.runtime.xposed82)
 
     implementation(platform(libs.kavaref.bom))
     implementation(libs.kavaref.android)

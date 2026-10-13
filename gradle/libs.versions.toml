@@ -1,20 +1,21 @@
 [versions]
-agp = "9.2.1"
-kotlin = "2.4.20"
+agp = "9.4.1"
+kotlin = "2.4.21"
 devtools-ksp = "2.3.12"
-yukihook-bom = "1.5.0-beta.7"
+yukihook-bom = "1.5.0-beta.12"
 
 [libraries]
 libxposed-api = { module = "io.github.libxposed:api", version = "102.0.0" }
 xposed-api = { module = "de.robv.android.xposed:api", version = "82" }
 
 yukihook-bom = { module = "com.highcapable.yukihookapi:yukihook-bom", version.ref = "yukihook-bom" }
+yukihook-compiler = { module = "com.highcapable.yukihookapi:yukihook-compiler", version.ref = "yukihook-bom" }
 yukihook-core = { module = "com.highcapable.yukihookapi:yukihook-core" }
+yukihook-extension-kavaref = { module = "com.highcapable.yukihookapi:yukihook-extension-kavaref" }
 yukihook-runtime-libxposed = { module = "com.highcapable.yukihookapi:yukihook-runtime-libxposed" }
 yukihook-runtime-xposed82 = { module = "com.highcapable.yukihookapi:yukihook-runtime-xposed82" }
-yukihook-compiler = { module = "com.highcapable.yukihookapi:yukihook-compiler" }
 
-kavaref-bom = { module = "com.highcapable.kavaref:kavaref-bom", version = "1.1.0" }
+kavaref-bom = { module = "com.highcapable.kavaref:kavaref-bom", version = "1.1.1" }
 kavaref-android = { module = "com.highcapable.kavaref:kavaref-android" }
 kavaref-core = { module = "com.highcapable.kavaref:kavaref-core" }
 kavaref-extension = { module = "com.highcapable.kavaref:kavaref-extension" }
