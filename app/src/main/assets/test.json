@@ -371,6 +371,16 @@
         }
       },
       {
+        "key": "clicfg_xiaojinguan_chatroom_tool_liteapp_entry_switch",
+        "title": "群工具「小金罐」入口",
+        "version": {
+          "min": "8.0.77.3141.0x28004D10"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_chatting_voice_dialect_recognize",
         "title": "语音转文字方言识别",
         "version": {
@@ -884,6 +894,16 @@
   {
     "group": "Global 全局",
     "configs": [
+      {
+        "key": "clicfg_settings_hearing_aid_android",
+        "title": "新设置页「声音清晰度增强」入口",
+        "version": {
+          "min": "8.0.79.3180.0x28004F10"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
       {
         "key": "clicfg_new_setting",
         "title": "新设置页",
