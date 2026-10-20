@@ -20,7 +20,7 @@ kavaref-android = { module = "com.highcapable.kavaref:kavaref-android" }
 kavaref-core = { module = "com.highcapable.kavaref:kavaref-core" }
 kavaref-extension = { module = "com.highcapable.kavaref:kavaref-extension" }
 
-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.11.0" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.12.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
