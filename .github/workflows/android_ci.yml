@@ -39,11 +39,6 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
 
-      - name: Setup Maven Local
-        run: |
-          mkdir -p "$HOME/.m2/repository"
-          unzip -oq .github/dependencies/1.5.0-beta.13.zip -d "$HOME/.m2/repository"
-
       - name: Build with Gradle
         env:
           KEY_STORE_PATH: '../keystore.jks'
