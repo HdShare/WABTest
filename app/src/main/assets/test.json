@@ -1149,7 +1149,7 @@
     "configs": [
       {
         "key": "clicfg_android_moments_long_press_text_post",
-        "title": "朋友圈个人页长按「发表」或「私密发表」发文字",
+        "title": "朋友圈个人页长按「发表」发文字",
         "version": {
           "min": "8.0.79.3200.0x28004F36"
         },
@@ -1217,7 +1217,7 @@
       },
       {
         "key": "clicfg_moments_sns_interaction_in_host_enabled_2026",
-        "title": "朋友圈点赞彩蛋互动区宿主内实现开关",
+        "title": "朋友圈点赞彩蛋互动区宿主内实现",
         "version": {
           "min": "8.0.79.3200.0x28004F36"
         },
