@@ -113,6 +113,16 @@
     "group": "Chatting 会话",
     "configs": [
       {
+        "key": "clicfg_android_file_ask_xiaowei_switch",
+        "title": "文件「问小微」独立实验开关",
+        "version": {
+          "min": "8.0.79.3200.0x28004F36"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_chatting_long_click_menu_order",
         "title": "长按菜单中将「连续朗读」与「翻译」顺序",
         "version": {
@@ -1138,6 +1148,84 @@
     "group": "Sns 朋友圈",
     "configs": [
       {
+        "key": "clicfg_android_moments_long_press_text_post",
+        "title": "朋友圈个人页长按「发表」或「私密发表」发文字",
+        "version": {
+          "min": "8.0.79.3200.0x28004F36"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_android_moments_private_feed_interaction",
+        "title": "朋友圈私密动态互动",
+        "version": {
+          "min": "8.0.79.3200.0x28004F36"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_moments_like_easter_egg_android_browse_enabled_2026",
+        "title": "朋友圈点赞彩蛋浏览",
+        "version": {
+          "min": "8.0.79.3200.0x28004F36"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_moments_like_easter_egg_android_publish_enabled_2026",
+        "title": "朋友圈点赞彩蛋发表",
+        "version": {
+          "min": "8.0.79.3200.0x28004F36"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_moments_like_easter_egg_haptic_style_android",
+        "title": "朋友圈点赞彩蛋震动",
+        "version": {
+          "min": "8.0.79.3200.0x28004F36"
+        },
+        "ui": {
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "关闭",
+              "value": "0"
+            },
+            {
+              "alias": "轻(50ms)",
+              "value": "1"
+            },
+            {
+              "alias": "中(80ms)",
+              "value": "2"
+            },
+            {
+              "alias": "重(100ms)",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      {
+        "key": "clicfg_moments_sns_interaction_in_host_enabled_2026",
+        "title": "朋友圈点赞彩蛋互动区宿主内实现开关",
+        "version": {
+          "min": "8.0.79.3200.0x28004F36"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_android_flutter_sns_user_page_v3",
         "title": "朋友圈用户页使用 Flutter",
         "version": {
@@ -1169,7 +1257,7 @@
       },
       {
         "key": "clicfg_android_moments_private_publish",
-        "title": "朋友圈私密发表",
+        "title": "朋友圈个人页私密发表",
         "version": {
           "min": "8.0.77.3141.0x28004D1B"
         },
