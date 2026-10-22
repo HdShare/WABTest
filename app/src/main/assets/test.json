@@ -1062,6 +1062,16 @@
     "group": "Scan 扫一扫",
     "configs": [
       {
+        "key": "clicfg_scan_ai_ui_v2_android",
+        "title": "扫一扫问AI主页新样式",
+        "version": {
+          "min": "8.0.80.3200.0x28005010"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_scan_ask_ai_android",
         "title": "扫一扫问小微",
         "version": {
@@ -1147,6 +1157,26 @@
   {
     "group": "Sns 朋友圈",
     "configs": [
+      {
+        "key": "clicfg_android_sns_native_comment_dictation",
+        "title": "朋友圈评论语音输入",
+        "version": {
+          "min": "8.0.80.3200.0x28005010"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_sns_ask_xiaowei_image_viewer_android",
+        "title": "朋友圈图片查看器「AI处理」",
+        "version": {
+          "min": "8.0.80.3200.0x28005010"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
       {
         "key": "clicfg_android_moments_long_press_text_post",
         "title": "朋友圈个人页长按「发表」发文字",
