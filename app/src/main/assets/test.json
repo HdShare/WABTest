@@ -690,6 +690,40 @@
     "group": "Conversation 会话列表",
     "configs": [
       {
+        "key": "clicfg_conv_search_entrance",
+        "title": "会话列表内嵌搜索框",
+        "version": {
+          "min": "8.0.80.3200.0x28005011"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
+        "key": "clicfg_conv_search_entrance_style",
+        "title": "会话列表搜索栏样式",
+        "version": {
+          "min": "8.0.80.3200.0x28005011"
+        },
+        "ui": {
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "图标+文案+红点居中",
+              "value": "1"
+            },
+            {
+              "alias": "图标居左，文案+红点居右",
+              "value": "2"
+            },
+            {
+              "alias": "图标居左，文案置右+提示图标",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      {
         "key": "clicfg_message_box_session_top_enable",
         "title": "折叠的聊天 支持在列表中置顶",
         "version": {
