@@ -1141,6 +1141,16 @@
     "group": "ScreenShot 截图组件",
     "configs": [
       {
+        "key": "clicfg_screenshot_ask_xiaowei_android_config",
+        "title": "截图问小微「AI处理」入口",
+        "version": {
+          "min": "8.0.80.3200.0x28005012"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_screenshot_share_service",
         "title": "转发截图入口",
         "version": {
