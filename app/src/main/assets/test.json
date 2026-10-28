@@ -119,7 +119,21 @@
           "min": "8.0.80.3220.0x28005030"
         },
         "ui": {
-          "type": "switch"
+          "type": "single_choice",
+          "options": [
+            {
+              "alias": "关闭",
+              "value": "0"
+            },
+            {
+              "alias": "复制后展示",
+              "value": "1"
+            },
+            {
+              "alias": "长按语音后展示",
+              "value": "2"
+            }
+          ]
         }
       },
       {
