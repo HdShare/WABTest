@@ -113,6 +113,16 @@
     "group": "Chatting 会话",
     "configs": [
       {
+        "key": "clicfg_chatfooter_paste_bubble",
+        "title": "聊天输入框粘贴浮窗",
+        "version": {
+          "min": "8.0.80.3220.0x28005030"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
+      {
         "key": "clicfg_android_file_ask_xiaowei_switch",
         "title": "文件「问小微」独立实验开关",
         "version": {
@@ -1101,6 +1111,16 @@
   {
     "group": "Scan 扫一扫",
     "configs": [
+      {
+        "key": "clicfg_scan_ai_history_android",
+        "title": "扫一扫问AI历史会话入口",
+        "version": {
+          "min": "8.0.80.3220.0x28005030"
+        },
+        "ui": {
+          "type": "switch"
+        }
+      },
       {
         "key": "clicfg_scan_ai_ui_v2_android",
         "title": "扫一扫问AI主页新样式",
