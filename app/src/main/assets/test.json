@@ -126,7 +126,8 @@
         "key": "clicfg_chatting_long_click_menu_order",
         "title": "长按菜单中将「连续朗读」与「翻译」顺序",
         "version": {
-          "min": "8.0.79.3180.0x28004F10"
+          "min": "8.0.79.3180.0x28004F10",
+          "max": "8.0.79.3200.0x28004F36"
         },
         "ui": {
           "type": "switch"
@@ -136,7 +137,8 @@
         "key": "clicfg_enable_xiaowei_task",
         "title": "聊天栏顶部小微任务入口",
         "version": {
-          "min": "8.0.78.3180.0x28004E32"
+          "min": "8.0.78.3180.0x28004E32",
+          "max": "8.0.79.3200.0x28004F32"
         },
         "ui": {
           "type": "switch"
@@ -180,7 +182,8 @@
         "key": "clicfg_chatfooter_paste_entry",
         "title": "聊天输入框剪贴板粘贴入口",
         "version": {
-          "min": "8.0.78.3160.0x28004E10"
+          "min": "8.0.78.3160.0x28004E10",
+          "max": "8.0.78.3180.0x28004E30"
         },
         "ui": {
           "type": "single_choice",
@@ -274,7 +277,8 @@
         "key": "clicfg_xiaowei_summary_file_for_xw_and",
         "title": "文件消息支持「小微总结」（小微用户）",
         "version": {
-          "min": "8.0.77.3160.0x28004D30"
+          "min": "8.0.77.3160.0x28004D30",
+          "max": "8.0.79.3200.0x28004F32"
         },
         "ui": {
           "type": "switch"
@@ -415,7 +419,7 @@
         "key": "clicfg_chatfooter_longpress_suppress_menu",
         "title": "输入框为空时长按唤起键盘",
         "version": {
-          "min": "8.0.74.3120.0x28004A34"
+          "min": "8.0.74.3100.0x28004A10"
         },
         "ui": {
           "type": "switch"
@@ -425,7 +429,7 @@
         "key": "clicfg_file_selector_multi_select_and",
         "title": "系统文件选择器支持多选",
         "version": {
-          "min": "8.0.74.3120.0x28004A34"
+          "min": "8.0.74.3100.0x28004A10"
         },
         "ui": {
           "type": "switch"
@@ -435,7 +439,7 @@
         "key": "clicfg_markdown_preview_enable",
         "title": "Markdown消息双击预览",
         "version": {
-          "min": "8.0.74.3120.0x28004A34"
+          "min": "8.0.74.3100.0x28004A10"
         },
         "ui": {
           "type": "switch"
@@ -445,7 +449,7 @@
         "key": "clicfg_sys_msg_delete",
         "title": "系统消息和拍一拍长按删除",
         "version": {
-          "min": "8.0.74.3120.0x28004A34",
+          "min": "8.0.74.3100.0x28004A10",
           "max": "8.0.77.3160.0x28004D35"
         },
         "ui": {
@@ -496,7 +500,7 @@
         "key": "clicfg_chatting_voice_input_long_click",
         "title": "快捷语音输入支持长按",
         "version": {
-          "min": "8.0.69.3060.0x28004633"
+          "min": "8.0.70.3060.0x28004633"
         },
         "ui": {
           "type": "switch"
@@ -506,7 +510,7 @@
         "key": "clicfg_mediagroup_sender_ui_visibility_2",
         "title": "媒体文件折叠合集",
         "version": {
-          "min": "8.0.69.3060.0x28004633",
+          "min": "8.0.70.3060.0x28004633",
           "max": "8.0.77.3160.0x28004D35"
         },
         "ui": {
@@ -531,7 +535,8 @@
         "key": "clicfg_chatting_chatfooter_fix_big_font",
         "title": "聊天输入栏大字体适配",
         "version": {
-          "min": "8.0.69.3040.0x28004530"
+          "min": "8.0.69.3040.0x28004530",
+          "max": "8.0.79.3200.0x28004F36"
         },
         "ui": {
           "type": "switch"
@@ -667,7 +672,7 @@
         "key": "clicfg_chatting_c2c_live_preview_v2",
         "title": "聊天支持预览实况",
         "version": {
-          "min": "8.0.63.2920.0x28003F32"
+          "min": "8.0.64.2940.0x28004033"
         },
         "ui": {
           "type": "switch"
@@ -927,7 +932,8 @@
         "key": "clicfg_batch_label_enable",
         "title": "未设置标签的朋友 显示 批量设置 菜单",
         "version": {
-          "min": "8.0.70.3060.0x28004633"
+          "min": "8.0.70.3060.0x28004633",
+          "max": "8.0.79.3200.0x28004F36"
         },
         "ui": {
           "type": "switch"
@@ -1545,7 +1551,7 @@
         "key": "clicfg_weclaw_shortcut_command",
         "title": "WeClawBot 快捷指令",
         "version": {
-          "min": "8.0.74.3120.0x28004A34"
+          "min": "8.0.74.3100.0x28004A10"
         },
         "ui": {
           "type": "switch"
