@@ -1,7 +1,7 @@
 [versions]
-agp = "9.4.1"
+agp = "9.5.1"
 kotlin = "2.4.21"
-devtools-ksp = "2.3.12"
+devtools-ksp = "2.3.14"
 yukihook-bom = "1.5.0"
 
 [libraries]
@@ -20,7 +20,7 @@ kavaref-android = { module = "com.highcapable.kavaref:kavaref-android" }
 kavaref-core = { module = "com.highcapable.kavaref:kavaref-core" }
 kavaref-extension = { module = "com.highcapable.kavaref:kavaref-extension" }
 
-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.12.0" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.13.0" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
